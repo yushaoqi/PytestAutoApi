@@ -105,27 +105,5 @@ class Assert:
 
 
 if __name__ == '__main__':
-    assertDatas = {'contactMobile': {'jsonpath': '$.data.contactMobile', 'type': '==', "AssertType": "SQL", 'value': "$.contactMobile"},
-                   'banStatus': {'jsonpath': 'data.banStatus', "AssertType": "SQL", 'type': '==', 'value': '$.banStatus'}}
-    sqlDatas = {'contactMobile': b'18811111111', 'accountHolder': '任振华', 'attribute': '{"oldDataFlag": 0}',
-                'banStatus': 0, 'bankAccount': '6214833803686347', 'bankName': '招商银行', 'bizType': 1, 'contact': '何沐阳',
-                'supplier.contactMobile': 'WF50bxSDPb0nbde9cxVRag==', 'corporateIdNumber': '412725199810248636',
-                'corporateName': '任振华', 'depositBank': '招商银行股份有限公司郑州二十一世纪支行', 'gmtCreate': 1627021468000,
-                'gmtModified': 1629098905000, 'id': 237, 'name': '杭州余杭化真韧商贸行', 'status': 1, 'supplierType': 1,
-                'taxpayerType': 2}
+    pass
 
-    responseDatas = {"code": 200, "data": {"accountHolder": "任振华", "attribute": "{\"oldDataFlag\": 0}", "banStatus": 0,
-                                           "bankAccount": "6214833803686347", "bankName": "招商银行", "bizType": 1,
-                                           "contact": "何沐阳", "contactMobile": 18811111111,
-                                           "corporateIdNumber": "412725199810248636", "corporateName": "任振华",
-                                           "depositBank": "招商银行股份有限公司郑州二十一世纪支行", "gmtCreate": 1627021468000,
-                                           "gmtModified": 1629098905000, "id": 237, "name": "杭州余杭化真韧商贸行",
-                                           "oldDataFlag": 0, "socialCreditCode": "92330110MA2KH4BB2N", "status": 1,
-                                           "supperAdmin": 1, "supplierAttributeObject": {"oldDataFlag": 0},
-                                           "supplierType": 1, "taxpayerType": 2}, "success": True,
-                     "traceId": "5afa1680af03591f3270c6f94e8df98d"}
-    # print(assertDatas)
-    # print(sqlDatas)
-    # print(responseDatas)
-    # print(jsonpath.jsonpath(responseDatas, '$.data.[1]'))
-    Assert(assertDatas).assertEquality(responseData=responseDatas, sqlData=sqlDatas)
