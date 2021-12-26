@@ -4,7 +4,6 @@
 # @Author : 余少琪
 
 
-
 import allure
 import os
 from config.setting import ConfigHandler
@@ -29,6 +28,7 @@ class TestShopList:
         :param :
         :return:
         """
+        print(inData)
 
         res = TestDemo().Demo(inData)
         Assert(inData['resp']).assertEquality(responseData=res[0], sqlData=res[1])

@@ -1,15 +1,17 @@
 - # 用例001
-  url: "${{MerchantHost}}?appId=db97653b8291c7c4_1&appType=android&channel=xiaomi&deviceId=Wmlsc6Jsf%2BIDACYMbR%2Fs7bhX&did=&gzip=1&latestVersion=&pkg=com.zigan.lswfys&sdkVersion=2.7.3.2&sign=83b993e17ee5d29860ea88bdf28804e6&ts=1639379741311&version=1.7.7"
-  method: GET
-  detail: 测试的接口
+  url: "${{MerchantHost}}/recommend/get_head_word"
+  method: POST
+  detail: 测试接口
   headers:
     Content-Type: application/json;charset=UTF-8
   data:
+    # 请求类型：params 是以url拼接的形式请求，json则传的是json串
     requestType: params
+    bid: blog-121903028
   resp:
     code:
-      jsonpath: $.code
+      jsonpath: $.status
       type: ==
-      value: 1
+      value: 200
       AssertType:
   sql:

@@ -1,17 +1,17 @@
 # 商家端账号
 MerchantUser:
-  mobile: 18811111111
-  password: he123456
-  SelfOperatedShop: 515  # 自营店铺ID
+  mobile:
+  password:
+  SelfOperatedShop:
 
 ProjectName:
   - 婚奢汇
   - 峰购
 
-# 商户端域名
-merchant: http://qa.qingbao.cn/adsdk/api/control/cfg
-# 平台端域名
-work: http://work.test.feng-go.com/
+# 域名1
+merchant: https://redisdatarecall.csdn.net
+# 域名2
+work:
 
 # 报告通知类型：1：钉钉 2：企业微信通知
 NotificationType: 2
