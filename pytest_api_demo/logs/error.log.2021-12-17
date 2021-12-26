@@ -1,7 +1,0 @@
-%(levelname)-8s2021-12-17 13:28:41,871 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs/error.log:conftest.py:92 执行失败用例数:0
-%(levelname)-8s2021-12-17 21:27:18,853 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:assertControl.py:70 断言失败, 预期值:余少琪品牌, 断言类型==, 实际值直播专用品牌
-%(levelname)-8s2021-12-17 21:27:29,408 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:assertControl.py:70 断言失败, 预期值:E20211201222858194010611, 断言类型==, 实际值111
-%(levelname)-8s2021-12-17 21:27:30,406 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:conftest.py:92 执行失败用例数:2
-%(levelname)-8s2021-12-17 21:39:05,740 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:assertControl.py:70 断言失败, 预期值:余少琪品牌, 断言类型==, 实际值直播专用品牌
-%(levelname)-8s2021-12-17 21:39:16,993 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:assertControl.py:70 断言失败, 预期值:E20211201222858194010611, 断言类型==, 实际值111
-%(levelname)-8s2021-12-17 21:39:18,041 C:\Users\hzxy\PycharmProjects\pytest_api_demo\logs\error.log:conftest.py:92 执行失败用例数:2
