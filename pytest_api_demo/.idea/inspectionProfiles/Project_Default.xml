@@ -1,0 +1,49 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="18">
+            <item index="0" class="java.lang.String" itemvalue="v-on:click" />
+            <item index="1" class="java.lang.String" itemvalue="@click" />
+            <item index="2" class="java.lang.String" itemvalue="v-model.number" />
+            <item index="3" class="java.lang.String" itemvalue="v-model.trim" />
+            <item index="4" class="java.lang.String" itemvalue="v-model.number," />
+            <item index="5" class="java.lang.String" itemvalue="v-if" />
+            <item index="6" class="java.lang.String" itemvalue="v-elif" />
+            <item index="7" class="java.lang.String" itemvalue="v-else" />
+            <item index="8" class="java.lang.String" itemvalue="v-else-if" />
+            <item index="9" class="java.lang.String" itemvalue="v-show" />
+            <item index="10" class="java.lang.String" itemvalue="v-for" />
+            <item index="11" class="java.lang.String" itemvalue="@click.prevernt" />
+            <item index="12" class="java.lang.String" itemvalue="v-model" />
+            <item index="13" class="java.lang.String" itemvalue="@keyup.enter" />
+            <item index="14" class="java.lang.String" itemvalue="@keyup.del" />
+            <item index="15" class="java.lang.String" itemvalue="@keyup.delete" />
+            <item index="16" class="java.lang.String" itemvalue="v-model.lazy" />
+            <item index="17" class="java.lang.String" itemvalue=":key" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="router-link" />
+            <item index="7" class="java.lang.String" itemvalue="router-view" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

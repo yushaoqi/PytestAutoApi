@@ -1,0 +1,56 @@
+# 商家端账号
+MerchantUser:
+  mobile: 18811111111
+  password: he123456
+  SelfOperatedShop: 515  # 自营店铺ID
+
+ProjectName:
+  - 婚奢汇
+  - 峰购
+
+# 商户端域名
+merchant: http://qa.qingbao.cn/adsdk/api/control/cfg
+# 平台端域名
+work: http://work.test.feng-go.com/
+
+# 报告通知类型：1：钉钉 2：企业微信通知
+NotificationType: 2
+
+# 钉钉相关配置
+DingTalk:
+  webhook: https://oapi.dingtalk.com/robot/send?access_token=a59902a7e811f93ffe301d8326b07a2acc8aa2a864e7d61ee9fc076481ced2a6
+  secret: SECdea6489dfcc3b9259da943c5ae38d3530696f2fa83ac72a9ee716e9511675b9b
+
+# 数据库相关配置
+MySqlDB:
+  # 数据库开关
+  switch: False
+  host:
+  user:
+  password:
+  db: test_obp_data
+
+
+# 企业通知的相关配置
+WeChat:
+  # 请求获取token的相关配置
+  Token:
+    # 企业ID
+    corpid: ww26069345b8b96323
+    # Secret
+    corpsecret: s61-Ydp5O8XBNg0pBgksasgj7YzBzHG5OGK-HoG0ra0
+  host: https://qyapi.weixin.qq.com/cgi-bin
+  Data:
+    # 指定接收消息的成员，成员ID列表（多个接收者用‘|’分隔，最多支持1000个）。指定为”@all”，则向该企业应用的全部成员发送
+    touser: '@all'
+    # 指定接收消息的部门，部门ID列表，多个接收者用‘|’分隔，最多支持100个。 当 touser 为”@all”时忽略本参数
+    toparty:
+    # 指定接收消息的标签，标签ID列表，多个接收者用‘|’分隔，最多支持100个。当touser为”@all”时忽略本参数
+    totag:
+    agentid: 1000002
+
+email:
+  send_user: 13688400244@sina.cn
+  email_host: smtp.sina.com
+  stmp_key: 916710c1e562841d
+  send_list: 1603453211@qq.com

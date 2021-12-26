@@ -1,0 +1,15 @@
+- # 用例001
+  url: "${{MerchantHost}}?appId=db97653b8291c7c4_1&appType=android&channel=xiaomi&deviceId=Wmlsc6Jsf%2BIDACYMbR%2Fs7bhX&did=&gzip=1&latestVersion=&pkg=com.zigan.lswfys&sdkVersion=2.7.3.2&sign=83b993e17ee5d29860ea88bdf28804e6&ts=1639379741311&version=1.7.7"
+  method: GET
+  detail: 测试的接口
+  headers:
+    Content-Type: application/json;charset=UTF-8
+  data:
+    requestType: params
+  resp:
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 1
+      AssertType:
+  sql:
