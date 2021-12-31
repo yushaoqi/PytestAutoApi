@@ -45,7 +45,7 @@ class RequestControl:
             if res.status_code != 200:
                 return res.text, {"sql": None}, InData
             # 判断数据库开关为开启状态，获取数据库的数据，并且返回
-            if self._switch():
+            if self._switch() and InData['sql'] is not None:
                 sqlData = self.MysqlDB.assert_execution(InData['sql'], res.json())
                 return res.json(), sqlData, InData
             return res.json(), {"sql": None}, InData
