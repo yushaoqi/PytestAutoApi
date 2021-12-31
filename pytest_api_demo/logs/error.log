@@ -3,3 +3,4 @@
 %(levelname)-8s2021-12-31 16:19:37,990 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:92 执行失败用例数:0
 %(levelname)-8s2021-12-31 16:19:40,787 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:92 执行失败用例数:0
 %(levelname)-8s2021-12-31 16:23:52,137 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0
+%(levelname)-8s2021-12-31 16:35:52,384 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0

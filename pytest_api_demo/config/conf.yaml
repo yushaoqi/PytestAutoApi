@@ -50,7 +50,8 @@ WeChat:
     agentid: 1000002
 
 email:
-  send_user: 13688400244@sina.cn
-  email_host: smtp.sina.com
-  stmp_key: 916710c1e562841d
+  send_user: 1603453211@qq.com
+  email_host: smtp.qq.com
+  stmp_key: rzuabbobadbuhadc
+  # 收件人
   send_list: 1603453211@qq.com
