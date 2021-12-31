@@ -13,5 +13,5 @@
       jsonpath: $.status
       type: ==
       value: 200
-      AssertType:
+      AssertType: SQL
   sql:

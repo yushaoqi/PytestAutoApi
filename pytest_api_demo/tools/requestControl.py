@@ -11,6 +11,8 @@ from tools.mysqlControl import MysqlDB
 import allure
 from tools.logDecorator import logDecorator
 from tools import allure_step, allure_step_no
+from tools.yamlControl import GetYamlData
+from config.setting import ConfigHandler
 
 
 class Transmission:
@@ -27,6 +29,13 @@ class RequestControl:
         # TODO 初始化逻辑调整
         self.MysqlDB = MysqlDB()
 
+    @staticmethod
+    def _switch():
+        # 获取数据库开关
+        switch = GetYamlData(ConfigHandler.config_path).\
+            get_yaml_data()['MySqlDB']["switch"]
+        return switch
+
     def _checkParams(self, res, InData: dict):
         """ 抽离出通用模块，判断request中的一些参数校验 """
         if 'url' and 'data' and 'headers' and 'sql' not in InData:
@@ -35,8 +44,8 @@ class RequestControl:
             # 判断响应码不等于200时，打印文本格式信息
             if res.status_code != 200:
                 return res.text, {"sql": None}, InData
-            # 判断 sql 不是空的话，获取数据库的数据，并且返回
-            if InData['sql'] is not None:
+            # 判断数据库开关为开启状态，获取数据库的数据，并且返回
+            if self._switch():
                 sqlData = self.MysqlDB.assert_execution(InData['sql'], res.json())
                 return res.json(), sqlData, InData
             return res.json(), {"sql": None}, InData

@@ -83,17 +83,16 @@ class Assert:
 
             # jsonpath 如果数据获取失败，会返回False，判断获取成功才会执行如下代码
             if respData is not False:
-                # 判断数据库状态为关闭、断言数据也为空、并且值为空，抛异常提示
-                if assertValue is None and self._switch() is True and sqlData == {'sql': None}:
-                    ERROR.logger.error("查询sql或者期望值value必须有一项必填")
-                    raise "查询sql或者期望值value必须有一项必填"
                 # 判断 assertValue 为 None, 并且数据库为开启状态, 则走数据库校验
-                elif assertType == 'SQL' and self._switch() is True:
+                if assertType == 'SQL' and self._switch() is True:
                     ResSqlData = jsonpath.jsonpath(sqlData, assertValue)[0]
                     # 判断mysql查询出来的数据类型如果是bytes类型，转换成str类型
                     if isinstance(ResSqlData, bytes):
                         ResSqlData = ResSqlData.decode('utf=8')
                     self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=ResSqlData)
+                # 当数据库开关为False的时候，则跳过判断数据库验证的用例
+                elif self._switch() is False:
+                    ERROR.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
                 # 判断assertType为空的情况下，则走响应断言
                 elif assertType is None:
                     self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=assertValue)

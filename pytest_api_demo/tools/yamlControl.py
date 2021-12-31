@@ -55,27 +55,13 @@ class GetCaseData(GetYamlData):
         """
         try:
             resList = []
-            # 数据库开关，开启状态
-            if self._switch():
-                for i in self.get_yaml_data():
-                    # 正则替换相关数据
-                    reData = regular(str(i))
-                    redata = eval(reData)
-                    resList.append(redata)
-                return resList
-            else:
-                # 关闭状态判断
-                for i in self.get_yaml_data():
-                    reData = regular(str(i))
-                    redata = eval(reData)
-                    if redata['sql'] is not None:
-                        ERROR.logger.error(f"用例数据: {redata}")
-                        raise f"检查到测试用例中有sql存在, 如需断言数据库, 请开启数据库开关"
 
-                    else:
-                        resList.append(redata)
-                    return resList
-
+            for i in self.get_yaml_data():
+                # 正则替换相关数据
+                reData = regular(str(i))
+                redata = eval(reData)
+                resList.append(redata)
+            return resList
         except yaml.scanner.ScannerError:
             raise "yaml格式不正确"
 
