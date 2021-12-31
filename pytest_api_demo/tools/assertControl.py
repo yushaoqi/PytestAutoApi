@@ -5,7 +5,7 @@
 from tools.yamlControl import GetCaseData
 from config.setting import ConfigHandler
 import jsonpath
-from tools.logControl import INFO, ERROR
+from tools.logControl import INFO, ERROR, WARNING
 from tools import slash
 
 
@@ -92,7 +92,7 @@ class Assert:
                     self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=ResSqlData)
                 # 当数据库开关为False的时候，则跳过判断数据库验证的用例
                 elif self._switch() is False:
-                    ERROR.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
+                    WARNING.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
                 # 判断assertType为空的情况下，则走响应断言
                 elif assertType is None:
                     self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=assertValue)

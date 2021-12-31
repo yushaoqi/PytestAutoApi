@@ -64,7 +64,7 @@ class LogHandler(object):
 
 INFO = LogHandler(ConfigHandler.info_log_path, level='info')
 ERROR = LogHandler(ConfigHandler.error_log_path, level='error')
-
+WARNING = LogHandler(ConfigHandler.error_log_path, level='warning')
 
 if __name__ == '__main__':
     INFO.logger.info("测试")

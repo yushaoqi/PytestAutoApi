@@ -4,3 +4,7 @@
 %(levelname)-8s2021-12-31 16:19:40,787 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:92 执行失败用例数:0
 %(levelname)-8s2021-12-31 16:23:52,137 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0
 %(levelname)-8s2021-12-31 16:35:52,384 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0
+%(levelname)-8s2021-12-31 16:45:43,108 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:assertControl.py:95 检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': 'SQL'}
+%(levelname)-8s2021-12-31 16:45:43,108 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:assertControl.py:95 检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': 'SQL'}
+%(levelname)-8s2021-12-31 16:45:43,118 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0
+%(levelname)-8s2021-12-31 16:45:43,118 C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\logs\error.log:conftest.py:94 执行失败用例数:0
