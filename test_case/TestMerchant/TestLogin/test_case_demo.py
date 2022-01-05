@@ -8,11 +8,11 @@ import allure
 import os
 from config.setting import ConfigHandler
 from tools.yamlControl import GetCaseData
-from lib.TestDemo import TestDemo
+from lib.TestDemo import Demo
 import pytest
 from tools.assertControl import Assert
 
-Path = GetCaseData(ConfigHandler.merchant_data_path + 'testDemo.yaml')
+Path = GetCaseData(ConfigHandler.merchant_data_path + 'TestDemo.yaml')
 TestData = Path.get_yaml_case_data()
 
 
@@ -29,7 +29,7 @@ class TestShopList:
         :return:
         """
 
-        res = TestDemo().Demo(inData)
+        res = Demo().Demo(inData)
         Assert(inData['resp']).assertEquality(responseData=res[0], sqlData=res[1])
 
 

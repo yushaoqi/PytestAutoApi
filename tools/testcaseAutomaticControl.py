@@ -23,35 +23,40 @@ class TestCaseAutomaticGeneration:
         filename = []
         # 获取所有文件下的子文件名称
         for root, dirs, files in os.walk(ConfigHandler.data_path):
-            # 过滤所有空文件
-            if files:
-                for i in files:
-                    # 判断只返回 yaml 的文件
-                    if '.yaml' in i:
-                        filename.append((root, i))
+            for filePath in files:
+                path = os.path.join(root, filePath)
+                if '.yaml' in path:
+                    filename.append(path)
         return filename
 
     def testCaseAutomatic(self):
         """ 自动生成 测试代码"""
-        files = self._getAllFiles()
-        for file in files:
-            print(file)
-            caseDetail = GetYamlData(
-                file[0] + "\\" + file[1]
-            ).get_yaml_data()[0]['detail']
+        dataPath = ConfigHandler.data_path
+        filePath = self._getAllFiles()
 
+        for file in filePath:
+
+            # 解析数据，将yaml文件数据转换成代码
+            i = len(dataPath)
+            yamlPath = file[i:]
+            # 路径转换
+            ApiPath = yamlPath.replace('.yaml', '.py')
+            casePath = ConfigHandler.lib_path + "\\" + ApiPath
+            dirPath = os.path.split(casePath)[0]
+
+            caseDetail = GetYamlData(file).get_yaml_data()[0]['detail']
             # 类名称(直接获取 yaml 文件的命名做为生成的类名称)
-            classTitle = file[1][:-5]
+            classTitle = os.path.split(casePath)[1][:-3]
+
             # 函数名称(类名称改成小写，作为函数名称)
             funcTitle = classTitle[0].lower() + classTitle[1:]
-            # 生成测试用例的路径
-            casePath = ConfigHandler().lib_path + '\\' + classTitle + '.py'
-            # 判断只生成不存在的py文件，已存在则不写入
-            if not os.path.exists(casePath):
-                # yaml文件路径
-                yamlPath = file[0] + "\\" + file[1]
-                # TODO 根据接口生成的文件进行分组
-                self.writePageFiles(classTitle, funcTitle, caseDetail, casePath, yamlPath)
+            print(caseDetail, classTitle, funcTitle, file)
+            # 判断文件路径不存在，则创建文件
+            if not os.path.exists(dirPath):
+                os.mkdir(dirPath)
+
+            self.writePageFiles(classTitle, funcTitle, caseDetail,
+                                casePath, file)
 
     @classmethod
     def writePageFiles(cls, classTitle, funcTitle, caseDetail, casePath, yamlPath):
@@ -94,12 +99,11 @@ if __name__ == '__main__':
     data = {classTitle}().{funcTitle}(path)
     print(data)
         '''
-
         with open(casePath, 'w', encoding="utf-8") as f:
             f.write(page)
 
 
-if __name__ == '__main__':
-    # 定义开始时间
-    TestCaseAutomaticGeneration().testCaseAutomatic()
 
+
+if __name__ == '__main__':
+    TestCaseAutomaticGeneration().testCaseAutomatic()

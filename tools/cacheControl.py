@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2021/11/26 21:56
 # @Author : 余少琪
-from setting import ConfigHandler
+from config.setting import ConfigHandler
 import os
 
 
