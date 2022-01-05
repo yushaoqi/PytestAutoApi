@@ -6,7 +6,7 @@
 
 from tools.requestControl import RequestControl
 from tools.yamlControl import GetCaseData
-from setting import ConfigHandler
+from config.setting import ConfigHandler
 
 
 class DateDemo(object):
