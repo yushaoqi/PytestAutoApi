@@ -50,7 +50,6 @@ class TestCaseAutomaticGeneration:
 
             # 函数名称(类名称改成小写，作为函数名称)
             funcTitle = classTitle[0].lower() + classTitle[1:]
-            print(caseDetail, classTitle, funcTitle, file)
             # 判断文件路径不存在，则创建文件
             if not os.path.exists(dirPath):
                 os.mkdir(dirPath)
