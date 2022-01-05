@@ -39,7 +39,6 @@ class TestCaseAutomaticGeneration:
             # 解析数据，将yaml文件数据转换成代码
             i = len(dataPath)
             yamlPath = file[i:]
-            print(yamlPath)
             # 路径转换
             ApiPath = yamlPath.replace('.yaml', '.py')
             casePath = ConfigHandler.lib_path + "\\" + ApiPath
@@ -52,10 +51,11 @@ class TestCaseAutomaticGeneration:
             funcTitle = classTitle[0].lower() + classTitle[1:]
             # 判断文件路径不存在，则创建文件
             if not os.path.exists(dirPath):
-                print(dirPath)
                 os.makedirs(dirPath)
-            self.writePageFiles(classTitle, funcTitle, caseDetail,
-                                casePath, yamlPath)
+            # 判断文件如果已存在，则不会重复写入
+            if not os.path.exists(casePath):
+                self.writePageFiles(classTitle, funcTitle, caseDetail,
+                                    casePath, yamlPath)
 
     @classmethod
     def writePageFiles(cls, classTitle, funcTitle, caseDetail, casePath, yamlPath):
