@@ -68,12 +68,12 @@ class TestCaseAutomaticGeneration:
         :param caseDetail: 函数描述，读取用例中的描述内容，做为函数描述
         :return:
         """
-
+        Author = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         page = f'''#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : {now}
-# @Author : 余少琪
+# @Author : {Author}
 
 
 from tools.requestControl import RequestControl

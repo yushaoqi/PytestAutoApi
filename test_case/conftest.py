@@ -13,6 +13,7 @@ from tools.localIpControl import get_host_ip
 from tools.yamlControl import GetYamlData
 
 _PROJECT_NAME = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
+_TEST_NAME = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -32,8 +33,8 @@ def clear_report():
 def sendDingNotification(totalNum: int, passNum: int, failNum: int,
                          errorNum: int, skipNum: int, passRate):
     # 发送钉钉通知
-    text = f"#### 婚奢汇自动化通知  \n\n>Python脚本任务: {_PROJECT_NAME}\n\n>环境: TEST\n\n>" \
-           f"执行人: 余少琪\n\n>执行结果: {passRate} \n\n>总用例数: {totalNum} \n\n>成功用例数: {passNum}" \
+    text = f"#### {_PROJECT_NAME}自动化通知  \n\n>Python脚本任务: {_PROJECT_NAME}\n\n>环境: TEST\n\n>" \
+           f"执行人: {_TEST_NAME}\n\n>执行结果: {passRate} \n\n>总用例数: {totalNum} \n\n>成功用例数: {passNum}" \
            f" \n\n>失败用例数: {failNum} \n\n>异常用例数: {errorNum} \n\n>跳过用例数: {skipNum}" \
            f" ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n" \
            f" > ###### 测试报告 [详情](http://{get_host_ip()}:9999/index.html) \n"
@@ -49,19 +50,19 @@ def sendEmailNotification(passNum: int, failNum: int,
     # 发送企业微信通知
     text = """【{0}自动化通知】
                                 >测试环境：<font color=\"info\">TEST</font>
-                                >测试负责人：@余少琪
+                                f>测试负责人：@{1}
                                 >
                                 > **执行结果**
-                                ><font color=\"info\">{1}</font>
-                                >成功用例数：<font color=\"info\">{2}</font>
-                                >失败用例数：`{3}个`
-                                >异常用例数：`{4}个`
-                                >跳过用例数：<font color=\"warning\">{5}个</font>
-                                >时　间：<font color=\"comment\">{6}</font>
+                                ><font color=\"info\">{2}</font>
+                                >成功用例数：<font color=\"info\">{3}</font>
+                                >失败用例数：`{4}个`
+                                >异常用例数：`{5}个`
+                                >跳过用例数：<font color=\"warning\">{6}个</font>
+                                >时　间：<font color=\"comment\">{7}</font>
                                 >
                                 >非相关负责人员可忽略此消息。
                                 >测试报告，点击查看>>[测试报告入口](http://121.43.35.47/:9999/index.html)""" \
-        .format(_PROJECT_NAME, passRate, passNum, failNum, errorNum, skipNum, NowTime())
+        .format(_PROJECT_NAME, _TEST_NAME, passRate, passNum, failNum, errorNum, skipNum, NowTime())
 
     WeChatSend().sendMarkdownMsg(text)
 
