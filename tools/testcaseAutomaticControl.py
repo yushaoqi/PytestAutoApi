@@ -78,7 +78,7 @@ class TestCaseAutomaticGeneration:
 
 from tools.requestControl import RequestControl
 from tools.yamlControl import GetCaseData
-from config.etting import ConfigHandler
+from config.setting import ConfigHandler
 
 
 class {classTitle}(object):
