@@ -95,7 +95,7 @@ class {classTitle}(object):
 
 
 if __name__ == '__main__':
-    path = GetCaseData(ConfigHandler.data_path + '{yamlPath}').get_yaml_case_data()[0]
+    path = GetCaseData(ConfigHandler.data_path + r'{yamlPath}').get_yaml_case_data()[0]
     data = {classTitle}().{funcTitle}(path)
     print(data)
         '''
