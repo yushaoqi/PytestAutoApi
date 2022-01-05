@@ -22,7 +22,7 @@ class TestDemo(object):
 
 
 if __name__ == '__main__':
-    path = GetCaseData(r"C:\Users\hzxy\PycharmProjects\py_auto_demo\pytest_api_demo\data\TestDemo.yaml").get_yaml_case_data()[0]
+    path = GetCaseData(r"C:\Users\hzxy\PycharmProjects\py_auto_demo\data\TestDemo.yaml").get_yaml_case_data()[0]
     data = TestDemo().Demo(path)
     print(data)
         

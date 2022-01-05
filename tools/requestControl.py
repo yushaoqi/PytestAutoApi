@@ -107,13 +107,4 @@ class RequestControl:
 
 
 if __name__ == '__main__':
-    a = RequestControl().HttpRequest('get', {
-        'url': 'http://merchant.test.feng-go.com/api/v1/merchant/spu/manager/countSpuByStatus?spuType=1',
-        'method': 'GET', 'detail':
-            '获取商品状态以及商品总数',
-        'headers': {'Content-Type': 'application/json;charset=UTF-8',
-                    'token': 'token', 'X-Shop-Id':
-                        '515'}, 'data': {'requestType': 'json', 'spuType': 1},
-        'resp': {'code': {'jsonpath': '$.code', 'type': '==',
-                          'value': 200}}, 'sql': None}, )
-    print(a)
+    pass
