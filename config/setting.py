@@ -18,7 +18,7 @@ def get_current_system():
 
 
 class ConfigHandler:
-    _SLASH = '\\'
+    _SLASH = '/'
 
     # 判断当前操作系统
     if get_current_system() == 'Linux' or get_current_system() == "Darwin":

@@ -27,6 +27,7 @@ class TestCaseAutomaticGeneration:
                 path = os.path.join(root, filePath)
                 if '.yaml' in path:
                     filename.append(path)
+        print(filename)
         return filename
 
     def testCaseAutomatic(self):
@@ -52,8 +53,8 @@ class TestCaseAutomaticGeneration:
             funcTitle = classTitle[0].lower() + classTitle[1:]
             # 判断文件路径不存在，则创建文件
             if not os.path.exists(dirPath):
-                os.mkdir(dirPath)
-
+                print(dirPath)
+                os.makedirs(dirPath)
             self.writePageFiles(classTitle, funcTitle, caseDetail,
                                 casePath, file)
 
@@ -100,8 +101,6 @@ if __name__ == '__main__':
         '''
         with open(casePath, 'w', encoding="utf-8") as f:
             f.write(page)
-
-
 
 
 if __name__ == '__main__':
