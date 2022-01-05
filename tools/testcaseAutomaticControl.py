@@ -27,7 +27,6 @@ class TestCaseAutomaticGeneration:
                 path = os.path.join(root, filePath)
                 if '.yaml' in path:
                     filename.append(path)
-        print(filename)
         return filename
 
     def testCaseAutomatic(self):
@@ -40,11 +39,11 @@ class TestCaseAutomaticGeneration:
             # 解析数据，将yaml文件数据转换成代码
             i = len(dataPath)
             yamlPath = file[i:]
+            print(yamlPath)
             # 路径转换
             ApiPath = yamlPath.replace('.yaml', '.py')
             casePath = ConfigHandler.lib_path + "\\" + ApiPath
             dirPath = os.path.split(casePath)[0]
-
             caseDetail = GetYamlData(file).get_yaml_data()[0]['detail']
             # 类名称(直接获取 yaml 文件的命名做为生成的类名称)
             classTitle = os.path.split(casePath)[1][:-3]
@@ -56,7 +55,7 @@ class TestCaseAutomaticGeneration:
                 print(dirPath)
                 os.makedirs(dirPath)
             self.writePageFiles(classTitle, funcTitle, caseDetail,
-                                casePath, file)
+                                casePath, yamlPath)
 
     @classmethod
     def writePageFiles(cls, classTitle, funcTitle, caseDetail, casePath, yamlPath):
@@ -79,6 +78,7 @@ class TestCaseAutomaticGeneration:
 
 from tools.requestControl import RequestControl
 from tools.yamlControl import GetCaseData
+from setting import ConfigHandler
 
 
 class {classTitle}(object):
@@ -95,7 +95,7 @@ class {classTitle}(object):
 
 
 if __name__ == '__main__':
-    path = GetCaseData(r"{yamlPath}").get_yaml_case_data()[0]
+    path = GetCaseData(ConfigHandler.data_path + '{yamlPath}').get_yaml_case_data()[0]
     data = {classTitle}().{funcTitle}(path)
     print(data)
         '''

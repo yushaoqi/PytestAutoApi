@@ -342,3 +342,36 @@
 %(levelname)-8s2022-01-05 14:41:23,821 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\info.log:conftest.py:96 执行异常用例数:0
 %(levelname)-8s2022-01-05 14:41:23,822 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\info.log:conftest.py:98 执行跳过用例数:0
 %(levelname)-8s2022-01-05 14:41:23,822 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\info.log:conftest.py:100 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-05 15:44:38,011 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-05 15:44:43,067 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-05 15:46:00,492 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
