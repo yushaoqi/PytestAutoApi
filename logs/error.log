@@ -25,3 +25,57 @@
 %(levelname)-8s2022-01-05 14:41:23,821 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
 %(levelname)-8s2022-01-05 16:20:15,786 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
 %(levelname)-8s2022-01-05 16:20:15,786 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:43:46,509 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:43:46,509 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:48:08,765 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:48:08,765 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:53:14,849 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:53:14,849 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:54:00,552 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:54:00,552 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:54:00,552 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:54:02,420 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:runtimeControl.py:27 
+=================================================================================
+测试用例执行时间较长，请关注.
+函数名称: _DoRequest
+函数运行时间:1191 ms
+测试用例相关数据: ({'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}, {'sql': None}, {'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'data': {'requestType': 'params', 'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}}, 'sql': None})
+=================================================================================
+%(levelname)-8s2022-01-06 10:54:02,420 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:runtimeControl.py:27 
+=================================================================================
+测试用例执行时间较长，请关注.
+函数名称: _DoRequest
+函数运行时间:1191 ms
+测试用例相关数据: ({'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}, {'sql': None}, {'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'data': {'requestType': 'params', 'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}}, 'sql': None})
+=================================================================================
+%(levelname)-8s2022-01-06 10:54:02,434 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:54:02,434 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:56:53,659 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:runtimeControl.py:27 
+=================================================================================
+测试用例执行时间较长，请关注.
+函数名称: _DoRequest
+函数运行时间:1646 ms
+测试用例相关数据: ({'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}, {'sql': None}, {'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'data': {'requestType': 'params', 'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}}, 'sql': None})
+=================================================================================
+%(levelname)-8s2022-01-06 10:56:53,659 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:runtimeControl.py:27 
+=================================================================================
+测试用例执行时间较长，请关注.
+函数名称: _DoRequest
+函数运行时间:1646 ms
+测试用例相关数据: ({'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}, {'sql': None}, {'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'data': {'requestType': 'params', 'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}}, 'sql': None})
+=================================================================================
+%(levelname)-8s2022-01-06 10:56:53,672 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 10:56:53,672 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 14:29:34,539 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-06 14:29:34,539 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 10:04:15,280 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 10:04:15,280 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 22:36:06,030 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 22:36:06,030 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 22:36:06,367 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0
+%(levelname)-8s2022-01-07 22:36:06,367 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/error.log:conftest.py:95 执行失败用例数:0

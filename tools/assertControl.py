@@ -6,7 +6,7 @@ from tools.yamlControl import GetCaseData
 from config.setting import ConfigHandler
 import jsonpath
 from tools.logControl import INFO, ERROR, WARNING
-from tools import slash
+from tools import SqlSwitch
 
 
 class Transmission:
@@ -35,12 +35,6 @@ class Assert:
             pass
         else:
             raise "responseData、sqlData、assertData的数据类型必须要是字典类型"
-
-    @staticmethod
-    def _switch():
-        # 获取数据库开关
-        switch = GetCaseData(ConfigHandler.config_path).get_yaml_data()['MySqlDB']["switch"]
-        return switch
 
     @staticmethod
     def _assertType(key: any, Type: str, value: any):
@@ -85,10 +79,10 @@ class Assert:
             if respData is not False:
                 if assertType == 'SQL':
                     # 判断数据库为开关为关闭状态
-                    if self._switch() is False:
+                    if SqlSwitch() is False:
                         WARNING.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
                     # 数据库开关为开启
-                    if self._switch():
+                    if SqlSwitch():
                         # 判断当用例走的数据数据库断言，但是用例中未填写SQL
                         if sqlData == {'sql': None}:
                             raise "请在用例中添加您要查询的SQL语句。"

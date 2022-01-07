@@ -401,3 +401,260 @@
 %(levelname)-8s2022-01-05 16:20:15,786 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
 %(levelname)-8s2022-01-05 16:20:15,786 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
 %(levelname)-8s2022-01-05 16:20:15,787 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 10:43:30,098 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 10:43:45,107 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 10:43:46,498 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:43:46,499 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 10:43:46,508 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:43:46,509 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 10:43:46,545 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:43:46,545 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:43:46,546 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 10:48:08,706 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:48:08,709 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 10:48:08,762 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:48:08,764 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 10:48:08,768 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:48:08,769 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:48:08,771 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 10:53:12,339 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-06 10:53:14,162 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：0.00%
+%(levelname)-8s2022-01-06 10:53:14,163 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：0.00%
+%(levelname)-8s2022-01-06 10:53:14,838 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:53:14,839 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 10:53:14,849 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:53:14,849 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 10:53:14,850 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:53:14,850 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:53:14,851 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 10:53:58,854 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 10:54:00,551 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:54:00,551 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-06 10:54:00,551 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-06 10:54:00,552 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:54:00,553 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:54:00,553 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+��：0.00%
+%(levelname)-8s2022-01-06 10:54:00,553 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：0.00%
+%(levelname)-8s2022-01-06 10:54:01,840 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:54:02,419 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:54:02,421 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 10:54:02,433 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:54:02,434 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 10:54:02,435 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:54:02,435 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:54:02,435 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 10:56:51,030 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 10:56:53,186 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:56:53,659 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 10:56:53,661 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 10:56:53,672 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 10:56:53,672 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 10:56:53,673 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 10:56:53,673 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 10:56:53,673 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-06 14:29:33,602 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-06 14:29:34,522 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-06 14:29:34,526 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-06 14:29:34,537 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-06 14:29:34,538 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-06 14:29:34,540 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-06 14:29:34,541 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-06 14:29:34,541 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-07 10:04:12,683 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-07 10:04:14,245 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-07 10:04:14,246 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：0.00%
+%(levelname)-8s2022-01-07 10:04:15,273 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-07 10:04:15,274 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:67 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-07 10:04:15,280 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-07 10:04:15,280 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-07 10:04:15,281 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-07 10:04:15,281 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-07 10:04:15,281 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%
+%(levelname)-8s2022-01-07 22:36:04,203 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:run.py:19 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-01-07 22:36:06,029 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-07 22:36:06,029 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:0
+%(levelname)-8s2022-01-07 22:36:06,031 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-07 22:36:06,031 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-07 22:36:06,031 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：0.00%
+%(levelname)-8s2022-01-07 22:36:06,357 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+%(levelname)-8s2022-01-07 22:36:06,357 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:61 断言成功, 预期值:200, 断言类型==, 实际值200
+%(levelname)-8s2022-01-07 22:36:06,367 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:92 执行用例总数: 1
+%(levelname)-8s2022-01-07 22:36:06,367 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:93 执行通过用例数:1
+%(levelname)-8s2022-01-07 22:36:06,368 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:97 执行异常用例数:0
+%(levelname)-8s2022-01-07 22:36:06,368 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:99 执行跳过用例数:0
+%(levelname)-8s2022-01-07 22:36:06,368 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:conftest.py:101 执行成功率: 成功率：100.00%

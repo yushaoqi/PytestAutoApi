@@ -1,8 +1,0 @@
-{
-    "code": {
-        "jsonpath": "$.status",
-        "type": "==",
-        "value": 200,
-        "AssertType": null
-    }
-}

@@ -5,7 +5,9 @@
 
 import allure
 import json
-from config.setting import get_current_system
+from config.setting import get_current_system, ConfigHandler
+from tools.yamlControl import GetYamlData
+
 
 def allure_step(step: str, var: str) -> None:
     """
@@ -38,7 +40,13 @@ def slash():
 
     # 判断当前操作系统
     if get_current_system() == 'Linux' or get_current_system() == "Darwin":
-
         SLASH = '/'
 
     return SLASH
+
+
+def SqlSwitch() -> bool:
+    """获取数据库开关"""
+    switch = GetYamlData(ConfigHandler.config_path) \
+        .get_yaml_data()['MySqlDB']["switch"]
+    return switch
