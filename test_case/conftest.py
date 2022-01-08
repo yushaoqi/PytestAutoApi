@@ -50,7 +50,7 @@ def sendEmailNotification(passNum: int, failNum: int,
     # 发送企业微信通知
     text = """【{0}自动化通知】
                                 >测试环境：<font color=\"info\">TEST</font>
-                                f>测试负责人：@{1}
+                                >测试负责人：@{1}
                                 >
                                 > **执行结果**
                                 ><font color=\"info\">{2}</font>
