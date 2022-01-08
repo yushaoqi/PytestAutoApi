@@ -67,7 +67,6 @@ class Assert:
     def assertEquality(self, responseData: dict, sqlData: dict):
         # 判断数据类型
         self._checkParams(responseData, sqlData)
-        global getSqlData
         for key, values in self.assertData.items():
             assertValue = self.assertData[key]['value']  # 获取 yaml 文件中的期望value值
             assertJsonPath = self.assertData[key]['jsonpath']  # 获取到 yaml断言中的jsonpath的数据

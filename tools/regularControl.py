@@ -14,7 +14,7 @@ class Context:
         self.f = Faker(locale='zh_CN')
 
     @property
-    def get_phone(self):
+    def get_phone(self) -> int:
         """
         :return: 随机生成手机号码
         """
@@ -22,7 +22,7 @@ class Context:
         return phone
 
     @property
-    def get_id_number(self):
+    def get_id_number(self) -> int:
         """
 
         :return: 随机生成身份证号码
@@ -32,7 +32,7 @@ class Context:
         return id_number
 
     @property
-    def get_female_name(self):
+    def get_female_name(self) -> str:
         """
 
         :return: 女生姓名
@@ -41,7 +41,7 @@ class Context:
         return female_name
 
     @property
-    def get_male_name(self):
+    def get_male_name(self) -> str:
         """
 
         :return: 男生姓名
@@ -50,7 +50,7 @@ class Context:
         return male_name
 
     @property
-    def get_email(self):
+    def get_email(self) -> str:
         """
 
         :return: 生成邮箱
@@ -59,7 +59,7 @@ class Context:
         return email
 
     @property
-    def merchantSelfOperatedShop(self):
+    def merchantSelfOperatedShop(self) -> int:
         """
 
         :return: 商家端自营店铺ID
@@ -68,25 +68,26 @@ class Context:
         return SelfOperatedShop
 
     @property
-    def get_time(self):
+    def get_time(self) -> datetime.datetime:
         """
         计算当前时间
         :return:
         """
+
         return datetime.datetime.now()
 
     @property
-    def MerchantHost(self):
+    def MerchantHost(self) -> str:
         from tools.yamlControl import GetYamlData
         from config.setting import ConfigHandler
 
         # 从配置文件conf.yaml 文件中获取到域名，然后使用正则替换
-        HOST = GetYamlData(ConfigHandler.config_path)\
+        HOST = GetYamlData(ConfigHandler.config_path) \
             .get_yaml_data()['merchant']
         return HOST
 
 
-def regular(target):
+def regular(target) -> str:
     """
     使用正则替换请求数据
     :return:
@@ -97,7 +98,6 @@ def regular(target):
             key = re.search(regular_pattern, target).group(1)
 
             target = re.sub(regular_pattern, str(getattr(Context(), key)), target, 1)
-
         return target
 
     except AttributeError:
@@ -132,4 +132,3 @@ if __name__ == '__main__':
     test = "${{MerchantHost}}/api/v1/work/user/loginByPassword"
 
     print(regular(test))
-

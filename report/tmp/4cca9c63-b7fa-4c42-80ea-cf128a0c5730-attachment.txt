@@ -1,0 +1,12 @@
+[32mINFO    [0m C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:logDecorator.py:25 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'requestType': 'params', 'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['pytest', 'gitee', 'yaml', 'api', 'jenkins', 'sdn'], 'error': False}
+数据库断言数据: {'sql': None}
+函数名称: _DoRequest
+=================================================================================
+[32mINFO    [0m C:\Users\hzxy\PycharmProjects\py_auto_demo\logs/info.log:assertControl.py:61 断言成功, 预期值:200, 断言类型==, 实际值200
