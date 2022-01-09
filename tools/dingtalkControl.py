@@ -11,6 +11,7 @@ import urllib.parse
 from tools.yamlControl import GetYamlData
 from dingtalkchatbot.chatbot import DingtalkChatbot, FeedLink
 from config.setting import ConfigHandler
+from typing import Any
 
 
 class DingTalkSendMsg(object):
@@ -26,7 +27,7 @@ class DingTalkSendMsg(object):
         self.webhook = self.getDingTalk["webhook"] + "&timestamp=" + self.timeStamp + "&sign=" + self.sign
         self.xiaoDing = DingtalkChatbot(self.webhook)
 
-    def get_sign(self):
+    def get_sign(self) -> str:
         """
         根据时间戳 + "sign" 生成密钥
         :return:
@@ -37,7 +38,7 @@ class DingTalkSendMsg(object):
         sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
         return sign
 
-    def send_text(self, msg: str, mobiles=None):
+    def send_text(self, msg: str, mobiles=None) -> None:
         """
         发送文本信息
         :param msg: 文本内容
@@ -52,7 +53,7 @@ class DingTalkSendMsg(object):
             else:
                 raise TypeError("mobiles类型错误 不是list类型.")
 
-    def send_link(self, title: str, text: str, message_url: str, pic_url: str):
+    def send_link(self, title: str, text: str, message_url: str, pic_url: str) -> None:
         """
         发送link通知
         :return:
@@ -62,7 +63,7 @@ class DingTalkSendMsg(object):
         except Exception:
             raise
 
-    def send_markdown(self, title: str, msg: str, mobiles=None):
+    def send_markdown(self, title: str, msg: str, mobiles=None) -> None:
         """
 
         :param mobiles:
@@ -80,11 +81,11 @@ class DingTalkSendMsg(object):
                 raise TypeError("mobiles类型错误 不是list类型.")
 
     @staticmethod
-    def feed_link(title: str, message_url: str, pic_url: str):
+    def feed_link(title: str, message_url: str, pic_url: str) -> Any:
 
         return FeedLink(title=title, message_url=message_url, pic_url=pic_url)
 
-    def send_feed_link(self, *arg):
+    def send_feed_link(self, *arg) -> None:
         try:
             self.xiaoDing.send_feed_card(list(arg))
         except Exception:

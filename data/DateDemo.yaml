@@ -1,5 +1,5 @@
 - # 用例001
-  url: "${{MerchantHost}}/recommend/get_head_word"
+  url: ${{MerchantHost}}/recommend/get_head_word
   method: POST
   detail: 测试接口
   headers:

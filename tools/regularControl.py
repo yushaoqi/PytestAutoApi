@@ -128,7 +128,4 @@ def SqlRegular(value, res=None):
 
 
 if __name__ == '__main__':
-    # test.yaml = '{"1": "#get_email#", "2": "#get_id_number#"}'
-    test = "${{MerchantHost}}/api/v1/work/user/loginByPassword"
-
-    print(regular(test))
+    pass

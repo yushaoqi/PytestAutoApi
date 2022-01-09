@@ -27,7 +27,7 @@ class RequestControl:
         # TODO 初始化逻辑调整
         self.MysqlDB = MysqlDB()
 
-    def _checkParams(self, res, InData: dict):
+    def _checkParams(self, res, InData: dict) -> tuple:
         """ 抽离出通用模块，判断request中的一些参数校验 """
         if 'url' and 'data' and 'headers' and 'sql' not in InData:
             ERROR.logger.error("请求失败，请检查用例数据中是否缺少必要参数[url, data, headers, sql]")
@@ -43,7 +43,7 @@ class RequestControl:
 
     @executionDuration(1000)
     @logDecorator(True)
-    def _DoRequest(self, InData: dict, method: str, **kwargs):
+    def _DoRequest(self, InData: dict, method: str, **kwargs) -> tuple:
         """
         request的请求的封装
         :param InData:
@@ -81,7 +81,7 @@ class RequestControl:
         else:
             raise TypeError("InData 需要是 dict类型")
 
-    def HttpRequest(self, Method, inData, **kwargs):
+    def HttpRequest(self, Method, inData, **kwargs) -> tuple:
         try:
             if Method.upper() == 'POST':
                 return self._DoRequest(inData, inData['method'], **kwargs)

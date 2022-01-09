@@ -19,7 +19,7 @@ class Transmission:
 class Assert:
 
     def __init__(self, assertData: dict):
-        self.GetCaseData = GetCaseData(ConfigHandler.merchant_data_path + r'/ShopInfo/GetSupplierInfo.yaml')
+        self.GetCaseData = GetCaseData(ConfigHandler.merchant_data_path + r'\ShopInfo\GetSupplierInfo.yaml')
         self.assertData = assertData
 
     @staticmethod
@@ -64,7 +64,43 @@ class Assert:
             ERROR.logger.error("断言失败, 预期值:{}, 断言类型{}, 实际值{}".format(key, Type, value))
             raise
 
-    def assertEquality(self, responseData: dict, sqlData: dict):
+    def sql_switch_handle(self, sqlData, assertValue, key, values, respData) -> None:
+        """
+
+        :param sqlData: 测试用例中的sql
+        :param assertValue: 断言内容
+        :param key:
+        :param values:
+        :param respData: 预期结果
+        :return:
+        """
+        # 判断数据库为开关为关闭状态
+        if SqlSwitch() is False:
+            WARNING.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
+        # 数据库开关为开启
+        if SqlSwitch():
+            # 判断当用例走的数据数据库断言，但是用例中未填写SQL
+            if sqlData == {'sql': None}:
+                raise "请在用例中添加您要查询的SQL语句。"
+            # 走正常SQL断言逻辑
+            else:
+                ResSqlData = jsonpath.jsonpath(sqlData, assertValue)[0]
+                # 判断mysql查询出来的数据类型如果是bytes类型，转换成str类型
+                if isinstance(ResSqlData, bytes):
+                    ResSqlData = ResSqlData.decode('utf=8')
+                self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=ResSqlData)
+
+    def assertType_handle(self, assertType, sqlData, assertValue, key, values, respData) -> None:
+        # 判断断言类型
+        if assertType == 'SQL':
+            self.sql_switch_handle(sqlData, assertValue, key, values, respData)
+        # 判断assertType为空的情况下，则走响应断言
+        elif assertType is None:
+            self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=assertValue)
+        else:
+            raise "断言失败，目前只支持数据库断言和响应断言"
+
+    def assertEquality(self, responseData: dict, sqlData: dict) -> None:
         # 判断数据类型
         self._checkParams(responseData, sqlData)
         for key, values in self.assertData.items():
@@ -76,27 +112,8 @@ class Assert:
 
             # jsonpath 如果数据获取失败，会返回False，判断获取成功才会执行如下代码
             if respData is not False:
-                if assertType == 'SQL':
-                    # 判断数据库为开关为关闭状态
-                    if SqlSwitch() is False:
-                        WARNING.logger.warning(f"检测到数据库状态为关闭状态，程序已为您跳过此断言，断言值:{values}")
-                    # 数据库开关为开启
-                    if SqlSwitch():
-                        # 判断当用例走的数据数据库断言，但是用例中未填写SQL
-                        if sqlData == {'sql': None}:
-                            raise "请在用例中添加您要查询的SQL语句。"
-                        # 走正常SQL断言逻辑
-                        else:
-                            ResSqlData = jsonpath.jsonpath(sqlData, assertValue)[0]
-                            # 判断mysql查询出来的数据类型如果是bytes类型，转换成str类型
-                            if isinstance(ResSqlData, bytes):
-                                ResSqlData = ResSqlData.decode('utf=8')
-                            self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=ResSqlData)
-                # 判断assertType为空的情况下，则走响应断言
-                elif assertType is None:
-                    self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=assertValue)
-                else:
-                    raise "断言失败，目前只支持数据库断言和响应断言"
+                # 判断断言类型
+                self.assertType_handle(assertType, sqlData, assertValue, key, values, respData)
             else:
                 ERROR.logger.error("JsonPath值获取失败{}".format(assertJsonPath))
                 raise
@@ -104,4 +121,3 @@ class Assert:
 
 if __name__ == '__main__':
     pass
-

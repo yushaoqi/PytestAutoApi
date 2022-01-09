@@ -4,6 +4,7 @@
 # @Author : 余少琪
 from config.setting import ConfigHandler
 import os
+from typing import Any
 
 
 class Cache:
@@ -11,7 +12,7 @@ class Cache:
     def __init__(self, filename: str):
         self.path = ConfigHandler().cache_path + "/" + filename + '.txt'
 
-    def set_cache(self, key, value):
+    def set_cache(self, key: str, value) -> None:
         """
         设置缓存, 只支持设置单字典类型缓存数据, 缓存文件如以存在,则替换之前的缓存内容
         :return:
@@ -19,7 +20,7 @@ class Cache:
         with open(self.path, 'w') as f:
             f.write(str({key: value}))
 
-    def set_caches(self, value: dict):
+    def set_caches(self, value: dict) -> None:
         """
         设置多组缓存数据
         :param value: 缓存内容
@@ -32,7 +33,7 @@ class Cache:
         else:
             raise "缓存类型必须要是 dict 类型"
 
-    def get_cache(self):
+    def get_cache(self) -> Any:
         """
         获取缓存数据
         :return:
@@ -46,7 +47,7 @@ class Cache:
         os.remove(self.path)
 
     @classmethod
-    def clean_all_cache(cls):
+    def clean_all_cache(cls) -> None:
         """
         清除所有缓存文件
         :return:

@@ -100,8 +100,8 @@ def pytest_terminal_summary(terminalreporter):
             "执行跳过用例数:{}".format(skipNum))
         INFO.logger.info(
             '执行成功率: {}'.format(passRate))
-
-        # TODO 完善失败用例负责人，用例执行失败@对应的负责人
+        #
+        # # TODO 完善失败用例负责人，用例执行失败@对应的负责人
         if getNotificationType() == 1:
             # 发送钉钉通知
             sendDingNotification(totalNum, passNum, failNum, errorNum, skipNum, passRate)

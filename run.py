@@ -28,7 +28,7 @@ def run():
                 """.format(ProjectName)
         )
         pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', '--alluredir', './report/tmp'])
-        # os.system(f"allure serve ./report/tmp -p 9999")
+        os.system(f"allure serve ./report/tmp -p 9999")
 
     except Exception:
         # 如有异常，相关异常发送邮件

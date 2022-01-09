@@ -9,7 +9,7 @@ from xlutils.copy import copy
 from config.setting import ConfigHandler
 
 
-def get_excelData(sheetName: str, caseName: any):
+def get_excelData(sheetName: str, caseName: any) -> list:
     """
     读取 Excel 中的数据
     :param sheetName: excel 中的 sheet 页的名称
@@ -36,7 +36,7 @@ def get_excelData(sheetName: str, caseName: any):
     return resList
 
 
-def set_excelData(sheetIndex: int):
+def set_excelData(sheetIndex: int) -> tuple:
     """
     excel 写入
     :return:

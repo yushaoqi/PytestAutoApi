@@ -18,7 +18,7 @@ def countMilliseconds():
     return access_delta
 
 
-def Timestamp_conversion(timeStr: str):
+def Timestamp_conversion(timeStr: str) -> int:
     """
     时间戳转换，将日期格式转换成时间戳
     :param timeStr: 时间
@@ -49,7 +49,7 @@ def Time_conversion(timeNum: int):
         raise "请传入正确的时间戳"
 
 
-def NowTime():
+def NowTime() -> str:
     """
     获取当前时间, 日期格式: 2021-12-11 12:39:25
     :return:
