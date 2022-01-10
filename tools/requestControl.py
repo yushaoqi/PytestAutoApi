@@ -25,9 +25,10 @@ class RequestControl:
 
     def __init__(self):
         # TODO 初始化逻辑调整
-        self.MysqlDB = MysqlDB()
+        pass
 
-    def _checkParams(self, res, InData: dict) -> tuple:
+    @classmethod
+    def _checkParams(cls, res, InData: dict) -> tuple:
         """ 抽离出通用模块，判断request中的一些参数校验 """
         if 'url' and 'data' and 'headers' and 'sql' not in InData:
             ERROR.logger.error("请求失败，请检查用例数据中是否缺少必要参数[url, data, headers, sql]")
@@ -37,7 +38,7 @@ class RequestControl:
                 return res.text, {"sql": None}, InData
             # 判断数据库开关为开启状态，获取数据库的数据，并且返回
             if SqlSwitch() and InData['sql'] is not None:
-                sqlData = self.MysqlDB.assert_execution(InData['sql'], res.json())
+                sqlData = MysqlDB().assert_execution(InData['sql'], res.json())
                 return res.json(), sqlData, InData
             return res.json(), {"sql": None}, InData
 
