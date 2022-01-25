@@ -58,6 +58,23 @@ def NowTime() -> str:
     return localtime
 
 
+def get_time_for_min(minute: int) -> int:
+    """
+    获取几分钟后的时间戳
+    @param minute: 分钟
+    @return: N分钟后的时间戳
+    """
+    return int(time.time() + 60 * minute) * 1000
+
+
+def get_now_time() -> int:
+    """
+    获取当前时间戳, 整形
+    @return: 当前时间戳
+    """
+    return int(time.time()) * 1000
+
+
 if __name__ == '__main__':
     print(NowTime())
     Time_conversion(1547450538000)
