@@ -18,7 +18,7 @@ def get_current_system():
 
 
 class ConfigHandler:
-    _SLASH = '/'
+    _SLASH = '\\'
 
     # 判断当前操作系统
     if get_current_system() == 'Linux' or get_current_system() == "Darwin":
@@ -47,6 +47,8 @@ class ConfigHandler:
     info_log_path = os.path.join(root_path, 'logs' + _SLASH + 'info.log')
 
     error_log_path = os.path.join(root_path, 'logs' + _SLASH + 'error.log')
+
+    warning_log_path = os.path.join(root_path, 'logs' + _SLASH + 'warning.log')
 
     if not os.path.exists(report_path):
         os.mkdir(report_path)
