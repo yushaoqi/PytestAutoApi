@@ -53,15 +53,15 @@ class RequestControl:
         """
         # 判断测试数据为字典类型
         if isinstance(InData, dict):
-            if InData['data']['requestType'] == Transmission.JSON:
+            if InData['requestType'] == Transmission.JSON:
                 res = requests.request(method=method, url=InData["url"], json=InData['data'],
                                        headers=InData['headers'], **kwargs)
 
-            elif InData['data']['requestType'] == Transmission.FILE:
+            elif InData['requestType'] == Transmission.FILE:
                 res = requests.request(method=method, url=InData["url"], files=InData['data'],
                                        headers=InData['headers'], **kwargs)
 
-            elif InData['data']['requestType'] == Transmission.PARAMS:
+            elif InData['requestType'] == Transmission.PARAMS:
                 res = requests.request(method=method, url=InData["url"], params=InData['data'],
                                        headers=InData['headers'], **kwargs)
 

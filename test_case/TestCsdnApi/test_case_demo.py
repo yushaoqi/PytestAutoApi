@@ -5,7 +5,6 @@
 
 
 import allure
-import os
 from config.setting import ConfigHandler
 from tools.yamlControl import GetCaseData
 from lib.DateDemo import DateDemo

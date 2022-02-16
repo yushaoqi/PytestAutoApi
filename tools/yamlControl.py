@@ -70,7 +70,7 @@ class GetCaseData(GetYamlData):
             resList.append(i)
         return resList
 
-    def get_yaml_case_data(self) -> list:
+    def get_yaml_case_data(self):
         """
         获取测试用例数据, 转换成指定数据格式
         :return:

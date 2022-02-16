@@ -28,6 +28,7 @@ def logDecorator(switch: bool):
                             f"请求方式: {res[2]['method']}\n"
                             f"请求头:   {res[2]['headers']}\n"
                             f"请求路径: {res[2]['url']}\n"
+                            f"请求参数类型: {res[2]['requestType']}\n"
                             f"请求内容: {res[2]['data']}\n"
                             f"接口响应内容: {res[0]}\n"
                             f"数据库断言数据: {res[1]}\n"

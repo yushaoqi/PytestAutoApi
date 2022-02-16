@@ -1,12 +1,12 @@
 - # 用例001
-  url: ${{MerchantHost}}/recommend/get_head_word
+  url: ${{Host}}/recommend/get_head_word
   method: POST
   detail: 测试接口
   headers:
     Content-Type: application/json;charset=UTF-8
+  requestType: params
   data:
     # 请求类型：params 是以url拼接的形式请求，json则传的是json串
-    requestType: params
     bid: blog-121903028
   resp:
     code:

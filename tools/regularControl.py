@@ -77,14 +77,14 @@ class Context:
         return datetime.datetime.now()
 
     @property
-    def MerchantHost(self) -> str:
+    def Host(self) -> str:
         from tools.yamlControl import GetYamlData
         from config.setting import ConfigHandler
 
         # 从配置文件conf.yaml 文件中获取到域名，然后使用正则替换
-        HOST = GetYamlData(ConfigHandler.config_path) \
-            .get_yaml_data()['merchant']
-        return HOST
+        host = GetYamlData(ConfigHandler.config_path) \
+            .get_yaml_data()['Host']
+        return host
 
 
 def regular(target) -> str:

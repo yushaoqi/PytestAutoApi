@@ -1,9 +1,3 @@
-# 商家端账号
-MerchantUser:
-  mobile:
-  password:
-  SelfOperatedShop:
-
 ProjectName:
   - 余少琪的框架
   -
@@ -12,7 +6,7 @@ ProjectName:
 TestName: 余少琪
 
 # 域名1
-merchant: https://redisdatarecall.csdn.net
+Host: https://redisdatarecall.csdn.net
 # 域名2
 work:
 

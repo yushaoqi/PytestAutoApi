@@ -88,7 +88,6 @@ def pytest_terminal_summary(terminalreporter):
         passRate = '成功率：%.2f' % (
                 len(terminalreporter.stats.get('passed', [])) / terminalreporter._numcollected * 100) + '%'
 
-        # INFO.logger.info(terminalreporter.stats)
         INFO.logger.info("执行用例总数: {}".format(totalNum))
         INFO.logger.info(
             "执行通过用例数:{}".format(passNum))
@@ -100,6 +99,7 @@ def pytest_terminal_summary(terminalreporter):
             "执行跳过用例数:{}".format(skipNum))
         INFO.logger.info(
             '执行成功率: {}'.format(passRate))
+
         #
         # # TODO 完善失败用例负责人，用例执行失败@对应的负责人
         if getNotificationType() == 1:
