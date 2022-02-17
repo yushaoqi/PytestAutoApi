@@ -14,4 +14,10 @@
       type: ==
       value: 200
       AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: 查询成功
+      AssertType:
+
   sql:

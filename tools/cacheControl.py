@@ -5,7 +5,7 @@
 from config.setting import ConfigHandler
 import os
 from typing import Any
-
+from tools.logControl import ERROR, INFO, WARNING
 
 class Cache:
     """ 设置、读取缓存 """
@@ -62,3 +62,6 @@ class Cache:
 
 if __name__ == '__main__':
     Cache('cache').clean_all_cache()
+    ERROR.logger.error("测试error")
+    INFO.logger.info("测试info")
+    WARNING.logger.warning("测试waring")

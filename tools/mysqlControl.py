@@ -65,7 +65,7 @@ class MysqlDB(object):
                     # 查询单条
                     data = self.cur.fetchone()
 
-                return data[0]
+                return data
             except Exception as e:
                 ERROR.logger.error("数据库连接失败，失败原因{0}".format(e))
 
@@ -104,7 +104,7 @@ class MysqlDB(object):
                             # 判断sql中是否有正则，如果有则通过jsonpath提取相关的数据
                             sql = SqlRegular(i, resp)
                             # for 循环逐条处理断言 sql
-                            query_data = self.query(sql)
+                            query_data = self.query(sql)[0]
                             # 将sql 返回的所有内容全部放入对象中
                             for key, value in query_data.items():
                                 data[key] = value

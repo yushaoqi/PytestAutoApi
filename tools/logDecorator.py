@@ -42,3 +42,6 @@ def logDecorator(switch: bool):
     else:
         raise TypeError("日志开关只能为 Ture 或者 False")
 
+
+if __name__ == '__main__':
+    INFO.logger.info("ceshi")
