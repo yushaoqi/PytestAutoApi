@@ -10,14 +10,6 @@ import requests
 from tools.logControl import ERROR
 
 
-class Articles:
-    def __init__(self, title, description, url, pic):
-        self.title = title
-        self.description = description
-        self.url = url
-        self.pic = pic
-
-
 class WeChatSend:
     """
     企业微信消息通知
