@@ -1,125 +1,73 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2021/12/10 21:17
+# @Time   : 2022/2/21 17:33
 # @Author : 余少琪
 import json
 
-import requests
 from config.setting import ConfigHandler
 from tools.yamlControl import GetYamlData
+import requests
 
 
 class WeChatSend:
+    """
+    企业微信消息通知
+    """
+
     def __init__(self):
         self.weChatData = GetYamlData(ConfigHandler.config_path).get_yaml_data()['WeChat']
-        self.host = self.weChatData['host'] + '/message/send?access_token=' + self.getToken()
-        # 获取发送企业微信通知的一些公共数据，全部放在了配置文件中
-        self.data = self.weChatData['Data']
+        self.curl = self.weChatData['webhook']
+        self.headers = {"Content-Type": "application/json"}
 
-    def getToken(self):
-        """ 获取企业微信 token """
-        _Data = self.weChatData['Token']
-        _Host = self.weChatData['host'] + '/gettoken'
-        res = requests.get(url=_Host, params=_Data, verify=True)
-        if res.json()['errcode'] != 0:
-            raise f"企业获取获取access_token失败，失败原因{res.json()}"
+    def sendText(self, content, mentioned_mobile_list=None):
+        """
+        发送文本类型通知
+        :param content: 文本内容，最长不超过2048个字节，必须是utf8编码
+        :param mentioned_mobile_list: 手机号列表，提醒手机号对应的群成员(@某个成员)，@all表示提醒所有人
+        :return:
+        """
+        _DATA = {"msgtype": "text", "text": {"content": content, "mentioned_list": None,
+                                             "mentioned_mobile_list": mentioned_mobile_list}}
+
+        if mentioned_mobile_list is None or isinstance(mentioned_mobile_list, list):
+            # 判断手机号码列表中得数据类型，如果为int类型，发送得消息会乱码
+            if len(mentioned_mobile_list) >= 1:
+                for i in mentioned_mobile_list:
+                    if isinstance(i, str):
+                        res = requests.post(url=self.curl, json=_DATA, headers=self.headers)
+                        print(res.text)
+                    else:
+                        raise "手机号码必须是字符串类型."
         else:
-            Token = res.json()['access_token']
-        return Token
+            raise "手机号码列表必须是list类型."
 
-    def uploadFile(self, fileType, filePath):
+    def sendMarkDown(self, content):
         """
-        上传临时素材
-        :param filePath: 文件路径
-        :param fileType: 媒体文件类型，分别有图片（image）、语音（voice）、视频（video），普通文件（file）
+        发送 MarkDown 类型消息
+        :param content: 消息内容，markdown形式
         :return:
         """
-        try:
-            # 判断 fileType 类型
-            if fileType == 'image' or fileType == 'voice' or fileType == 'video' or fileType == 'file':
-                url = self.weChatData['host'] + f'/media/upload?access_token={self.getToken()}&type={fileType}'
-                # 上传文件
-                files = [('filename', ('22.jpeg', open(filePath, 'rb'), 'image/jpeg'))]
-                headers = {'Content-Type': 'multipart/form-data'}
-                res = requests.post(url, headers=headers, files=files)
-                if res.json()['errcode'] != 0:
-                    raise f"上传文件失败，失败原因{res.json()}"
-                else:
-                    # 返回文件 ID
-                    return res.json()['media_id']
-            else:
-                raise "fileType 不正确"
-        except OSError:
-            raise "文件地址不正确"
+        _DATA = {"msgtype": "markdown", "markdown": {"content": content}}
+        res = requests.post(url=self.curl, json=_DATA, headers=self.headers)
+        if res.json()['errcode'] != 0:
+            raise f"企业微信「MarkDown类型」消息发送失败"
 
-    def sendTextMsg(self, text):
+    def sendImageText(self, title, description, url, pic):
         """
-        发送微信文本消息
-        :param text: 消息内容，最长不超过2048个字节，超过将截断（支持id转译）
+        发送图文消息
+        :param title: 标题，不超过128个字节，超过会自动截断
+        :param description: 描述，不超过512个字节，超过会自动截断
+        :param url: 点击后跳转的链接
+        :param pic: 图文消息的图片链接，支持JPG、PNG格式，较好的效果为大图 1068*455，小图150*150。
         :return:
         """
-
-        Data = {"content": text}
-        self.data['text'] = Data
-        self.data['msgtype'] = 'text'
-        res = requests.post(url=self.host, data=json.dumps(self.data))
+        _DATA = {
+            "msgtype": "news", "news": {
+                "articles": [{"title": title, "description": description, "url": url, "picurl": pic}]}}
+        res = requests.post(url=self.curl, headers=self.headers, json=_DATA)
         if res.json()['errcode'] != 0:
-            raise "企业微信「文本消息」消息发送失败，失败原因"
-
-    def sendImageMsg(self, filePath):
-        """
-        发送图片消息
-        :param filePath: 文件路径
-        :return:
-        """
-
-        Image = {"media_id": self.uploadFile(fileType='image', filePath=filePath)}
-        self.data['image'] = Image
-        self.data['msgtype'] = 'image'
-        res = requests.post(url=self.host, data=json.dumps(self.data))
-        if res.json()['errcode'] != 0:
-            raise "企业微信「图片消息」消息发送失败"
-
-    def sendTextCardMsg(self, title, description, url, btnText):
-        """
-        发送文本卡片格式消息
-        :param title: 卡片标题
-        :param description: 卡片描述
-        :param url:
-        :param btnText: 按钮文案
-        :return:
-        """
-        textCard = {"title": title, "description": description, "url": url, "btntxt": btnText}
-        self.data['textcard'] = textCard
-        self.data['msgtype'] = 'textcard'
-        res = requests.post(url=self.host, data=json.dumps(self.data))
-        if res.json()['errcode'] != 0:
-            raise "企业微信「文本卡片类型」消息发送失败"
-
-    def sendMarkdownMsg(self, content):
-        pass
-        markdown = {"content": content}
-        self.data['markdown'] = markdown
-        self.data['msgtype'] = 'markdown'
-        res = requests.post(url=self.host, data=json.dumps(self.data))
-        if res.json()['errcode'] != 0:
-            raise "企业微信「文本卡片类型」消息发送失败"
+            raise f"企业微信「图文类型」消息发送失败"
 
 
 if __name__ == '__main__':
-    # 发送markdown
-    text = """【婚奢汇自动化通知】
-                                >测试环境：<font color=\"info\">TEST</font> 
-                                >测试负责人：@余少琪 
-                                >
-                                > **执行结果**
-                                >成  功 率：<font color=\"info\">90%</font> 
-                                >成功用例数：<font color=\"info\">54个</font> 
-                                >失败用例数：`1个`
-                                >异常用例数：`1个` 
-                                >跳过用例数：<font color=\"warning\">1个</font> 
-                                >时　间：<font color=\"comment\">上午9:00-11:00</font>
-                                >
-                                >非相关负责人员可忽略此消息。 
-                                >测试报告，点击查看>>[测试报告入口](https://work.weixin.qq.com)"""
-    WeChatSend().sendMarkdownMsg(text)
+    pass

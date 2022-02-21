@@ -30,21 +30,7 @@ MySqlDB:
 
 # 企业通知的相关配置
 WeChat:
-  # 请求获取token的相关配置
-  Token:
-    # 企业ID
-    corpid: ww26069345b8b96323
-    # Secret
-    corpsecret: s61-Ydp5O8XBNg0pBgksasgj7YzBzHG5OGK-HoG0ra0
-  host: https://qyapi.weixin.qq.com/cgi-bin
-  Data:
-    # 指定接收消息的成员，成员ID列表（多个接收者用‘|’分隔，最多支持1000个）。指定为”@all”，则向该企业应用的全部成员发送
-    touser: '@all'
-    # 指定接收消息的部门，部门ID列表，多个接收者用‘|’分隔，最多支持100个。 当 touser 为”@all”时忽略本参数
-    toparty:
-    # 指定接收消息的标签，标签ID列表，多个接收者用‘|’分隔，最多支持100个。当touser为”@all”时忽略本参数
-    totag:
-    agentid: 1000002
+  webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=22748687-fa3b-4e48-a5d7-0502cef422b4
 
 email:
   send_user: 1603453211@qq.com

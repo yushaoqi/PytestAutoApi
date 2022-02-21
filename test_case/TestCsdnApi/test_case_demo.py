@@ -33,4 +33,4 @@ class TestShopList:
 
 
 if __name__ == '__main__':
-    pytest.main(['test_case_demo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
+    pytest.main(['test_case_demo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2", "--reruns-delay=2"])

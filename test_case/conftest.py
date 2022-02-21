@@ -64,7 +64,7 @@ def sendEmailNotification(passNum: int, failNum: int,
                                 >测试报告，点击查看>>[测试报告入口](http://121.43.35.47/:9999/index.html)""" \
         .format(_PROJECT_NAME, _TEST_NAME, passRate, passNum, failNum, errorNum, skipNum, NowTime())
 
-    WeChatSend().sendMarkdownMsg(text)
+    WeChatSend().sendMarkDown(text)
 
 
 def getNotificationType():
