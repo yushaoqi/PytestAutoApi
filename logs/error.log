@@ -1,11 +1,2 @@
-%(levelname)-8s2022-02-15 14:39:23,408 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
-%(levelname)-8s2022-02-16 10:27:32,068 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:assertControl.py:64 断言失败, 预期值:201, 断言类型==, 实际值200
-%(levelname)-8s2022-02-16 10:27:32,301 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:1
-%(levelname)-8s2022-02-16 10:38:42,519 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:assertControl.py:64 断言失败, 预期值:201, 断言类型==, 实际值200
-%(levelname)-8s2022-02-16 10:38:42,796 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:1
-%(levelname)-8s2022-02-16 10:40:10,514 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:assertControl.py:64 断言失败, 预期值:201, 断言类型==, 实际值200
-%(levelname)-8s2022-02-16 10:40:10,705 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:1
-%(levelname)-8s2022-02-16 10:42:16,095 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
-%(levelname)-8s2022-02-16 10:42:28,143 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
-%(levelname)-8s2022-02-16 10:44:51,286 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
-%(levelname)-8s2022-02-16 10:50:17,316 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
+%(levelname)-8s2022-02-21 18:37:52,617 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:1
+%(levelname)-8s2022-02-21 18:38:30,385 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
