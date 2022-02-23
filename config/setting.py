@@ -62,7 +62,9 @@ class ConfigHandler:
     # lib 存放po文件
     lib_path = os.path.join(root_path, "lib")
 
+    temp_path = os.path.join(root_path, 'report' + _SLASH + 'tmp')
+    if not os.path.exists(temp_path):
+        os.mkdir(temp_path)
+    html_path = os.path.join(root_path, 'report' + _SLASH + 'html')
 
-if __name__ == '__main__':
-    print(ConfigHandler.config_path)
 

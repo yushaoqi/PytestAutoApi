@@ -11,6 +11,7 @@ from tools.weChatSendControl import WeChatSend
 from tools.dingtalkControl import DingTalkSendMsg
 from tools.localIpControl import get_host_ip
 from tools.yamlControl import GetYamlData
+from tools.sendmailControl import SendEmail
 
 _PROJECT_NAME = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
 _TEST_NAME = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
@@ -108,6 +109,8 @@ def pytest_terminal_summary(terminalreporter):
         elif getNotificationType() == 2:
             # 发送企业微信通知
             sendEmailNotification(passNum, failNum, errorNum, skipNum, passRate)
+        elif getNotificationType() == 3:
+            SendEmail().send_main(passNum, failNum, errorNum, skipNum, passRate)
         else:
             raise "NotificationType配置不正确，现在只支持企业微信通知和邮箱通知"
 

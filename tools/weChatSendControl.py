@@ -80,8 +80,8 @@ class WeChatSend:
                     if res.json()['errcode'] != 0:
                         ERROR.logger.error(res.json())
                         raise ValueError(f"企业微信「图文类型」消息发送失败")
-            else:
-                raise ValueError("发送图文消息失败，标题、描述、链接地址、图片地址均不能为空！")
+                else:
+                    raise ValueError("发送图文消息失败，标题、描述、链接地址、图片地址均不能为空！")
         else:
             raise TypeError("图文类型的参数必须是字典类型")
 

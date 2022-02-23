@@ -10,7 +10,7 @@ Host: https://redisdatarecall.csdn.net
 # 域名2
 work:
 
-# 报告通知类型：1：钉钉 2：企业微信通知
+# 报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
 NotificationType: 2
 
 # 钉钉相关配置

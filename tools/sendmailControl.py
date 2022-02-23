@@ -53,46 +53,39 @@ class SendEmail(object):
         content = "自动化测试执行完毕，程序中发现异常，请悉知。报错信息如下：\n{0}".format(error_message)
         self.send_mail(user_list, sub, content)
 
-    def send_main(self, pass_list, fail_list, time):
+    def send_main(self, passNum: int, failNum: int,
+                          errorNum: int, skipNum: int, passRate):
         """
-        发送测试报告
-        @param pass_list: 通过用例数
-        @param fail_list: 失败用例数
-        @param time: 执行时间
-        @return:
+        发送邮件
+        :param passNum: 通过用例数
+        :param failNum: 失败用例数
+        :param errorNum: 异常用例数
+        :param skipNum: 跳过用例数
+        :param passRate: 通过率
+        :return:
         """
-        pass_num = len(pass_list)
-        fail_num = len(fail_list)
-        count_num = pass_num + fail_num
-        pass_result = '%.2f%%' % (pass_num / count_num * 100)
-        fail_result = '%.2f%%' % (fail_num / count_num * 100)
 
         emali = self.getData["send_list"]
         user_list = emali.split(',')  # 多个邮箱发送，yaml文件中直接添加  '806029174@qq.com'
 
         sub = self.name + "接口自动化报告"
-        content = "此次一共运行接口个数为{0}个, 通过个数为{1}个, 失败个数为{2}个， 通过率为{3}, 失败率为{4}，共耗时{5}。".format(
-            count_num, pass_num, fail_num, pass_result, fail_result, time)
+        totalNum = passNum + failNum + errorNum + skipNum
+        content = """
+        各位同事, 大家好:
+            自动化用例执行完成，执行结果如下:
+            用例运行总数: {} 个
+            通过用例个数: {} 个
+            失败用例个数: {} 个
+            异常用例个数: {} 个
+            跳过用例个数: {} 个
+            {}
 
-        msg = MIMEMultipart()
-        # 发送附件
-        part = MIMEApplication(open(self.getData, 'rb').read())
-        part.add_header('Content-Disposition', 'attachment', filename="自动化测试报告.xlsx")
-        msg.attach(part)
+        *****************************************************************
+        详细情况可登录jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
+        """.format(totalNum, passNum, failNum, skipNum, errorNum, passRate)
+
         self.send_mail(user_list, sub, content)
 
 
 if __name__ == '__main__':
-    message = """From: From Person <from@fromdomain.com>
-    To: To Person <to@todomain.com>
-    MIME-Version: 1.0
-    Content-type: text/html
-    Subject: SMTP HTML e-mail test.yaml
-
-    This is an e-mail message to be sent in HTML format
-
-    <b>This is HTML message.</b>
-    <h1>This is headline.</h1>
-    """
-    SendEmail().send_main([1, 2, 3], [], 3)
-    SendEmail().error_mail("NameError")
+    pass

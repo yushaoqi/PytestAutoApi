@@ -17,7 +17,7 @@ def allure_step(step: str, var: str) -> None:
     with allure.step(step):
         allure.attach(
             json.dumps(
-                var,
+                str(var),
                 ensure_ascii=False,
                 indent=4),
             step,
