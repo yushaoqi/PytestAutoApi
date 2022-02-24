@@ -13,6 +13,10 @@ work:
 # 报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
 NotificationType: 2
 
+# 注意点：
+# 之前为了小伙伴们拉下代码执行的时候不受影响，企业微信、钉钉、邮箱的通知配置的都是我的
+# 我发现很多拉代码的小伙伴这里配置都没改，所有的通知都发到我这里来了哦~~麻烦看到这里的小伙伴自己改一下相关配置
+
 # 钉钉相关配置
 DingTalk:
   webhook: https://oapi.dingtalk.com/robot/send?access_token=a59902a7e811f93ffe301d8326b07a2acc8aa2a864e7d61ee9fc076481ced2a6

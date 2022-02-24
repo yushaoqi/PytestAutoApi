@@ -6,7 +6,6 @@ import traceback
 
 import pytest
 import os
-from tools.sendmailControl import SendEmail
 from tools.logControl import INFO
 from tools.yamlControl import GetYamlData
 from config.setting import ConfigHandler

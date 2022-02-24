@@ -57,8 +57,8 @@ class Assert:
 
             else:
                 raise f"断言失败，目前不支持{Type}断言类型，如需新增断言类型，请联系管理员"
-
-            INFO.logger.info("断言成功, 预期值:{}, 断言类型{}, 实际值{}".format(value, Type, key))
+            # 断言成功的日志，需要的话可以自动开启
+            # INFO.logger.info("断言成功, 预期值:{}, 断言类型{}, 实际值{}".format(value, Type, key))
 
         except AssertionError:
             ERROR.logger.error("断言失败, 预期值:{}, 断言类型{}, 实际值{}".format(value, Type, key))

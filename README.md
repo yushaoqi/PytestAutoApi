@@ -40,6 +40,7 @@
     ├── report                      // 测试报告层
     ├── test_case                   // 测试用例代码
     ├── tool                        // 所有公共模块的封装 
+    │   └── allureDataControl.py    // allure报告数据清洗
     │   └── assertControl.py        // 断言模块
     │   └── cacheControl.py         // 缓存模块
     │   └── dingtalkControl.py      // 钉钉发送通知
@@ -156,6 +157,10 @@ deactivate
 目前框架主要是用的企业微信通知，在用例执行成功之后发送通知，通知内容如下，可以根据公司主要使用的通讯工具自行更改。
 在公共方法中分别封装了钉钉通知、以及邮箱通知。
 
+# 注意点：
+# 之前为了小伙伴们拉下代码执行的时候不受影响，企业微信、钉钉、邮箱的通知配置的都是我的
+# 我发现很多拉代码的小伙伴这里配置都没改，所有的通知都发到我这里来了哦~~麻烦看到这里的小伙伴自己在conf.yaml改一下相关配置
+
 ![img.png](images/config/wechat.png)
 
 如程序执行执行异常时，会自动收集错误信息，并将内容发送邮件。
@@ -179,9 +184,9 @@ setting.py 文件主要是用来存放项目中所有文件的目录地址
 - method: 请求方式，目前支持GET、POST、DELETE、PUT，本人公司目前设计到的请求方式只有这四种，如有需求可自行添加
 - detail: 用例描述，程序中未强制要求必填，但是最好是每个用例都填写上，打印日志以及生成代码的函数注释，都会依赖用例描述
 - header: 请求头
-- data: 请求参数
-    - requestType: 必填，这个字段主要取决于你请求的是参数是以json、params、file、或者data的格式
-    - 如接口中需要的请求参数全部放在data中
+- requestType: 必填，这个字段主要取决于你请求的是参数是以json、params、file、或者data的格式
+- data: 请求参数 
+   如接口中需要的请求参数全部放在data中
 - resp: 响应断言相关的数据
     - 响应接口的参数字段(如code): code，就是接口的响应状态码，这些参数都是自己加的。
       - jsonpath: 这里获取到对应的接口数据，主要使用到了jsonpath。如果有不了这一块的，大家可以看我的博客：https://blog.csdn.net/weixin_43865008/article/details/118371620

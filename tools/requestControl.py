@@ -42,7 +42,7 @@ class RequestControl:
                 return res.json(), sqlData, InData
             return res.json(), {"sql": None}, InData
 
-    @executionDuration(1000)
+    @executionDuration(3000)
     @logDecorator(True)
     def _DoRequest(self, InData: dict, method: str, **kwargs) -> tuple:
         """
