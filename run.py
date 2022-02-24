@@ -10,6 +10,10 @@ from tools.sendmailControl import SendEmail
 from tools.logControl import INFO
 from tools.yamlControl import GetYamlData
 from config.setting import ConfigHandler
+from tools import getNotificationType
+from tools.weChatSendControl import WeChatSend
+from tools.dingtalkControl import DingTalkSendMsg
+from tools.sendmailControl import SendEmail
 
 
 def run():
@@ -28,6 +32,16 @@ def run():
                 """.format(ProjectName)
         )
         pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', '--alluredir', './report/tmp'])
+        os.system(r"allure generate ./report/tmp -o ./report/html --clean")
+        # 通过配置文件判断发送报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
+        if getNotificationType() == 1:
+            DingTalkSendMsg().sendDingNotification()
+        if getNotificationType() == 2:
+            WeChatSend().sendEmailNotification()
+        if getNotificationType() == 3:
+            SendEmail().send_main()
+        else:
+            raise ValueError("通知类型配置错误，暂不支持该类型通知")
         os.system(f"allure serve ./report/tmp -p 9999")
 
     except Exception:

@@ -68,3 +68,5 @@ class ConfigHandler:
     html_path = os.path.join(root_path, 'report' + _SLASH + 'html')
 
 
+if __name__ == '__main__':
+    print(ConfigHandler.temp_path)

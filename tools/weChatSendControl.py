@@ -8,6 +8,9 @@ from config.setting import ConfigHandler
 from tools.yamlControl import GetYamlData
 import requests
 from tools.logControl import ERROR
+from tools.allureDataControl import CaseCount
+from tools.gettimeControl import NowTime
+from tools.localIpControl import get_host_ip
 
 
 class WeChatSend:
@@ -19,6 +22,15 @@ class WeChatSend:
         self.weChatData = GetYamlData(ConfigHandler.config_path).get_yaml_data()['WeChat']
         self.curl = self.weChatData['webhook']
         self.headers = {"Content-Type": "application/json"}
+        self.name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
+        self.tester = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
+        self.allureData = CaseCount()
+        self.PASS = self.allureData.passCount()
+        self.FAILED = self.allureData.failedCount()
+        self.BROKEN = self.allureData.brokenCount()
+        self.SKIP = self.allureData.skippedCount()
+        self.TOTAL = self.allureData.totalCount()
+        self.RATE = self.allureData.passRate()
 
     def sendText(self, content, mentioned_mobile_list=None):
         """
@@ -85,6 +97,27 @@ class WeChatSend:
         else:
             raise TypeError("图文类型的参数必须是字典类型")
 
+    def sendEmailNotification(self):
+        # 发送企业微信通知
+        text = """【{0}自动化通知】
+                                    >测试环境：<font color=\"info\">TEST</font>
+                                    >测试负责人：@{1}
+                                    >
+                                    > **执行结果**
+                                    ><font color=\"info\">成功率: {2}%</font>
+                                    >成功用例数：<font color=\"info\">{3}</font>
+                                    >失败用例数：`{4}个`
+                                    >异常用例数：`{5}个`
+                                    >跳过用例数：<font color=\"warning\">{6}个</font>
+                                    >时　间：<font color=\"comment\">{7}</font>
+                                    >
+                                    >非相关负责人员可忽略此消息。
+                                    >测试报告，点击查看>>[测试报告入口](http://{6}:9999/index.html)""" \
+            .format(self.name, self.tester, self.RATE, self.PASS, self.FAILED,
+                    self.BROKEN, self.SKIP, NowTime(), get_host_ip())
+
+        WeChatSend().sendMarkDown(text)
+
 
 if __name__ == '__main__':
-    WeChatSend().articles({"title": "余少琪标题", "description": "这里是描述", "url": "www.baidu.com", "picurl": "111"},)
+    WeChatSend().sendEmailNotification()

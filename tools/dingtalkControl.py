@@ -12,6 +12,8 @@ from tools.yamlControl import GetYamlData
 from dingtalkchatbot.chatbot import DingtalkChatbot, FeedLink
 from config.setting import ConfigHandler
 from typing import Any
+from tools.allureDataControl import CaseCount
+from tools.localIpControl import get_host_ip
 
 
 class DingTalkSendMsg(object):
@@ -26,6 +28,15 @@ class DingTalkSendMsg(object):
         # 获取 webhook地址
         self.webhook = self.getDingTalk["webhook"] + "&timestamp=" + self.timeStamp + "&sign=" + self.sign
         self.xiaoDing = DingtalkChatbot(self.webhook)
+        self.name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
+        self.tester = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
+        self.allureData = CaseCount()
+        self.PASS = self.allureData.passCount()
+        self.FAILED = self.allureData.failedCount()
+        self.BROKEN = self.allureData.brokenCount()
+        self.SKIP = self.allureData.skippedCount()
+        self.TOTAL = self.allureData.totalCount()
+        self.RATE = self.allureData.passRate()
 
     def get_sign(self) -> str:
         """
@@ -91,6 +102,20 @@ class DingTalkSendMsg(object):
         except Exception:
             raise
 
+    def sendDingNotification(self):
+        # 发送钉钉通知
+        text = f"#### {self.name}自动化通知  \n\n>Python脚本任务: {self.name}\n\n>环境: TEST\n\n>" \
+               f"执行人: {self.tester}\n\n>成功率: {self.RATE}% \n\n>总用例数: {self.TOTAL} \n\n>成功用例数: {self.PASS}" \
+               f" \n\n>失败用例数: {self.FAILED} \n\n>异常用例数: {self.BROKEN} \n\n>跳过用例数: {self.BROKEN}" \
+               f" ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n" \
+               f" > ###### 测试报告 [详情](http://{get_host_ip()}:9999/index.html) \n"
+        DingTalkSendMsg().send_markdown(
+            title="【婚奢汇自动化通知】",
+            msg=text
+            , mobiles=[18867507063]
+        )
+
 
 if __name__ == '__main__':
     d = DingTalkSendMsg()
+    print(d.sendDingNotification())

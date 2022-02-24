@@ -50,3 +50,9 @@ def SqlSwitch() -> bool:
     switch = GetYamlData(ConfigHandler.config_path) \
         .get_yaml_data()['MySqlDB']["switch"]
     return switch
+
+
+def getNotificationType():
+    # 获取报告通知类型，是发送钉钉还是企业邮箱
+    Date = GetYamlData(ConfigHandler.config_path).get_yaml_data()['NotificationType']
+    return Date
