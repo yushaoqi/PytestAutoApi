@@ -35,9 +35,9 @@ def run():
         # 通过配置文件判断发送报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
         if getNotificationType() == 1:
             DingTalkSendMsg().sendDingNotification()
-        if getNotificationType() == 2:
+        elif getNotificationType() == 2:
             WeChatSend().sendEmailNotification()
-        if getNotificationType() == 3:
+        elif getNotificationType() == 3:
             SendEmail().send_main()
         else:
             raise ValueError("通知类型配置错误，暂不支持该类型通知")
