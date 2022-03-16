@@ -37,6 +37,8 @@ class ConfigHandler:
 
     cache_path = os.path.join(root_path, 'Cache' + _SLASH)
 
+    case_path = os.path.join(root_path, 'test_case' + _SLASH)
+
     # 测试报告路径
     report_path = os.path.join(root_path, 'report')
 
@@ -60,7 +62,7 @@ class ConfigHandler:
     excel_path = os.path.join(root_path, 'data' + _SLASH)
 
     # lib 存放po文件
-    lib_path = os.path.join(root_path, "lib")
+    lib_path = os.path.join(root_path, "lib" + _SLASH)
 
     temp_path = os.path.join(root_path, 'report' + _SLASH + 'tmp')
     if not os.path.exists(temp_path):

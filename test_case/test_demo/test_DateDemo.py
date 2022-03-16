@@ -1,29 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2021/12/26 20:21
+# @Time   : 2022-03-16 13:07:13
 # @Author : 余少琪
 
 
 import allure
+import pytest
 from config.setting import ConfigHandler
 from tools.yamlControl import GetCaseData
-from lib.DateDemo import DateDemo
-import pytest
+from lib.test_demo.DateDemo import DateDemo
 from tools.assertControl import Assert
 
-Path = GetCaseData(ConfigHandler.merchant_data_path + 'DateDemo.yaml')
-TestData = Path.get_yaml_case_data()
+TestData = GetCaseData(ConfigHandler.merchant_data_path + r'test_demo\DateDemo.yaml').get_yaml_case_data()
 
 
-@allure.epic("测试平台端")
-@allure.feature("测试模块")
-class TestShopList:
+@allure.epic("这里是测试平台名称")
+@allure.feature("这里是测试模块名称")
+class TestDateDemo:
 
     @allure.story("这是一个测试的demo接口")
     @pytest.mark.parametrize('inData', TestData)
-    def testDemo(self, inData):
+    def test_dateDemo(self, inData):
         """
-        测试
+        测试接口
         :param :
         :return:
         """
@@ -33,4 +32,4 @@ class TestShopList:
 
 
 if __name__ == '__main__':
-    pytest.main(['test_case_demo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2", "--reruns-delay=2"])
+    pytest.main(['test_DateDemo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2", "--reruns-delay=2"])

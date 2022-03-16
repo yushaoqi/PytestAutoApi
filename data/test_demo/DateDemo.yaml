@@ -5,6 +5,10 @@
   headers:
     Content-Type: application/json;charset=UTF-8
   requestType: params
+  # 测试平台名称
+  allureEpic: 这里是测试平台名称
+  # 测试模块名称
+  allureFeature: 这里是测试模块名称
   data:
     # 请求类型：params 是以url拼接的形式请求，json则传的是json串
     bid: blog-121903028
