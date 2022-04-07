@@ -1,0 +1,26 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test_case.test_demo.test_DateDemo",
+    "children" : [ {
+      "name" : "test_dateDemo[inData0]",
+      "uid" : "f55aa1e142fcf040",
+      "parentUid" : "827511afb259d0c1cfc36fa1a8b41cc8",
+      "status" : "broken",
+      "time" : {
+        "start" : 1649341597527,
+        "stop" : 1649341597527,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "{'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'params', 'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}, 'msg': {'jsonpath': '$.msg', 'type': '==', 'value': '查询成功', 'AssertType': None}}, 'sql': None}" ]
+    } ],
+    "uid" : "test_case.test_demo.test_DateDemo"
+  } ]
+}

@@ -1,2 +1,334 @@
-%(levelname)-8s2022-02-21 18:37:52,617 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:1
-%(levelname)-8s2022-02-21 18:38:30,385 C:\Users\hzxy\PycharmProjects\py_auto_demo\logs\error.log:conftest.py:94 执行失败用例数:0
+<<<<<<< HEAD
+%(levelname)-8s2022-04-02 10:46:12,349 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 10:53:05,670 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 16:36:25,809 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 17:51:06,101 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 18:02:10,052 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 18:06:19,876 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 18:09:44,105 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+=======
+%(levelname)-8s2022-04-04 23:12:19,468 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 ('失败用例书：', 0)
+%(levelname)-8s2022-04-04 23:12:19,472 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 ('异常用例数：', 0)
+%(levelname)-8s2022-04-04 23:17:29,681 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:17:29,681 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 0
+%(levelname)-8s2022-04-04 23:19:44,769 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:19:44,770 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 0
+%(levelname)-8s2022-04-04 23:20:13,255 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:20:13,255 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 0
+%(levelname)-8s2022-04-04 23:20:32,708 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:20:32,709 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 1
+%(levelname)-8s2022-04-04 23:20:32,725 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:20:32,726 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 1
+%(levelname)-8s2022-04-04 23:20:32,966 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:102 异常用例数: 0
+%(levelname)-8s2022-04-04 23:20:32,966 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 失败用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,687 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,687 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,703 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,703 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,914 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:23:57,914 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 1
+%(levelname)-8s2022-04-04 23:25:01,026 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:25:01,027 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 1
+%(levelname)-8s2022-04-04 23:29:33,110 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:29:33,110 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,892 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,893 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,930 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,931 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,943 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:30:03,944 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:31:23,262 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:31:23,262 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:32:34,960 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:32:34,960 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:32:35,019 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:32:35,019 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:32:35,045 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:32:35,045 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:36:12,973 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:36:12,973 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:36:13,027 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:36:13,027 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:36:13,104 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:36:13,105 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,638 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,638 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,676 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,676 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,735 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:39:06,735 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,410 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,410 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,519 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,519 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,600 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:103 异常用例数: 0
+%(levelname)-8s2022-04-04 23:43:03,600 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,700 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,700 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,702 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,702 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,768 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:32,768 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:33,500 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:33,500 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,333 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,333 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,350 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,350 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,350 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,350 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,469 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:46:54,469 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:14,881 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:14,881 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:14,969 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:14,969 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:15,027 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:15,028 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:15,192 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:15,192 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,360 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,360 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,413 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,413 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,416 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,417 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,556 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-04 23:55:43,556 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,659 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,659 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,702 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,703 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,825 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,826 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,988 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:10:22,988 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,635 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,635 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,779 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,779 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,839 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:27:05,840 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 00:27:06,035 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 00:27:06,035 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:47:43,580 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 13:47:43,580 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:48:24,560 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 13:48:24,560 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:49:00,198 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:49:00,198 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:50:00,239 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:0, 断言类型==, 实际值00000
+%(levelname)-8s2022-04-05 13:50:00,415 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:50:00,415 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:50:16,968 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:50:16,969 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:52:43,653 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值A0002
+%(levelname)-8s2022-04-05 13:52:43,828 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:52:43,828 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:53:36,056 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值D0001
+%(levelname)-8s2022-04-05 13:53:36,228 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:53:36,229 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:54:25,387 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值D0001
+%(levelname)-8s2022-04-05 13:54:25,556 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:54:25,556 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:55:52,739 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值00000
+%(levelname)-8s2022-04-05 13:55:52,908 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:55:52,909 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 13:56:48,602 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 13:56:48,602 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:59:16,449 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 13:59:16,449 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 13:59:38,024 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 13:59:38,024 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:00:45,379 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:00:45,379 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:01:05,299 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:01:05,299 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:01:05,421 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:01:05,421 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:01:05,426 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:01:05,427 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:01:05,555 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:01:05,555 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:01:15,933 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:01:15,934 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:02:10,134 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:02:10,135 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:06:41,324 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:06:41,324 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:18:23,449 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:18:23,454 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:19:40,579 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:19:40,579 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:20:06,733 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:000, 断言类型==, 实际值00000
+%(levelname)-8s2022-04-05 14:20:06,914 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:20:06,914 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 1
+%(levelname)-8s2022-04-05 14:33:59,876 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 1
+%(levelname)-8s2022-04-05 14:33:59,877 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+%(levelname)-8s2022-04-05 14:34:50,154 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:104 异常用例数: 0
+%(levelname)-8s2022-04-05 14:34:50,154 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:105 失败用例数: 0
+>>>>>>> cbe7dd67f936639516799c2ead3ef8b44ecddeb6
+%(levelname)-8s2022-04-06 13:08:36,270 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值500
+%(levelname)-8s2022-04-06 14:14:55,456 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值500
+%(levelname)-8s2022-04-06 14:26:23,563 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值500
+%(levelname)-8s2022-04-06 16:46:44,780 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 异常用例数: 0
+%(levelname)-8s2022-04-06 16:46:44,782 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:107 失败用例数: 0
+<<<<<<< HEAD
+%(levelname)-8s2022-04-07 00:00:45,453 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 3
+%(levelname)-8s2022-04-07 00:00:45,454 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:00:45,495 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 3
+%(levelname)-8s2022-04-07 00:00:45,495 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:00:45,514 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 3
+%(levelname)-8s2022-04-07 00:00:45,515 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:00:46,213 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 9
+%(levelname)-8s2022-04-07 00:00:46,213 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:01:53,486 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 1
+%(levelname)-8s2022-04-07 00:01:53,487 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:03:44,425 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 1
+%(levelname)-8s2022-04-07 00:03:44,426 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:09:07,854 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 0
+%(levelname)-8s2022-04-07 00:09:07,854 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 0
+%(levelname)-8s2022-04-07 00:09:08,008 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011008
+%(levelname)-8s2022-04-07 00:09:08,255 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 0
+%(levelname)-8s2022-04-07 00:09:08,255 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 1
+%(levelname)-8s2022-04-07 00:09:08,379 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 0
+%(levelname)-8s2022-04-07 00:09:08,380 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 1
+%(levelname)-8s2022-04-07 00:09:08,573 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:106 异常用例数: 0
+%(levelname)-8s2022-04-07 00:09:08,574 C:\work\Study\pytest-auto-api3\logs\error.log:conftest.py:107 失败用例数: 2
+=======
+%(levelname)-8s2022-04-07 00:24:11,657 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值401
+%(levelname)-8s2022-04-07 14:49:55,900 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 14:49:55,901 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 14:49:56,329 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 14:49:56,330 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 14:49:58,846 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 14:49:58,847 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 0
+%(levelname)-8s2022-04-07 14:49:59,634 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 14:49:59,635 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 2
+%(levelname)-8s2022-04-07 14:51:12,326 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 15:16:25,996 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 15:16:26,564 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:16:26,564 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:16:26,897 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:16:26,898 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:16:27,056 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:16:27,056 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:16:27,597 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:16:27,598 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 15:17:13,085 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 15:17:13,746 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:17:13,747 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:17:13,819 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:17:13,820 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:17:14,195 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:17:14,196 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 15:17:14,631 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 15:17:14,632 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 17:33:20,531 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 17:33:21,227 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:33:21,228 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:33:21,449 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:33:21,451 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:33:21,819 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:33:21,820 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:33:22,297 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:33:22,298 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 17:38:33,414 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 17:38:34,002 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:38:34,002 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:38:34,125 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:38:34,126 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:38:34,540 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:38:34,541 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:38:34,951 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:38:34,952 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 17:43:15,151 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 17:43:15,898 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:43:15,899 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:43:16,451 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:43:16,453 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:43:16,746 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:43:16,748 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:43:17,269 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:43:17,270 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 17:47:52,801 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 17:47:53,247 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:47:53,247 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:48:21,649 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:21,651 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:48:22,097 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:22,098 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 0
+%(levelname)-8s2022-04-07 17:48:23,050 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:23,051 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 2
+%(levelname)-8s2022-04-07 17:48:51,713 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 17:48:52,294 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:52,295 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:48:52,448 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:52,449 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:48:52,848 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:52,849 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:48:53,404 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:48:53,405 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 17:56:18,895 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:56:18,895 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:56:18,997 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:56:18,998 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:56:21,026 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:56:21,026 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 1
+%(levelname)-8s2022-04-07 17:56:21,532 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:105 异常用例数: 0
+%(levelname)-8s2022-04-07 17:56:21,533 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:106 失败用例数: 3
+%(levelname)-8s2022-04-07 18:01:10,619 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 18:01:11,239 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:01:11,239 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:01:11,433 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:01:11,434 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:01:11,761 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:01:11,761 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:01:12,160 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:01:12,161 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 3
+%(levelname)-8s2022-04-07 18:03:41,012 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:101106, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-07 18:03:41,282 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值401
+%(levelname)-8s2022-04-07 18:03:41,832 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:03:41,832 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:03:42,074 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:03:42,075 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:03:42,906 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:03:42,908 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 1
+%(levelname)-8s2022-04-07 18:03:43,464 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:130 异常用例数: 0
+%(levelname)-8s2022-04-07 18:03:43,465 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:131 失败用例数: 3
+%(levelname)-8s2022-04-07 18:14:00,680 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:121 异常用例数: 0
+%(levelname)-8s2022-04-07 18:14:00,681 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 失败用例数: 0
+%(levelname)-8s2022-04-07 18:14:00,839 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:121 异常用例数: 0
+%(levelname)-8s2022-04-07 18:14:00,839 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 失败用例数: 0
+%(levelname)-8s2022-04-07 18:14:00,939 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:121 异常用例数: 0
+%(levelname)-8s2022-04-07 18:14:00,939 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 失败用例数: 0
+%(levelname)-8s2022-04-07 18:14:01,472 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:121 异常用例数: 0
+%(levelname)-8s2022-04-07 18:14:01,472 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 失败用例数: 0
+%(levelname)-8s2022-04-07 18:33:51,700 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 18:33:51,708 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,043 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,045 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,100 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,101 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,897 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 18:33:52,898 C:\Users\hzxy\PycharmProjects\pyestAutoApi\logs\error.log:conftest.py:123 失败用例数: 0
+>>>>>>> 2a92615c074dbfa657c44828c7734164b7cb2b0b
+%(levelname)-8s2022-04-07 21:05:55,881 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 2
+%(levelname)-8s2022-04-07 21:05:55,883 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 21:06:50,258 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 21:06:50,259 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 21:07:03,256 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 21:07:03,256 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 22:03:31,770 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 22:03:31,772 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 22:03:40,134 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 22:03:40,135 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 22:04:06,843 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:122 异常用例数: 0
+%(levelname)-8s2022-04-07 22:04:06,843 C:\work\Study\pytest-auto-api2\logs\error.log:conftest.py:123 失败用例数: 0
+%(levelname)-8s2022-04-07 22:15:08,820C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:15:44,347C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:16:03,260C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:16:29,309C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:17:43,496C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:23:09,587C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200
+%(levelname)-8s2022-04-07 22:23:28,693C:\work\Study\pytest-auto-api2\logs\error.log:assertControl.py:64 断言失败, 预期值:[200], 断言类型==, 实际值200

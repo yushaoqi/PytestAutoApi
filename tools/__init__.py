@@ -92,7 +92,7 @@ class {classTitle}(object):
         :return:
         """
 
-        resp = RequestControl().HttpRequest(inData['method'], inData)
+        resp = RequestControl().http_request(inData['method'], inData)
         return resp
 
 
@@ -149,11 +149,11 @@ class Test{classTitle}:
         """
 
         res = {classTitle}().{funcTitle}(inData)
-        Assert(inData['resp']).assertEquality(responseData=res[0], sqlData=res[1])
+        Assert(inData['resp']).assert_equality(response_data=res[0], sql_data=res[1])
 
 
 if __name__ == '__main__':
-    pytest.main(['{fileName}', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2", "--reruns-delay=2"])
+    pytest.main(['{fileName}', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
 '''
     with open(casePath, 'w', encoding="utf-8") as f:
         f.write(page)

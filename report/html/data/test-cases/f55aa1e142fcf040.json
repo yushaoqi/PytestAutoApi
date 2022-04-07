@@ -1,0 +1,125 @@
+{
+  "uid" : "f55aa1e142fcf040",
+  "name" : "test_dateDemo[inData0]",
+  "fullName" : "test_case.test_demo.test_DateDemo.TestDateDemo#test_dateDemo",
+  "historyId" : "9724f0467ede83b4aa72aeced28d200a",
+  "time" : {
+    "start" : 1649341597527,
+    "stop" : 1649341597527,
+    "duration" : 0
+  },
+  "description" : "\n        测试接口\n        :param :\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    测试接口\n    :param :\n    :return:\n</code></pre>\n",
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'RequestControl' object has no attribute 'HttpRequest'",
+  "statusTrace" : "self = <test_DateDemo.TestDateDemo object at 0x00000264B8607D00>\ninData = {'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'detail': '测试接口', ...}\n\n    @allure.story(\"这是一个测试的demo接口\")\n    @pytest.mark.parametrize('inData', TestData)\n    def test_dateDemo(self, inData):\n        \"\"\"\n        测试接口\n        :param :\n        :return:\n        \"\"\"\n    \n>       res = DateDemo().dateDemo(inData)\n\ntest_case\\test_demo\\test_DateDemo.py:30: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ninData = {'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'detail': '测试接口', ...}\n\n    @staticmethod\n    def dateDemo(inData):\n        \"\"\"\n        测试接口\n        :param inData:\n        :return:\n        \"\"\"\n    \n>       resp = RequestControl().HttpRequest(inData['method'], inData)\nE       AttributeError: 'RequestControl' object has no attribute 'HttpRequest'\n\nlib\\test_demo\\DateDemo.py:21: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1649341597421,
+      "stop" : 1649341597521,
+      "duration" : 100
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "clear_report",
+    "time" : {
+      "start" : 1649341597521,
+      "stop" : 1649341597522,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "clear_report::0",
+    "time" : {
+      "start" : 1649341597659,
+      "stop" : 1649341597659,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "这里是测试平台名称"
+  }, {
+    "name" : "story",
+    "value" : "这是一个测试的demo接口"
+  }, {
+    "name" : "feature",
+    "value" : "这里是测试模块名称"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.test_demo"
+  }, {
+    "name" : "suite",
+    "value" : "test_DateDemo"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDateDemo"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-H35VFGJ"
+  }, {
+    "name" : "thread",
+    "value" : "11356-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_demo.test_DateDemo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "inData",
+    "value" : "{'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'params', 'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}, 'msg': {'jsonpath': '$.msg', 'type': '==', 'value': '查询成功', 'AssertType': None}}, 'sql': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "f55aa1e142fcf040.json",
+  "parameterValues" : [ "{'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'params', 'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}, 'msg': {'jsonpath': '$.msg', 'type': '==', 'value': '查询成功', 'AssertType': None}}, 'sql': None}" ]
+}

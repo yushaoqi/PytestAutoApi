@@ -1,0 +1,30 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'RequestControl' object has no attribute 'HttpRequest'",
+      "children" : [ {
+        "name" : "test_dateDemo[inData0]",
+        "uid" : "f55aa1e142fcf040",
+        "parentUid" : "6223cb31c16802e96c5849954dbac69e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1649341597527,
+          "stop" : 1649341597527,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'method': 'POST', 'detail': '测试接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'params', 'allureEpic': '这里是测试平台名称', 'allureFeature': '这里是测试模块名称', 'data': {'bid': 'blog-121903028'}, 'resp': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}, 'msg': {'jsonpath': '$.msg', 'type': '==', 'value': '查询成功', 'AssertType': None}}, 'sql': None}" ]
+      } ],
+      "uid" : "6223cb31c16802e96c5849954dbac69e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

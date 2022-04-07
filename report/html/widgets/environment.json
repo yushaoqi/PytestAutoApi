@@ -1,0 +1,16 @@
+[ {
+  "values" : [ "测试项目" ],
+  "name" : "测试平台"
+}, {
+  "values" : [ "TEST" ],
+  "name" : "测试环境"
+}, {
+  "values" : [ "余少琪" ],
+  "name" : "测试人员"
+}, {
+  "values" : [ "1603453211@qq.com" ],
+  "name" : "邮箱"
+}, {
+  "values" : [ "3.9.0" ],
+  "name" : "python.Version"
+} ]

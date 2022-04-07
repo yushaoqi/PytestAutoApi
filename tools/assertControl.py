@@ -96,7 +96,7 @@ class Assert:
             self.sql_switch_handle(sql_data, assert_value, key, values, resp_data)
         # 判断assertType为空的情况下，则走响应断言
         elif assert_type is None:
-            self._assert_type(assert_type=self.assertData[key]['type'], key=resp_data[0], value=resp_data)
+            self._assert_type(assert_type=self.assertData[key]['type'], key=resp_data[0], value=resp_data[0])
         else:
             raise ValueError("断言失败，目前只支持数据库断言和响应断言")
 

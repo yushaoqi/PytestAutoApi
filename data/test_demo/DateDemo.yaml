@@ -1,5 +1,5 @@
 - # 用例001
-  url: ${{Host}}/recommend/get_head_word
+  url: ${{host}}/recommend/get_head_word
   method: POST
   detail: 测试接口
   headers:

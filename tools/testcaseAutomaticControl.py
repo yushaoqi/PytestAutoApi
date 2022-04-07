@@ -9,7 +9,7 @@ from tools.yamlControl import GetYamlData
 from tools import writePageFiles, writeTestCaseFile
 
 
-class TestCaseAutomaticGeneration:
+class CaseAutomaticGeneration:
     """自动生成自动化测试中的page代码"""
 
     # TODO 自动生成测试代码
@@ -81,7 +81,7 @@ class TestCaseAutomaticGeneration:
         elif len(i) == 1:
             return f"from lib.{i[0][:-3]} import {i[0][:-3]}"
 
-    def test_case_path(self, file_path):
+    def get_case_path(self, file_path):
         """
         根据 yaml 中的用例，生成对应 testCase 层代码的路径
         :param file_path: yaml用例路径
@@ -94,7 +94,7 @@ class TestCaseAutomaticGeneration:
         return ConfigHandler.case_path + new_name, case_name
 
     @classmethod
-    def test_case_detail(cls, file_path):
+    def get_case_detail(cls, file_path):
         """
         获取用例描述
         :param file_path: yaml 用例路径
@@ -102,7 +102,7 @@ class TestCaseAutomaticGeneration:
         """
         return GetYamlData(file_path).get_yaml_data()[0]['detail']
 
-    def test_class_title(self, file_path):
+    def get_class_title(self, file_path):
         """
         自动生成类名称
         :param file_path:
@@ -116,7 +116,7 @@ class TestCaseAutomaticGeneration:
         :param file_path: yaml 用例路径
         :return:
         """
-        _CLASS_NAME = self.test_class_title(file_path)
+        _CLASS_NAME = self.get_class_title(file_path)
         return _CLASS_NAME[0].lower() + _CLASS_NAME[1:]
 
     @classmethod
@@ -141,7 +141,7 @@ class TestCaseAutomaticGeneration:
         """ 判断生成自动化代码的路径是否存在，如果不存在，则自动创建 """
         _LibDirPath = os.path.split(self.lib_page_path(file_path))[0]
 
-        _CaseDirPath = os.path.split(self.test_case_path(file_path)[0])[0]
+        _CaseDirPath = os.path.split(self.get_case_path(file_path)[0])[0]
         _PathList = [_LibDirPath, _CaseDirPath]
         for i in _PathList:
             if not os.path.exists(i):
@@ -165,13 +165,13 @@ class TestCaseAutomaticGeneration:
             self.mk_dir(file)
             print(self.get_package_path(file))
 
-            writePageFiles(self.test_class_title(file), self.func_title(file), self.test_case_detail(file),
+            writePageFiles(self.get_class_title(file), self.func_title(file), self.get_case_detail(file),
                            self.lib_page_path(file), self.yaml_path(file))
 
-            writeTestCaseFile(self.allure_epic(file), self.allure_feature(file), self.test_class_title(file),
-                              self.func_title(file), self.test_case_detail(file), self.test_case_path(file)[0],
-                              self.yaml_path(file), self.test_case_path(file)[1], self.get_package_path(file))
+            writeTestCaseFile(self.allure_epic(file), self.allure_feature(file), self.get_class_title(file),
+                              self.func_title(file), self.get_case_detail(file), self.get_case_path(file)[0],
+                              self.yaml_path(file), self.get_case_path(file)[1], self.get_package_path(file))
 
 
 if __name__ == '__main__':
-    TestCaseAutomaticGeneration().test_case_automatic()
+    CaseAutomaticGeneration().test_case_automatic()

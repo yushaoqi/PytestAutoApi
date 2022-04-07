@@ -1,0 +1,22 @@
+{
+  "9724f0467ede83b4aa72aeced28d200a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f55aa1e142fcf040",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'RequestControl' object has no attribute 'HttpRequest'",
+      "time" : {
+        "start" : 1649341597527,
+        "stop" : 1649341597527,
+        "duration" : 0
+      }
+    } ]
+  }
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2022-03-16 13:07:13
+# @Time   : 2022-04-07 22:29:22
 # @Author : 余少琪
 
 
@@ -26,3 +26,4 @@ if __name__ == '__main__':
     path = GetCaseData(ConfigHandler.data_path + r'test_demo\DateDemo.yaml').get_yaml_case_data()[0]
     data = DateDemo().dateDemo(path)
     print(data)
+        
