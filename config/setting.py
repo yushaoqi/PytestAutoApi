@@ -28,23 +28,16 @@ class ConfigHandler:
     # 项目路径
     root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    # 测试数据路径
-    date_path = os.path.join(root_path, 'data' + _SLASH + "Merchant" + _SLASH + "UserLogin")
-
-    merchant_data_path = os.path.join(root_path, 'data' + _SLASH)
-
+    # 用例路径
+    case_path = os.path.join(root_path, 'test_case' + _SLASH)
+    # 测试用例数据路径
     data_path = os.path.join(root_path, 'data' + _SLASH)
 
     cache_path = os.path.join(root_path, 'Cache' + _SLASH)
+    if not os.path.exists(cache_path):
+        os.mkdir(cache_path)
 
-    case_path = os.path.join(root_path, 'test_case' + _SLASH)
-
-    # 测试报告路径
-    report_path = os.path.join(root_path, 'report')
-
-    json_path = os.path.join(root_path, 'data' + _SLASH + 'data.json')
-
-    log_path = os.path.join(root_path + _SLASH + 'logs')
+    log_path = os.path.join(root_path, 'logs' + _SLASH + 'log.log')
 
     info_log_path = os.path.join(root_path, 'logs' + _SLASH + 'info.log')
 
@@ -52,23 +45,20 @@ class ConfigHandler:
 
     warning_log_path = os.path.join(root_path, 'logs' + _SLASH + 'warning.log')
 
-    if not os.path.exists(report_path):
-        os.mkdir(report_path)
+    config_path = os.path.join(root_path, 'config' + _SLASH + 'config.yaml')
 
-    config_path = os.path.join(root_path, 'config' + _SLASH + 'conf.yaml')
+    file_path = os.path.join(root_path, 'Files' + _SLASH)
 
-    token_yaml_path = os.path.join(root_path, 'data' + _SLASH + 'token.yaml')
-
-    excel_path = os.path.join(root_path, 'data' + _SLASH)
+    # 测试报告路径
+    report_path = os.path.join(root_path, 'report')
 
     # lib 存放po文件
     lib_path = os.path.join(root_path, "lib" + _SLASH)
 
-    temp_path = os.path.join(root_path, 'report' + _SLASH + 'tmp')
-    if not os.path.exists(temp_path):
-        os.mkdir(temp_path)
-    html_path = os.path.join(root_path, 'report' + _SLASH + 'html')
+    # temp_path = os.path.join(root_path, 'report' + _SLASH + 'tmp')
+    # if not os.path.exists(temp_path):
+    #     os.mkdir(temp_path)
 
 
 if __name__ == '__main__':
-    print(ConfigHandler.temp_path)
+    print(ConfigHandler.cache_path)

@@ -1,0 +1,8 @@
+%(levelname)-8s2022-04-02 20:11:02,465 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:57 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 22:38:57,192 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:111 JsonPath值获取失败$.code
+%(levelname)-8s2022-04-02 22:39:56,756 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:111 JsonPath值获取失败$.code
+%(levelname)-8s2022-04-02 22:45:55,163 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:115 JsonPath值获取失败$.code
+%(levelname)-8s2022-04-02 22:46:21,310 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:115 JsonPath值获取失败$.code
+%(levelname)-8s2022-04-02 23:02:12,628 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 23:45:41,734 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006
+%(levelname)-8s2022-04-02 23:59:33,188 C:\work\Study\pytest-auto-api3\logs\error.log:assertControl.py:61 断言失败, 预期值:200, 断言类型==, 实际值1011006

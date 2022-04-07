@@ -1,0 +1,237 @@
+%(levelname)-8s2022-04-02 22:48:54,293 C:\work\Study\pytest-auto-api3\logs\warning.log:assertControl.py:118 该用例当前不执行，跳过断言判断
+%(levelname)-8s2022-04-02 22:56:48,119 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '753263e5f81e3b40436d8b7ceffcdf791c5c'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: {'res': False}
+数据库断言数据: {'sql': False}
+=================================================================================
+%(levelname)-8s2022-04-02 22:57:31,857 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532109233fa72ad486c97e471d6ff2d6204'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: {'res': False}
+数据库断言数据: {'sql': False}
+=================================================================================
+%(levelname)-8s2022-04-02 22:59:47,978 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:00:16,779 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:01:45,748 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:01:45,748 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:01:46,083 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:02:12,204 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:02:12,205 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:02:12,817 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:02:12,840 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:02:12,847 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:45:41,234 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:45:41,235 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:45:41,626 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:45:41,645 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:45:41,970 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:59:32,711 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:59:32,711 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:59:32,711 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:59:32,714 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: http://work.test.feng-go.com/api/v1/work/user/loginByPassword
+请求内容: {'param': {'phone': '13300000000', 'password': '123456'}}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:59:32,715 C:\work\Study\pytest-auto-api3\logs\warning.log:conftest.py:61 登录用例设置的是不执行，无法获取到token信息
+%(levelname)-8s2022-04-02 23:59:33,111 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:59:33,116 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-02 23:59:33,410 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 查看商品审核列表
+请求方式: GET
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'token': '7532b925b258a4c54a7a97e24f668727d0d5'}
+请求路径: http://work.test.feng-go.com/api/v1/work/spu/approval/spuList
+请求内容: {'spuType': 1, 'pageNum': 1, 'pageSize': 10}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================
+%(levelname)-8s2022-04-03 00:00:28,088 C:\work\Study\pytest-auto-api3\logs\warning.log:logDecoratorl.py:51 
+=================================================================================
+该条用例跳过执行.
+测试标题: 测试patch请求方式
+请求方式: PATCH
+请求头:   {'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjEyNjU0NzY4OTA2NzI2NzI4MDgsImFjY291bnQiOiJzdXBlckFkbWluIiwidXVpZCI6IjJiOTNlNTNjLWRkM2QtNGM0MS05YjI2LTA1Y2NhM2JjMjNlOSIsInN1YiI6IjEyNjU0NzY4OTA2NzI2NzI4MDgiLCJpYXQiOjE2NDg2ODg2NTgsImV4cCI6MTY0ODc3NTA1OH0.640mDK2Eyid_KjSi0Ijei6VW6LYQZ7oYfGCgq4ajqehACzqfvaG4XJ5lqizRSVhidl7J1XTJZeBYVCjEe0GMdw'}
+请求路径: http://39.105.186.77:8082/adpt/advert/adplan/batchDisable
+请求内容: {'ids': ['1509343309343780875']}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: False
+数据库断言数据: False
+=================================================================================

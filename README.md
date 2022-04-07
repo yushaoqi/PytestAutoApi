@@ -1,6 +1,6 @@
 ## 框架介绍
 
-本框架主要是基于 Python + pytest + allure + log + yaml + mysql + 钉钉通知 + Jenkins 实现的接口自动化框架。
+本框架主要是基于 Python + pytest + allure + log + yaml + mysql + redis + 钉钉通知 + Jenkins 实现的接口自动化框架。
 
 * git地址: [https://gitee.com/yu_xiao_qi/pytest-auto-api](https://gitee.com/yu_xiao_qi/pytest-auto-api)
 * 项目参与者: 余少琪
@@ -9,11 +9,18 @@
 
 如果对您有帮助，请点亮 小星星 以表支持，谢谢
 
+![img.png](image/starts.png)
 
-## 框架优势
+##　前言
+公司突然要求你做自动化，但是没有代码基础不知道怎么做？或者有自动化基础，但是不知道如何系统性的做自动化，
+放在yaml文件中维护，不知道如何处理多业务依赖的逻辑？
 
-本框架不收取任何费用， 其优势在于测试人员直接编写测试用例，运行框架可自动生成测试代码。
-框架支持多环境、多角色任意切换，支持接口响应断言以及数据库断言。
+那么这里 Gitte 中开源的自动化框架，将为你解决这些问题。
+框架主要使用 python 语言编写，结合 pytest 进行二次开发，用户仅需要在 yaml 文件中编写测试用例，
+编写成功之后，会自动生成 pytest 的代码，零基础代码小白，也可以操作。
+
+本框架支持多业务接口依赖，多进程执行，mysql 数据库断言和 接口响应断言，并且用例直接在yaml文件中维护，无需编写业务代码，
+接口pytest框架生成allure报告，并且发送 企业微信通知/ 钉钉通知/ 邮箱通知/ 飞书通知，灵活配置。
 
 ## 实现功能
 
@@ -29,35 +36,57 @@
 * 多线程执行
 
 ## 目录结构
-    ├── Cache                       // 存放缓存文件
-    ├── config                      // 配置
-    │   ├── conf.yaml               // 公共配置
-    │   ├── setting.py              // 环境路径存放区域
-    ├── data                        // 测试用例数据
-    ├── docs                        // 文档
-    ├── lib                         // 对象层，用作于接口的调用
-    ├── log                         // 日志层
-    ├── report                      // 测试报告层
-    ├── test_case                   // 测试用例代码
-    ├── tool                        // 所有公共模块的封装 
-    │   └── allureDataControl.py    // allure报告数据清洗
-    │   └── assertControl.py        // 断言模块
-    │   └── cacheControl.py         // 缓存模块
-    │   └── dingtalkControl.py      // 钉钉发送通知
-    │   └── excelControl.py         // 读取excel文件
-    │   └── gettimeControl.py       // 时间模块
-    │   └── logControl.py           // 日志模块
-    │   └── logDecorator.py         // 日志装饰器
-    │   └── mysqlControl.py         // 数据库模块
-    │   └── regularControl.py       // 正则模块
-    │   └── requestControl.py       // 请求模块
-    │   └── runtimeControl.py       // 响应时长统计模块
-    │   └── sendmailControl.py      // 发送邮件
-    │   └── testcaseAutomaticControl.py      // 自动生成测试代码
-    │   └── yamlControl.py          // yaml文件
-    ├── Readme.md                   // help
+    ├── Cache                          // 存放缓存文件
+    ├── config                         // 配置
+    │   ├── conf.yaml                  // 公共配置
+    │   ├── setting.py                 // 环境路径存放区域
+    ├── data                           // 测试用例数据
+    ├── Enums                          // 枚举层，用于存放项目中所需的枚举
+    ├── File                           // 上传文件接口所需的文件存放区域
+    ├── log                            // 日志层
+    ├── report                         // 测试报告层
+    ├── test_case                      // 测试用例代码
+    ├── utils                          // 工具类
+    │   └── assertUtils                // 断言
+    │       └── assertUtils .py        
+    │   └── cacheUtils                 // 缓存处理模块
+    │       └── cacheControl.py
+    │       └── redisControl.py  
+    │   └── logUtils                   // 日志处理模块
+    │       └── logControl.py
+    │       └── logDecoratrol.py       // 日志装饰器
+    │       └── runTimeDecoratrol.py   // 统计用例执行时长装饰器
+    │   └── mysqlUtils                 // 数据库模块
+    │       └── get_sql_data.py       
+    │       └── mysqlControl.py   
+    │   └── noticUtils                 // 通知模块
+    │       └── dingtalkControl.py     // 钉钉通知 
+    │       └── feishuControl.py       // 飞书通知
+    │       └── sendmailControl.py     // 邮箱通知
+    │       └── weChatSendControl.py   // 企业微信通知
+    │   └── otherUtils                 // 其他工具类
+    │       └── allureDate             // allure封装
+    │           └── allure_report_data.py // allure报告数据清洗
+    │           └── allure_tools..py   // allure 方法封装
+    │       └── localIpControl.py      // 获取本地IP
+    │       └── threadControl.py       // 定时器类
+    │   └── readFilesUtils             // 文件操作
+    │       └── caseAutomaticControl.py // 自动生成测试代码 
+    │       └── clean_files.py          // 清理文件
+    │       └── excelControl.py         // 读写excel
+    │       └── get_all_files_path.py   // 获取所有文件路径
+    │       └── get_yaml_data_analysis.py // yaml用例数据清洗
+    │       └── regularControl.py        // 正则
+    │       └── yamlControl.py          // yaml文件读写
+    │   └── recordingUtils             // 代理录制
+    │       └── mitmproxyContorl..py
+    │   └── requestsUtils 
+    │       └── dependentCase.py        // 数据依赖处理
+    │       └── requestControl..py      // 请求封装
+    │   └── timeUtils
+    ├── Readme.md                       // help
     ├── pytest.ini                  
-    ├── run.py                      // 运行入口  
+    ├── run.py                           // 运行入口  
     
 
 ## 依赖库
@@ -99,140 +128,433 @@
     xlutils==2.0.0
     xlwt==1.3.0
 
-#### 安装Python、Pip环境，创建虚拟环境  
-```
-一、安装Python环境
-
-# 1、下载Python程序
-# Python包地址：https://www.python.org/ftp/python/
-wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
-
-# 2、解压Python-3.8.5.tgz
-tar -zxvf Python-3.8.5.tgz
-
-# 3、编译安装
-sudo mkdir /usr/local/python3.8.5
-cd Python-3.8.5
-sudo ./configure --prefix=/usr/local/python3.8.5
-sudo make && sudo make install
-
-# 4、建立软链接
-sudo ln -s /usr/local/python3.8.5/bin/python3 /usr/bin/python3
-sudo ln -s /usr/local/python3.8.5/bin/pip3 /usr/bin/pip3
-
-# 5、验证安装
-python3 -V
-pip3 -V
-
-二、安装虚拟环境、创建虚拟环境
-# 1、安装虚拟环境virtualenv
-yum install -y python-virtualenv
-
-# 2、创建虚拟环境
-# 在项目根目录创建虚拟环境
-virtualenv -p python3 venv
-
-# 3、激活虚拟环境
-source ./venv/bin/activate
-
-# 4、退出虚拟环境
-deactivate
-```
-
 ## 安装教程
 
 输入如下命令，安装本框架的所有第三方库依赖
 
     pip install -r requirements.txt
 
-## 使用说明
+## 用例中相关字段的介绍
 
-### config-->conf.yaml
+![img.png](image/case_datas.png)
 
-![img.png](images/config/conf.png)
+上方截图，就是一个用例中需要维护的相关字段，下面我会对每个字段的作用，做出解释。
 
-首先是配置文件，这里主要存放了一个公共的配置数据，如项目名称、钉钉、邮箱、企业微信、数据库等相关的配置全部都在这里
-所有的字段，在conf.yaml中，都有相关的注释，自行修改即可。
+1、case_common: 这个公共参数的维护，方便后期如有需要新增的字段，可以添加在公共参数中，
+目前只有三个：allureEpic、allureFeature、allureStory，
+这三个都是allure报告需要用到的装饰器内容，后续自动生成 pytest 中 test_case 会用到这三个参数值。
+2、spu_apply_list_01： 用例ID，唯一
+3、host: 接口的域名： 填写规则如下 ${{host}}，执行脚本时，会去读取conf.yaml 文件中配置域名
+4、url: 接口路径
+5、header: 请求头
+6、requestType: 请求参数类型，有json、file、params、data四种类型
+7、is_run: 是否执行，为空、或者 True 都会执行
+8、data: 请求参数，所有的请求参数，全部放在 data 下方
+9、dependence_case：判断该条用力，是否有依赖业务，如为空或者 false 则表示没有
+10、dependence_case_data：依赖用例中需要的相关数据（下方数据依赖示例中，会对该字段下方的内容，做详细介绍）
+11、assert: 断言，支持判断sql、或者接口响应内容。
+12、sql：该用例中所需使用的sql
 
-目前框架主要是用的企业微信通知，在用例执行成功之后发送通知，通知内容如下，可以根据公司主要使用的通讯工具自行更改。
-在公共方法中分别封装了钉钉通知、以及邮箱通知。
+### 如何发送get请求
+上方了解了用例的数据结构之后，下面我们开始编写第一个get请求方式的接口。
+首先，开始编写项目之后，我们在 conf.yaml 中配置项目的域名
 
-# 注意点：
-# 之前为了小伙伴们拉下代码执行的时候不受影响，企业微信、钉钉、邮箱的通知配置的都是我的
-# 我发现很多拉代码的小伙伴这里配置都没改，所有的通知都发到我这里来了哦~~麻烦看到这里的小伙伴自己在conf.yaml改一下相关配置
+![img.png](image/conf.png)
 
-![img.png](images/config/wechat.png)
+域名配置好之后，我们来编写测试用例，在 data 文件下面，创建一个名称为
+spu_apply_list.yaml 的用例文件，内容如下
 
-如程序执行执行异常时，会自动收集错误信息，并将内容发送邮件。
-
-![img.png](images/data/email.png)
-
-### config --> setting.py
-
-setting.py 文件主要是用来存放项目中所有文件的目录地址
-
-更改过一些公用的配置之后，下面我们来开始编写自动化
-
-### data 用来存放测试用例
-
-![img.png](images/data/data.png)
-
-上方主要是测试用例，测试用例是整个自动化程序中非常重要的一部分，需要严格按照我上方图中的格式进行编写。
-下面我会对每个字段依次进行解释对应的作用。
-
-- url: 请求接口的地址，${{MerchantHost}} 为接口的host，放在conf.yaml 文件中，可以更改成公司项目的host
-- method: 请求方式，目前支持GET、POST、DELETE、PUT，本人公司目前设计到的请求方式只有这四种，如有需求可自行添加
-- detail: 用例描述，程序中未强制要求必填，但是最好是每个用例都填写上，打印日志以及生成代码的函数注释，都会依赖用例描述
-- header: 请求头
-- requestType: 必填，这个字段主要取决于你请求的是参数是以json、params、file、或者data的格式
-- data: 请求参数 
-   如接口中需要的请求参数全部放在data中
-- allureEpic: 作用与allure装饰器，必填（如有多个测试用例，只需要写在第一个用例中就行）
-- allureFeature: 作用于allure装饰器，必填（如有多个测试用例，只需要写在第一个用例中就行）
-- resp: 响应断言相关的数据
-    - 响应接口的参数字段(如code): code，就是接口的响应状态码，这些参数都是自己加的。
-      - jsonpath: 这里获取到对应的接口数据，主要使用到了jsonpath。如果有不了这一块的，大家可以看我的博客：https://blog.csdn.net/weixin_43865008/article/details/118371620
-      - value: 预期值，这里会根据你前面jsonpath中获取到的响应数据，然后和你添加的预期值进行断言。如果断言失败，会打印对应的日志信息，以及allure测试报告中也会呈现这条用例的失败状态
-      - type: 断言的类型，如判断是否相等，则使用”==“，或者”!=“，则表示内容不相等，”IN“则表示预期值是否在响应值中，对应的还有"NOTIN"
-      - AssertType: 目前自动化支持两种断言类型，接口响应断言和数据库断言。如果是接口响应断言，则AssertType的值可不填，如果值为"SQL"的话，则走数据库断言。为sql的时候，sql查询出来的数据类型是字典类型，因此value值会从sql查询出来的字段中使用jsonpath的形式读取sql查询出来的数据
-    - 如有多个数据，则可像上方图中一样，创建多个字段
-    - sql: sql 是以 LIST 的类型存储的，可以将我们这个接口需要依赖的sql语句全部放在这里，程序中会循环查询出sql中的所有语句，并且返回数据库中的值，从而与接口响应的值做匹配。（这里也是对于sql多表联查不太会的朋友的福音。如果不会多表联查的话，可以编写单表sql，程序中会将所有单表的数据内容全部查询出来）
-- 接口中如有多条测试用例，则以上方格式为例，添加多个即可。
-
-## lib---> xxx.py
-
-假设我们按照上方图中的格式内容，创建了一个用例创建成功之后yaml文件的用例，创建之后下面我们来生成自动化脚本，执行第一条用例。
-![img.png](images/lib/writecase.png)
-
-首先，我们找到tools目录下的 testcaseAutomaticControl.py 文件，然后执行这里的代码
-
-执行成功之后，我们可以看到lib和test_case目录下，会生成一个和创建用例yaml文件名称一模一样的py文件,test_case名称会以test_开头
-内容如下：
-![img.png](images/lib/lib.png)
+    # 公共参数
+    case_common:
+      allureEpic: 电商平台端
+      allureFeature: 审核中心
+      allureStory: 商品审核列表
     
-下面我们就可以开始执行我们的测试用例了，这里生成的文件，主要类似于我们自动化模型中的PO模型，生成的page
+    
+    spu_apply_list_01:
+      host: ${{host}}
+      url: /api/v1/work/spu/approval/spuList
+      method: GET
+      detail: 查看商品审核列表
+      headers:
+        Content-Type: application/json;charset=UTF-8
+        token: work_login_init
+      # 请求的数据，是 params 还是 json、或者file
+      requestType: params
+      # 是否执行，空或者 true 都会执行
+      is_run: False
+      data:
+        spuType: 1
+        pageNum: 1
+        pageSize: 10
+        # 是否有依赖业务，为空或者false则表示没有
+      dependence_case:
+      # 依赖的数据
+      dependence_case_data:
+      assert:
+        code:
+          jsonpath: $.code
+          type: ==
+          value: 200
+          AssertType:
+      sql:
 
-执行之后，我们可以看到下方详细的请求日志信息，方便我们进行用例调试（lie层只是作用域单个接口的调试，如果需要多接口跑业务的话，直接到test_case层去做即可）
+get请求我们 requestType 写的是params，这样发送请求时，我们会将请求参数拼接中url中，最终像服务端发送请求的地址格式会为：
 
-![img.png](images/lib/runcase.png)
+    ${{host}}/api/v1/work/spu/approval/spuList?supType=1&pageNum=1&pageSize=10
 
-test_case --> test_apply_verifycode.py
+### 如何发送post请求
 
-__用例调试成功之后，下面我们进入编写用例脚本阶段，主要内容如下：__
+    # 公共参数
+    case_common:
+      allureEpic: 盲盒APP
+      allureFeature: 登录模块
+      allureStory: 获取登录验证码
+    
+    send_sms_code_01:
+        host: ${{host}}
+        url: /mobile/sendSmsCode
+        method: POST
+        detail: 正常获取登录验证码
+        headers:
+          appId: '23132'
+          masterAppId: masterAppId
+          Content-Type: application/json;charset=UTF-8
+        # 请求的数据，是 params 还是 json、或者file
+        requestType: json
+        # 是否执行，空或者 true 都会执行
+        is_run:
+        data:
+          phoneNumber: "180xxxx9278"
+          # 是否有依赖业务，为空或者false则表示没有
+        dependence_case: False
+            # 依赖的数据
+        dependence_case_data:
+        assert:
+          code:
+            jsonpath: $.code
+            type: ==
+            value: '00000'
+            AssertType:
+          success:
+            jsonpath: $.success
+            type: ==
+            value: true
+            AssertType:
+    
+        sql:
+        
+这里post请求，我们需要请求的数据格式是json格式的，那么requestType 则填写为json格式。包括 PUT/DELETE/HEAD 请求的数据格式都是一样的，唯一不同的就是需要配置 reuqestType，如果需要请求的参数是json格式，则requestType我们就填写json，如果是url拼接的形式，我们就填写 params
 
-![img.png](images/testcases/img.png)
+### 如何测试上传文件接口
 
-其中代码中关于pytest的相关内容，网上的资料有非常多，并且非常详情，这里不做赘述。
+首先，我们将所有需要测试的文件，全部都放在 files 文件夹中
+![img.png](image/files.png)
 
-所有的用例内容，格式都为统一的，目前只能生成单接口的业务用例，如果需要接口执行的话，还需要在case层调用对应业务的接口
+    requestType: file
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      file: 
+         # file 直接写文件名称
+         files:排入水体名.png
 
-用例添加完成之后，执行run.py，程序会执行所有文件的用例，并且生成测试报告，发送钉钉通知。
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+
+在yaml文件中，我们需要注意两个地方，主要是用例中的requestType、和 filename 字段：
+1、requestType: 上传文件，我们需要更改成 file
+2、filename 参数名称: 上传文件，我们只需要填写files文件夹下的文件名称即可，程序在发送请求时，会去识别文件
+
+### 多业务逻辑，如何编写测试用例
+多业务这一块，我们拿个简单的例子举例，比如登录场景，在登陆之前，我们需要先获取到验证码。
+
+![img.png](image/send_sms_code.png)
+
+![img.png](image/login.png)
+
+首先，我们先创建一个 get_send_sms_code.yaml 的文件，编写一条发送验证码的用例
+
+    # 公共参数
+    case_common:
+      allureEpic: 盲盒APP
+      allureFeature: 登录模块
+      allureStory: 获取登录验证码
+    
+    send_sms_code_01:
+        host: ${{host}}
+        url: /mobile/sendSmsCode
+        method: POST
+        detail: 正常获取登录验证码
+        headers:
+          appId: '23132'
+          masterAppId: masterAppId
+          Content-Type: application/json;charset=UTF-8
+        # 请求的数据，是 params 还是 json、或者file
+        requestType: json
+        # 是否执行，空或者 true 都会执行
+        is_run:
+        data:
+          phoneNumber: "180****9278"
+          # 是否有依赖业务，为空或者false则表示没有
+        dependence_case: False
+            # 依赖的数据
+        dependence_case_data:
+        assert:
+          code:
+            jsonpath: $.code
+            type: ==
+            value: '00000'
+            AssertType:
+          success:
+            jsonpath: $.success
+            type: ==
+            value: true
+            AssertType:
+    
+        sql:
+
+编写好之后，我们在创建一个 login.yaml 文件
+
+    # 公共参数
+    case_common:
+      allureEpic: 盲盒APP
+      allureFeature: 登录模块
+      allureStory: 登录
+    
+    login_02:
+        host: ${{host}}
+        url: /login/phone
+        method: POST
+        detail: 登录输入错误的验证码
+        headers:
+          appId: '23132'
+          masterAppId: masterAppId
+          Content-Type: application/json;charset=UTF-8
+        # 请求的数据，是 params 还是 json、或者file
+        requestType: json
+        # 是否执行，空或者 true 都会执行
+        is_run:
+        data:
+          phoneNumber: 18014909278
+          code:
+          # 是否有依赖业务，为空或者false则表示没有
+        dependence_case: True
+            # 依赖的数据
+        dependence_case_data:
+          - case_id: send_sms_code_02
+            dependent_data:
+              - dependent_type: response
+                jsonpath: $.code
+                replace_key: $.data.code
+    
+        assert:
+          code:
+            jsonpath: $.code
+            type: ==
+            value: '00000'
+            AssertType:
+        sql:
+
+其中处理多业务的核心区域，主要在这里:
+
+       dependence_case: True
+            # 依赖的数据
+        dependence_case_data:
+          - case_id: send_sms_code_02
+            dependent_data:
+              - dependent_type: response
+                jsonpath: $.code
+                replace_key: $.data.code
+
+首先，我们 dependence_case 需要设置成 True，并且在下面的 dependence_case_data 中设计相关依赖的数据。
+
+1、case_id：上方场景中，我们登录需要先获取验证码，因此依赖的case_id 就是发送短信验证码的 case_id ：send_sms_code_02
+2、dependent_type：我们依赖的是获取短信验证码接口中的响应内容，因此这次填写的是 response
+3、jsonpath: 通过jsonpath 提取方式，提取到短信验证码中的验证码内容
+4、replace_key：拿到验证码之后，我们将本条用例中的data中的code参数，那么我们使用jsonpath的方式，进行替换 $.data.code
+
+### 多业务逻辑，需要依赖同一个接口中的多个数据
+    dependence_case_data:
+      - case_id: send_sms_code_02
+        dependent_data:
+          # 提取接口响应的code码
+          - dependent_type: response
+            jsonpath: $.code
+            replace_key: $.data.code
+          # 提取接口响应的accessToken
+          - dependent_type: response
+            jsonpath: $.data.accessToken
+            # 替换请求头中的accessToken
+            replace_key: $.headers.accessToken    
 
 
-### 关于框架未来功能的规划
+如上方示例，可以添加多个 dependent_type
 
-1、计划后期多接口业务逻辑，也统一放在yaml文件中维护，并且生成对应业务逻辑的相关代码
-2、自动生成代码的功能，计划通过多线程实现
+### 多业务逻辑，需要依赖不同接口的数据
+假设我们需要获取 send_sms_code_01、get_code_01两个接口中的数据，用例格式如下
+    
+    dependence_case: True
+        # 依赖的数据
+    dependence_case_data:
+      - case_id: send_sms_code_01
+        dependent_data:
+          # 提取接口响应的code码
+          - dependent_type: response
+            jsonpath: $.code
+            replace_key: $.data.code
+      - case_id: get_code_01
+        dependent_data:
+          # 提取接口响应的code码
+          - dependent_type: response
+            jsonpath: $.code
+            replace_key: $.data.code            
+
+### 用例中需要依赖登录的token，如何设计
+
+首先，为了防止重复请求调用登录接口，pytest中的 conftest.py 提供了热加载机制，看上方截图中的代码，我们需要在 conftest.py 提前编写好登录的代码。
+
+![img.png](image/conftest.png)
+
+如上方代码所示，我们会先去读取login.yaml文件中的用例，然后执行获取到响应中的token，然后 编写 Cache('work_login_init').set_caches(token)，将token写入缓存中，其中 work_login_init 是缓存名称。
+
+编写好之后，我们会在 requestControl.py 文件中，读取缓存中的token，如果该条用例需要依赖token，则直接进行内容替换。
+
+![img.png](image/token.png)
+
+这里在编写用例的时候，token 填写我们所编写的缓存名称即可。
+
+### 用例中如何生成随机数据
+
+比如我们有些特殊的场景，可能会涉及到一些定制化的数据，每次执行数据，需要按照指定规则随机生成。
+
+![img.png](image/randoms.png)
+
+如上图所示，我们用例中的 reason 审核原因后方，需要展示审核的当前时间。那么我们首先需要封装一个获取当前时间的方法
+
+![img.png](image/regular.png)
+
+那么我们就在 regularControl.py 文件中，编写 get_time 的方法。编写好之后，在用例中编写规则如下：
+
+    reason: 审核时间${{get_time}}
+使用 ${{函数名称}}的方法，程序调用时，会生成当前时间。在regularControl.py 文件中，我还封装了一些常用的随机数，如随机生成男生姓名、女生姓名、身份证、邮箱、手机号码之类的，方便大家使用。 如，随机生成邮箱，我们在用例中编写的格式为 ${{get_email}} 。
+
+其他所需随机生成的数据，可在文件中自行添加。
+
+
+### 用例中如何进行接口断言和数据库断言
+
+假设现在我需要测试一个报表统计的数据，该接口返回了任务的处理时长 和 处理数量。功能如下截图所示：
+
+![img.png](image/question_coun.png)
+
+假设下方是我们拿到接口响应的数据内容：
+
+    {"code": 200, "times": 155.91, "counts": 9}
+
+这个时候，我们需要判断该接口返回的数据是否正确，就需要编写sql，对响应内容进行校验。
+
+![img.png](image/sql.png)
+
+因此我们编写了如上sql，查出对应的数据，那么用例中编写规则如下，下方我们分别断言了两个内容，一个是对接口的响应code码进行断言，一个是断言数据库中的数据。
+
+
+      assert:
+        code:
+          jsonpath: $.code
+          type: ==
+          value: 200
+          # 断言接口响应时，可以为空
+          AssertType:
+       do_time:
+         # jsonpath 拿到接口响应的数据
+          jsonpath: $.times
+          type: ==
+          # sql 查出来的数据，是字典类型的，因此这里是从字段中提取查看出来的字段
+          value: $.do_time
+          # 断言sql的时候，AssertType 的值需要填写成 SQL
+          AssertType: SQL
+       question_counts:
+          jsonpath: $.counts
+          type: ==
+          # 
+          value: $.question_counts
+          # 断言sql的时候，AssertType 的值需要填写成 SQL
+          AssertType: SQL 
+      sql:
+        - select * from test_goods where shop_id = 515
+
+我们分别对用例的数据进行讲解，首先是响应断言, 编写规则如下
+
+    code:
+      # 通过jsonpath获取接口响应中的code {"code": 200, "times": 155.91, "counts": 9}
+      jsonpath: $.code
+      type: ==
+      value: 200
+      # 断言接口响应时，可以为空
+      AssertType:
+
+下面是对sql进行断言
+
+       question_counts:
+          # 断言接口响应的问题上报数量counts {"code": 200, "times": 155.91, "counts": 9}
+          jsonpath: $.counts
+          type: ==
+          # 查询sql，我们数据库查到的数据是一个字段，数据是这样的：{question_counts: 13, do_time: 1482.70}, 这里我们通过 jsonpath获取question_counts
+          value: $.question_counts
+          # 断言sql的时候，AssertType 的值需要填写成 SQL
+          AssertType: SQL 
+      sql:
+        - SELECT round( sum(( UNIX_TIMESTAMP( filing_time )- UNIX_TIMESTAMP( report_time )) / 60 ) / 60, 2 ) AS do_time, count( id ) AS question_counts FROM fl_report_info WHERE state IN ( 1, 3 )
+
+有些细心的小伙伴会发现，我们的sql，是列表类型的。这样就意味这，我们的sql可以同时编写多条，这样会对不会编写多表联查的小伙伴比较友好，可以进行单表查询，获取我们需要的数据。
+
+    sql:
+      - select * from users;
+      - select * from goods;
+
+### 自动生成test_case层代码
+
+小伙伴们在编写好 yaml 用例之后，可以直接执行 caseAutomaticControl.py ，会跟你设计的测试用例，生成对应的代码。
+
+![img.png](image/write_test_case.png)
+
+### 发送钉钉通知通知
+![img.png](image/dingding.png)
+
+### 发送企业微信通知
+![img.png](image/wechart.png)
+
+### 日志打印装饰器
+
+![img.png](image/log.png)
+
+在requestControl.py中，我单独封装了一个日志装饰器，需要的小伙伴可以不用改动代码，直接使用，如果不需要，直接注释，或者改成False。控制台将不会有日志输出
+
+### 统计用例运行时长
+![img.png](image/run_times.png)
+
+同样，这里封装了一个统计用例运行时长的装饰器，使用改装饰器前，需要先进行导包
+
+    from utils.logUtils.runTimeDecoratorl import execution_duration
+导入之后，调用改装饰器，装饰器中填写的用例执行时长，以毫秒为单位，如这里设置的2000ms，那么如果该用例执行大于2000ms，则会输出一条告警日志。
+
+    @execution_duration(2000)
+
+### 生成allure报告
+我们直接运行主程序 run.py ，运行完成之后，就可以生成漂亮的allure报告啦~
+
+![img.png](image/allure.png)
+
+![img.png](image/allure2.png)
+
+### 其他
+
+本框架为2.0升级版本，升级之后的功能，现在基本上都是在yaml中维护用例，无需测试人员编写代码，
+和 1.0版本的区别在于，1.0版本还需要测试人员手动编写多业务逻辑的代码，需要有一定基础编码的能力
+
+但是1.0版本，同样也可以自动生成代码，yaml中维护数据，对相对简单，如果偏于yaml简单维护的同学，可以切换查看1.0分支
+下方是1.0分支的操作文档：[点我查看](https://blog.csdn.net/weixin_43865008/article/details/121903028?spm=1001.2014.3001.5502)
 
 *******************************************************
 

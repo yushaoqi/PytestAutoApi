@@ -1,0 +1,32 @@
+# 公共参数
+case_common:
+  allureEpic: 电商平台端
+  allureFeature: 登录模块
+  allureStory: 正常登录
+
+login:
+    host: ${{host}}
+    url: /api/v1/work/user/loginByPassword
+    method: POST
+    detail: 正常登录
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    # 请求的数据，是 params 还是 json、或者file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: True
+    data:
+      param:
+        phone: '13300000000'
+        password: '123456'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+    sql:

@@ -1,0 +1,41 @@
+# 公共参数
+case_common:
+  allureEpic: 电商平台端
+  allureFeature: 审核中心
+  allureStory: 商品审核
+
+spu_apply_01:
+  host: ${{host}}
+  url: /api/v1/work/spu/approval/pass
+  method: PUT
+  detail: 正常审核商品(测试一个接口依赖多个数据)
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    token: work_login_init
+  # 请求的数据，是 params 还是 json、或者file
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run: False
+  data:
+    applyId:
+    reason: 审核时间${{get_time}}
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: True
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: spu_apply_list_01
+      dependent_data:
+        - dependent_type: response
+          jsonpath: $.data.data.[0].applyId
+          replace_key: $.data.applyId
+        - dependent_type: request
+          jsonpath: $.detail
+          replace_key: $.data.reason
+  assert:
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  sql:
+    - select * from test_goods where shop_id = 515

@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2021/11/26 23:12
+# @Time   : 2022/3/29 15:01
 # @Author : 余少琪
-import traceback
 
-import pytest
 import os
-from tools.logControl import INFO
-from tools.yamlControl import GetYamlData
-from config.setting import ConfigHandler
-from tools import getNotificationType
-from tools.weChatSendControl import WeChatSend
-from tools.dingtalkControl import DingTalkSendMsg
-from tools.sendmailControl import SendEmail
+import traceback
+import pytest
+from utils import project_name
+from utils.logUtils.logControl import INFO
+from utils import get_notification_type
+from utils.noticUtils.weChatSendControl import WeChatSend
+from utils.noticUtils.dingtalkControl import DingTalkSendMsg
+from utils.noticUtils.sendmailControl import SendEmail
+from Enums.notificationType_enum import NotificationType
+from utils.noticUtils.feishuControl import FeiShuTalkChatBot
 
 
 def run():
     # 从配置文件中获取项目名称
-    project_name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
     try:
         INFO.logger.info(
             """
@@ -30,15 +30,33 @@ def run():
                   开始执行{}项目...
                 """.format(project_name)
         )
-        pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', '--alluredir', './report/tmp'])
+
+        pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning',
+                     '--alluredir', './report/tmp'])
+        """
+                   --reruns: 失败重跑次数
+                   --count: 重复执行次数
+                   -v: 显示错误位置以及错误的详细信息
+                   -s: 等价于 pytest --capture=no 可以捕获print函数的输出
+                   -q: 简化输出信息
+                   -m: 运行指定标签的测试用例
+                   -x: 一旦错误，则停止运行
+                   --maxfail: 设置最大失败次数，当超出这个阈值时，则不会在执行测试用例
+                    "--reruns=3", "--reruns-delay=2"
+                   """
+
         os.system(r"allure generate ./report/tmp -o ./report/html --clean")
-        # 通过配置文件判断发送报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
-        if getNotificationType() == 1:
+        # 判断通知类型
+        if get_notification_type() == NotificationType.DEFAULT.value:
+            pass
+        elif get_notification_type() == NotificationType.DING_TALK.value:
             DingTalkSendMsg().send_ding_notification()
-        elif getNotificationType() == 2:
-            WeChatSend().send_email_notification()
-        elif getNotificationType() == 3:
+        elif get_notification_type() == NotificationType.WECHAT.value:
+            WeChatSend().send_wechat_notification()
+        elif get_notification_type() == NotificationType.EMAIL.value:
             SendEmail().send_main()
+        elif get_notification_type() == NotificationType.FEI_SHU.value:
+            FeiShuTalkChatBot().post()
         else:
             raise ValueError("通知类型配置错误，暂不支持该类型通知")
         os.system(f"allure serve ./report/tmp -p 9999")

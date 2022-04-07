@@ -1,0 +1,49 @@
+ProjectName:
+  - 余少琪的框架
+  -
+
+Env: 测试环境
+# 测试人员名称，作用于自动生成代码的作者，以及发送企业微信、钉钉通知的测试负责人
+TesterName: 余少琪
+
+# 域名1
+host: https://www.baidu.com # 域名随便写的，记得修改
+app_host:
+# 域名2
+work:
+
+# 报告通知类型：0: 不发送通知 1：钉钉 2：企业微信通知 3、邮箱通知 4、飞书通知
+NotificationType: 2
+
+# 注意点：
+# 之前为了小伙伴们拉下代码执行的时候不受影响，企业微信、钉钉、邮箱的通知配置的都是我的
+# 我发现很多拉代码的小伙伴这里配置都没改，所有的通知都发到我这里来了哦~~麻烦看到这里的小伙伴自己改一下相关配置
+
+# 钉钉相关配置
+DingTalk:
+  webhook: https://oapi.dingtalk.com/robot/send?access_token=a59902a7e811f93ffe301d8326b07a2acc8aa2a864e7d61ee9fc076481ced2a6
+  secret: SECdea6489dfcc3b9259da943c5ae38d3530696f2fa83ac72a9ee716e9511675b9b
+
+# 数据库相关配置
+MySqlDB:
+  switch: False
+  host:
+  user: dev
+  password:
+  db:
+
+
+# 企业通知的相关配置
+WeChat:
+  webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=22748687-fa3b-4e48-a5d7-0502cef422b4
+
+email:
+  send_user: 1603453211@qq.com
+  email_host: smtp.qq.com
+  stamp_key: rzuabbobadbuhadc
+  # 收件人
+  send_list: 1603453211@qq.com
+
+# 飞书通知
+FeiShuTalk:
+  webhook:
