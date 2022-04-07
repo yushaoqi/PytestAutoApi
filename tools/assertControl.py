@@ -5,7 +5,7 @@
 from tools.yamlControl import GetCaseData
 from config.setting import ConfigHandler
 import jsonpath
-from tools.logControl import INFO, ERROR, WARNING
+from tools.logControl import ERROR, WARNING
 from tools import SqlSwitch
 
 
@@ -18,60 +18,60 @@ class Transmission:
 
 class Assert:
 
-    def __init__(self, assertData: dict):
+    def __init__(self, assert_date: dict):
         self.GetCaseData = GetCaseData(ConfigHandler.merchant_data_path + r'\ShopInfo\GetSupplierInfo.yaml')
-        self.assertData = assertData
+        self.assertData = assert_date
 
     @staticmethod
-    def _checkParams(responseData: dict, sqlData: dict):
+    def _check_params(response_data: dict, sql_data: dict):
         """
 
-        :param responseData: 响应数据
-        :param sqlData: 数据库数据
+        :param response_data: 响应数据
+        :param sql_data: 数据库数据
         :return:
         """
         # 判断断言的数据类型
-        if isinstance(responseData, dict) and isinstance(sqlData, dict):
+        if isinstance(response_data, dict) and isinstance(sql_data, dict):
             pass
         else:
-            raise "responseData、sqlData、assertData的数据类型必须要是字典类型"
+            raise ValueError("responseData、sqlData、assertData的数据类型必须要是字典类型")
 
     @staticmethod
-    def _assertType(key: any, Type: str, value: any):
+    def _assert_type(key: any, assert_type: str, value: any):
         """
 
         :param key:
-        :param Type:
+        :param assert_type:
         :param value:
         :return:
         """
         try:
-            if Type == Transmission.EQUAL:
+            if assert_type == Transmission.EQUAL:
                 assert key == value
-            elif Type == Transmission.NOTEQUAL:
+            elif assert_type == Transmission.NOTEQUAL:
                 assert key != value
-            elif Type.upper() == Transmission.IN:
+            elif assert_type.upper() == Transmission.IN:
                 assert key in value
-            elif Type.upper() == Transmission.NOTIN:
+            elif assert_type.upper() == Transmission.NOTIN:
                 assert key not in value
 
             else:
-                raise f"断言失败，目前不支持{Type}断言类型，如需新增断言类型，请联系管理员"
+                raise ValueError(f"断言失败，目前不支持{assert_type}断言类型，如需新增断言类型，请联系管理员")
             # 断言成功的日志，需要的话可以自动开启
             # INFO.logger.info("断言成功, 预期值:{}, 断言类型{}, 实际值{}".format(value, Type, key))
 
         except AssertionError:
-            ERROR.logger.error("断言失败, 预期值:{}, 断言类型{}, 实际值{}".format(value, Type, key))
+            ERROR.logger.error("断言失败, 预期值:{}, 断言类型{}, 实际值{}".format(value, assert_type, key))
             raise
 
-    def sql_switch_handle(self, sqlData, assertValue, key, values, respData) -> None:
+    def sql_switch_handle(self, sql_date, assert_value, key, values, resp_data) -> None:
         """
 
-        :param sqlData: 测试用例中的sql
-        :param assertValue: 断言内容
+        :param sql_date: 测试用例中的sql
+        :param assert_value: 断言内容
         :param key:
         :param values:
-        :param respData: 预期结果
+        :param resp_data: 预期结果
         :return:
         """
         # 判断数据库为开关为关闭状态
@@ -80,44 +80,40 @@ class Assert:
         # 数据库开关为开启
         if SqlSwitch():
             # 判断当用例走的数据数据库断言，但是用例中未填写SQL
-            if sqlData == {'sql': None}:
-                raise "请在用例中添加您要查询的SQL语句。"
+            if sql_date == {'sql': None}:
+                raise ValueError("请在用例中添加您要查询的SQL语句。")
             # 走正常SQL断言逻辑
             else:
-                ResSqlData = jsonpath.jsonpath(sqlData, assertValue)[0]
+                res_sql_data = jsonpath.jsonpath(sql_date, assert_value)[0]
                 # 判断mysql查询出来的数据类型如果是bytes类型，转换成str类型
-                if isinstance(ResSqlData, bytes):
-                    ResSqlData = ResSqlData.decode('utf=8')
-                self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=ResSqlData)
+                if isinstance(res_sql_data, bytes):
+                    res_sql_data = res_sql_data.decode('utf=8')
+                self._assert_type(assert_type=self.assertData[key]['type'], key=resp_data[0], value=res_sql_data)
 
-    def assertType_handle(self, assertType, sqlData, assertValue, key, values, respData) -> None:
+    def assert_type_handle(self, assert_type, sql_data, assert_value, key, values, resp_data) -> None:
         # 判断断言类型
-        if assertType == 'SQL':
-            self.sql_switch_handle(sqlData, assertValue, key, values, respData)
+        if assert_type == 'SQL':
+            self.sql_switch_handle(sql_data, assert_value, key, values, resp_data)
         # 判断assertType为空的情况下，则走响应断言
-        elif assertType is None:
-            self._assertType(Type=self.assertData[key]['type'], key=respData[0], value=assertValue)
+        elif assert_type is None:
+            self._assert_type(assert_type=self.assertData[key]['type'], key=resp_data[0], value=resp_data)
         else:
-            raise "断言失败，目前只支持数据库断言和响应断言"
+            raise ValueError("断言失败，目前只支持数据库断言和响应断言")
 
-    def assertEquality(self, responseData: dict, sqlData: dict) -> None:
+    def assert_equality(self, response_data: dict, sql_data: dict) -> None:
         # 判断数据类型
-        self._checkParams(responseData, sqlData)
+        self._check_params(response_data, sql_data)
         for key, values in self.assertData.items():
-            assertValue = self.assertData[key]['value']  # 获取 yaml 文件中的期望value值
-            assertJsonPath = self.assertData[key]['jsonpath']  # 获取到 yaml断言中的jsonpath的数据
-            assertType = self.assertData[key]['AssertType']
+            assert_value = self.assertData[key]['value']  # 获取 yaml 文件中的期望value值
+            assert_json_path = self.assertData[key]['jsonpath']  # 获取到 yaml断言中的jsonpath的数据
+            assert_type = self.assertData[key]['AssertType']
             # 从yaml获取jsonpath，拿到对象的接口响应数据
-            respData = jsonpath.jsonpath(responseData, assertJsonPath)
+            resp_data = jsonpath.jsonpath(response_data, assert_json_path)
 
             # jsonpath 如果数据获取失败，会返回False，判断获取成功才会执行如下代码
-            if respData is not False:
+            if resp_data is not False:
                 # 判断断言类型
-                self.assertType_handle(assertType, sqlData, assertValue, key, values, respData)
+                self.assert_type_handle(assert_type, sql_data, assert_value, key, values, resp_data)
             else:
-                ERROR.logger.error("JsonPath值获取失败{}".format(assertJsonPath))
+                ERROR.logger.error("JsonPath值获取失败{}".format(assert_json_path))
                 raise
-
-
-if __name__ == '__main__':
-    pass

@@ -11,8 +11,11 @@ import os
 class AllureFileClean:
     """allure 报告数据清洗，提取业务需要得数据"""
 
+    def __init__(self):
+        pass
+
     @classmethod
-    def _getAllFiles(cls) -> list:
+    def _get_al_files(cls) -> list:
         """ 获取所有 test-case 中的 json 文件 """
         filename = []
         # 获取所有文件下的子文件名称
@@ -22,32 +25,32 @@ class AllureFileClean:
                 filename.append(path)
         return filename
 
-    def getTestCases(self):
+    def get_test_cases(self):
         """ 获取所有 allure 报告中执行用例的情况"""
         # 将所有数据都收集到files中
         files = []
-        for i in self._getAllFiles():
+        for i in self._get_al_files():
             with open(i, 'r', encoding='utf-8') as fp:
                 date = json.load(fp)
                 files.append(date)
         return files
 
-    def getFailedCase(self):
+    def get_failed_case(self):
         """ 获取到所有失败的用例标题和用例代码路径"""
-        errorCase = []
-        for i in self.getTestCases():
+        error_cases = []
+        for i in self.get_test_cases():
             if i['status'] == 'failed' or i['status'] == 'broken':
-                errorCase.append((i['name'], i['fullName']))
-        return errorCase
+                error_cases.append((i['name'], i['fullName']))
+        return error_cases
 
-    def getFailedCasesDetail(self):
+    def get_failed_cases_detail(self):
         """ 返回所有失败的测试用例相关内容 """
-        Data = self.getFailedCase()
+        date = self.get_failed_case()
         # 判断有失败用例，则返回内容
-        if len(Data) >= 1:
+        if len(date) >= 1:
             values = "失败用例:\n"
             values += "        **********************************\n"
-            for i in Data:
+            for i in date:
                 values += "        " + i[0] + ":" + i[1] + "\n"
             return values
         else:
@@ -55,10 +58,10 @@ class AllureFileClean:
             return ""
 
     @classmethod
-    def getCaseCount(cls):
+    def get_case_count(cls):
         """ 统计用例数量 """
-        fileName = ConfigHandler.report_path + '/html/history/history-trend.json'
-        with open(fileName, 'r', encoding='utf-8') as fp:
+        file_name = ConfigHandler.report_path + '/html/history/history-trend.json'
+        with open(file_name, 'r', encoding='utf-8') as fp:
             date = json.load(fp)[0]['data']
         return date
 
@@ -67,36 +70,36 @@ class CaseCount:
     def __init__(self):
         self.AllureData = AllureFileClean()
 
-    def passCount(self):
+    def pass_count(self):
         """用例成功数"""
-        return self.AllureData.getCaseCount()['passed']
+        return self.AllureData.get_case_count()['passed']
 
-    def failedCount(self):
+    def failed_count(self):
         """用例失败数"""
-        return self.AllureData.getCaseCount()['failed']
+        return self.AllureData.get_case_count()['failed']
 
-    def brokenCount(self):
+    def broken_count(self):
         """用例异常数"""
-        return self.AllureData.getCaseCount()['broken']
+        return self.AllureData.get_case_count()['broken']
 
-    def skippedCount(self):
+    def skipped_count(self):
         """用例跳过数"""
-        return self.AllureData.getCaseCount()['skipped']
+        return self.AllureData.get_case_count()['skipped']
 
-    def totalCount(self):
+    def total_count(self):
         """用例总数"""
-        return self.AllureData.getCaseCount()['total']
+        return self.AllureData.get_case_count()['total']
 
-    def passRate(self):
+    def pass_rate(self):
         """用例成功率"""
         # 四舍五入，保留2位小数
         try:
-            passRate = round((self.passCount() + self.skippedCount()) / self.totalCount() * 100, 2)
-            return passRate
+            pass_rate = round((self.pass_count() + self.skipped_count()) / self.total_count() * 100, 2)
+            return pass_rate
         except ZeroDivisionError:
             return 0.00
 
 
 if __name__ == '__main__':
-    data = AllureFileClean().getCaseCount()
+    data = AllureFileClean().get_case_count()
     print(data)

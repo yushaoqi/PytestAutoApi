@@ -19,13 +19,13 @@ class SendEmail(object):
         self.key = self.getData['stmp_key']  # STAMP 授权码
         self.name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
         self.allureData = CaseCount()
-        self.PASS = self.allureData.passCount()
-        self.FAILED = self.allureData.failedCount()
-        self.BROKEN = self.allureData.brokenCount()
-        self.SKIP = self.allureData.skippedCount()
-        self.TOTAL = self.allureData.totalCount()
-        self.RATE = self.allureData.passRate()
-        self.CaseDetail = AllureFileClean().getFailedCasesDetail()
+        self.PASS = self.allureData.pass_count()
+        self.FAILED = self.allureData.failed_count()
+        self.BROKEN = self.allureData.broken_count()
+        self.SKIP = self.allureData.skipped_count()
+        self.TOTAL = self.allureData.total_count()
+        self.RATE = self.allureData.pass_rate()
+        self.CaseDetail = AllureFileClean().get_failed_cases_detail()
 
     def send_mail(self, user_list: list, sub, content):
         """
@@ -35,7 +35,7 @@ class SendEmail(object):
         @param content: 发送内容
         @return:
         """
-        user = "yushaoqi" + "<" + self.send_user + ">"
+        user = "余少琪" + "<" + self.send_user + ">"
         message = MIMEText(content, _subtype='plain', _charset='utf-8')
         message['Subject'] = sub
         message['From'] = user

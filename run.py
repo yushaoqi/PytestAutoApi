@@ -17,7 +17,7 @@ from tools.sendmailControl import SendEmail
 
 def run():
     # 从配置文件中获取项目名称
-    ProjectName = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
+    project_name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
     try:
         INFO.logger.info(
             """
@@ -28,15 +28,15 @@ def run():
              \\__,_| .__/|_/_/   \\_\\__,_|\\__\\___/|_|\\___||___/\\__|
                   |_|
                   开始执行{}项目...
-                """.format(ProjectName)
+                """.format(project_name)
         )
         pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', '--alluredir', './report/tmp'])
         os.system(r"allure generate ./report/tmp -o ./report/html --clean")
         # 通过配置文件判断发送报告通知类型：1：钉钉 2：企业微信通知 3、邮箱
         if getNotificationType() == 1:
-            DingTalkSendMsg().sendDingNotification()
+            DingTalkSendMsg().send_ding_notification()
         elif getNotificationType() == 2:
-            WeChatSend().sendEmailNotification()
+            WeChatSend().send_email_notification()
         elif getNotificationType() == 3:
             SendEmail().send_main()
         else:
@@ -53,5 +53,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-
-

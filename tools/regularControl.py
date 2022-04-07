@@ -59,13 +59,13 @@ class Context:
         return email
 
     @property
-    def merchantSelfOperatedShop(self) -> int:
+    def merchant_self_operated_shop(self) -> int:
         """
 
         :return: 商家端自营店铺ID
         """
-        SelfOperatedShop = 515
-        return SelfOperatedShop
+        self_operated_shop = 515
+        return self_operated_shop
 
     @property
     def get_time(self) -> datetime.datetime:
@@ -77,7 +77,7 @@ class Context:
         return datetime.datetime.now()
 
     @property
-    def Host(self) -> str:
+    def host(self) -> str:
         from tools.yamlControl import GetYamlData
         from config.setting import ConfigHandler
 
@@ -105,24 +105,24 @@ def regular(target) -> str:
         raise
 
 
-def SqlJson(jsPath, res):
-    return jsonpath.jsonpath(res, jsPath)[0]
+def sql_json(js_path, res):
+    return jsonpath.jsonpath(res, js_path)[0]
 
 
-def SqlRegular(value, res=None):
+def sql_regular(value, res=None):
     """
     这里处理sql中的依赖数据，通过获取接口响应的jsonpath的值进行替换
     :param res: jsonpath使用的返回结果
     :param value:
     :return:
     """
-    SqlJsonList = re.findall(r"\$json\((.*?)\)\$", value)
+    sql_json_list = re.findall(r"\$json\((.*?)\)\$", value)
 
-    for i in SqlJsonList:
+    for i in sql_json_list:
         pattern = re.compile(r'\$json\(' + i.replace('$', "\$").replace('[', '\[') + r'\)\$')
-        key = str(SqlJson(i, res))
+        key = str(sql_json(i, res))
         value = re.sub(pattern, key, value, count=1)
-        value = SqlRegular(value, res)
+        value = sql_regular(value, res)
 
     return value
 

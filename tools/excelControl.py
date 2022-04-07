@@ -9,46 +9,46 @@ from xlutils.copy import copy
 from config.setting import ConfigHandler
 
 
-def get_excelData(sheetName: str, caseName: any) -> list:
+def get_excel_data(sheet_name: str, case_name: any) -> list:
     """
     读取 Excel 中的数据
-    :param sheetName: excel 中的 sheet 页的名称
-    :param caseName: 测试用例名称
+    :param sheet_name: excel 中的 sheet 页的名称
+    :param case_name: 测试用例名称
     :return:
     """
-    resList = []
+    res_list = []
 
-    excelDire = ConfigHandler.excel_path + 'Login.xls'
-    workBook = xlrd.open_workbook(excelDire, formatting_info=True)
+    excel_dire = ConfigHandler.excel_path + 'Login.xls'
+    work_book = xlrd.open_workbook(excel_dire, formatting_info=True)
 
     # 打开对应的子表
-    workSheet = workBook.sheet_by_name(sheetName)
+    work_sheet = work_book.sheet_by_name(sheet_name)
     # 读取一行
     idx = 0
-    for one in workSheet.col_values(0):
+    for one in work_sheet.col_values(0):
         # 运行需要运行的测试用例
-        if caseName in one:
-            reqBodyData = workSheet.cell(idx, 9).value
-            respData = workSheet.cell(idx, 11).value
-            resList.append((reqBodyData, json.loads(respData)))
+        if case_name in one:
+            req_body_data = work_sheet.cell(idx, 9).value
+            resp_data = work_sheet.cell(idx, 11).value
+            res_list.append((req_body_data, json.loads(resp_data)))
         idx += 1
-    print(resList)
-    return resList
+    print(res_list)
+    return res_list
 
 
-def set_excelData(sheetIndex: int) -> tuple:
+def set_excel_data(sheet_index: int) -> tuple:
     """
     excel 写入
     :return:
     """
-    excelDire = r'..\data\Login.xls'
-    workBook = xlrd.open_workbook(excelDire, formatting_info=True)
-    workBookNew = copy(workBook)
+    excel_dir = r'..\data\Login.xls'
+    work_book = xlrd.open_workbook(excel_dir, formatting_info=True)
+    work_book_new = copy(work_book)
 
-    workSheetNew = workBookNew.get_sheet(sheetIndex)
-    return workBookNew, workSheetNew
+    work_sheet_new = work_book_new.get_sheet(sheet_index)
+    return work_book_new, work_sheet_new
 
 
 if __name__ == '__main__':
-    get_excelData("登录", 'Login001')
+    get_excel_data("登录", 'Login001')
 

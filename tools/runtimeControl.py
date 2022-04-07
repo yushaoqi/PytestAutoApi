@@ -4,10 +4,10 @@
 # @Author : 余少琪
 
 import time
-from tools.logControl import ERROR, INFO
+from tools.logControl import ERROR
 
 
-def executionDuration(number: int):
+def execution_duration(number: int):
     """
     封装统计函数执行时间装饰器
     :param number: 函数预计运行时长
@@ -39,4 +39,3 @@ def executionDuration(number: int):
         return decorator
     else:
         raise TypeError("参数类型不正确")
-

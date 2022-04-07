@@ -19,17 +19,18 @@ TestData = GetCaseData(ConfigHandler.merchant_data_path + r'test_demo\DateDemo.y
 class TestDateDemo:
 
     @allure.story("这是一个测试的demo接口")
-    @pytest.mark.parametrize('inData', TestData)
-    def test_dateDemo(self, inData):
+    @pytest.mark.parametrize('data', TestData)
+    def test_date_demo(self, date):
         """
         测试接口
         :param :
         :return:
         """
 
-        res = DateDemo().dateDemo(inData)
-        Assert(inData['resp']).assertEquality(responseData=res[0], sqlData=res[1])
+        res = DateDemo().dateDemo(date)
+        Assert(date['resp']).assert_equality(response_data=res[0], sql_data=res[1])
 
 
 if __name__ == '__main__':
-    pytest.main(['test_DateDemo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2", "--reruns-delay=2"])
+    pytest.main(['test_DateDemo.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning', "--reruns=2",
+                 "--reruns-delay=2"])

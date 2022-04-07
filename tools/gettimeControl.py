@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 
 
-def countMilliseconds():
+def count_milliseconds():
     """
     计算时间
     :return:
@@ -18,38 +18,38 @@ def countMilliseconds():
     return access_delta
 
 
-def Timestamp_conversion(timeStr: str) -> int:
+def timestamp_conversion(time_str: str) -> int:
     """
     时间戳转换，将日期格式转换成时间戳
-    :param timeStr: 时间
+    :param time_str: 时间
     :return:
     """
 
     try:
-        datetimeFormat = datetime.strptime(str(timeStr), "%Y-%m-%d %H:%M:%S")
-        timestamp = int(time.mktime(datetimeFormat.timetuple()) * 1000.0 + datetimeFormat.microsecond / 1000.0)
+        datetime_format = datetime.strptime(str(time_str), "%Y-%m-%d %H:%M:%S")
+        timestamp = int(time.mktime(datetime_format.timetuple()) * 1000.0 + datetime_format.microsecond / 1000.0)
         return timestamp
     except ValueError:
-        raise '日期格式错误, 需要传入得格式为 "%Y-%m-%d %H:%M:%S" '
+        raise ValueError('日期格式错误, 需要传入得格式为 "%Y-%m-%d %H:%M:%S" ')
 
 
-def Time_conversion(timeNum: int):
+def time_conversion(time_num: int):
     """
     时间戳转换成日期
-    :param timeNum:
+    :param time_num:
     :return:
     """
-    if isinstance(timeNum, int):
-        timeStamp = float(timeNum / 1000)
-        timeArray = time.localtime(timeStamp)
-        otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-        return otherStyleTime
+    if isinstance(time_num, int):
+        time_stamp = float(time_num / 1000)
+        time_array = time.localtime(time_stamp)
+        other_style_time = time.strftime("%Y-%m-%d %H:%M:%S", time_array)
+        return other_style_time
 
     else:
-        raise "请传入正确的时间戳"
+        raise ValueError("请传入正确的时间戳")
 
 
-def NowTime() -> str:
+def now_time() -> str:
     """
     获取当前时间, 日期格式: 2021-12-11 12:39:25
     :return:
@@ -76,5 +76,5 @@ def get_now_time() -> int:
 
 
 if __name__ == '__main__':
-    print(NowTime())
-    Time_conversion(1547450538000)
+    print(now_time())
+    time_conversion(1547450538000)

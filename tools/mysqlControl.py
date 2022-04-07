@@ -9,7 +9,7 @@ from tools.yamlControl import GetYamlData
 from tools.logControl import ERROR
 from tools.yamlControl import GetCaseData
 from config.setting import ConfigHandler
-from tools.regularControl import SqlRegular
+from tools.regularControl import sql_regular
 
 # 忽略 Mysql 告警信息
 filterwarnings("ignore", category=pymysql.Warning)
@@ -76,7 +76,7 @@ class MysqlDB(object):
                 :return:
                 """
             try:
-                # 使用 excute 操作 sql
+                # 使用 execute 操作 sql
                 rows = self.cur.execute(sql)
                 # 提交事务
                 self.conn.commit()
@@ -98,11 +98,11 @@ class MysqlDB(object):
 
                     data = {}
                     if 'UPDATE' and 'update' and 'DELETE' and 'delete' and 'INSERT' and 'insert' in sql:
-                        raise "断言的 sql 必须是查询的 sql"
+                        raise ValueError("断言的 sql 必须是查询的 sql")
                     else:
                         for i in sql:
                             # 判断sql中是否有正则，如果有则通过jsonpath提取相关的数据
-                            sql = SqlRegular(i, resp)
+                            sql = sql_regular(i, resp)
                             # for 循环逐条处理断言 sql
                             query_data = self.query(sql)[0]
                             # 将sql 返回的所有内容全部放入对象中
@@ -111,13 +111,13 @@ class MysqlDB(object):
 
                         return data
                 else:
-                    raise "断言的查询sql需要是list类型"
+                    raise ValueError("断言的查询sql需要是list类型")
             except Exception as e:
                 ERROR.logger.error("数据库连接失败，失败原因{0}".format(e))
                 raise
 
 
 if __name__ == '__main__':
-    mydb = MysqlDB()
-    a = mydb.assert_execution(sql=["select count(id) as totalCount from test_obp_order.order_sub_order where shop_id = 515"], resp={"code": 237, "value": 1})
+    mysql_db = MysqlDB()
+    a = mysql_db.assert_execution(sql=[""], resp={"code": 237, "value": 1})
     print(a)

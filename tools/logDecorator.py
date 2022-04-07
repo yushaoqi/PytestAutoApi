@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2021/11/30 23:25
 # @Author : 余少琪
-import os
 from functools import wraps
 from tools.logControl import INFO
 
 
-def logDecorator(switch: bool):
+def log_decorator(switch: bool):
     """
     封装日志装饰器, 打印请求信息
     :param switch: 定义日志开关
@@ -42,5 +41,3 @@ def logDecorator(switch: bool):
         return decorator
     else:
         raise TypeError("日志开关只能为 Ture 或者 False")
-
-

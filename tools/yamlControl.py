@@ -5,14 +5,12 @@
 import yaml.scanner
 import os
 from tools.regularControl import regular
-from config.setting import ConfigHandler
-from tools.logControl import ERROR
 
 
 class GetYamlData:
 
-    def __init__(self, fileDir):
-        self.fileDir = fileDir
+    def __init__(self, file_dir):
+        self.fileDir = file_dir
 
     def get_yaml_data(self) -> dict:
         """
@@ -47,8 +45,8 @@ class GetYamlData:
             flag = 0
             for line in lines:
                 if key in line and '#' not in line:
-                    leftStr = line.split(":")[0]
-                    newline = "{0}: {1}".format(leftStr, value)
+                    left_str = line.split(":")[0]
+                    newline = "{0}: {1}".format(left_str, value)
                     line = newline
                     f.write('%s\n' % line)
                     flag = 1
@@ -65,10 +63,10 @@ class GetCaseData(GetYamlData):
         获取兼容不同格式的yaml数据
         :return:
         """
-        resList = []
+        res_list = []
         for i in self.get_yaml_data():
-            resList.append(i)
-        return resList
+            res_list.append(i)
+        return res_list
 
     def get_yaml_case_data(self):
         """
@@ -76,17 +74,13 @@ class GetCaseData(GetYamlData):
         :return:
         """
         try:
-            resList = []
+            res_list = []
 
             for i in self.get_yaml_data():
                 # 正则替换相关数据
-                reData = regular(str(i))
-                redata = eval(reData)
-                resList.append(redata)
-            return resList
+                re_data = regular(str(i))
+                re_data = eval(re_data)
+                res_list.append(re_data)
+            return res_list
         except yaml.scanner.ScannerError:
-            raise "yaml格式不正确"
-
-
-if __name__ == '__main__':
-    pass
+            raise ValueError("yaml格式不正确")

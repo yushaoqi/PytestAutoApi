@@ -7,6 +7,7 @@ import os
 from typing import Any
 from tools.logControl import ERROR, INFO, WARNING
 
+
 class Cache:
     """ 设置、读取缓存 """
     def __init__(self, filename: str):
@@ -31,7 +32,7 @@ class Cache:
                 f.write(str(value))
 
         else:
-            raise "缓存类型必须要是 dict 类型"
+            raise ValueError("缓存类型必须要是 dict 类型")
 
     def get_cache(self) -> Any:
         """
@@ -43,7 +44,7 @@ class Cache:
 
     def clean_cache(self):
         if not os.path.exists(self.path):
-            raise "您要删除的缓存文件不存在. {0}".format(self.path)
+            raise ValueError("您要删除的缓存文件不存在. {0}".format(self.path))
         os.remove(self.path)
 
     @classmethod

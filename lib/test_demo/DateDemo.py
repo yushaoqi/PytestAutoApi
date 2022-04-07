@@ -18,7 +18,7 @@ class DateDemo(object):
         :return:
         """
 
-        resp = RequestControl().HttpRequest(inData['method'], inData)
+        resp = RequestControl().http_request(inData['method'], inData)
         return resp
 
 
@@ -26,4 +26,3 @@ if __name__ == '__main__':
     path = GetCaseData(ConfigHandler.data_path + r'test_demo\DateDemo.yaml').get_yaml_case_data()[0]
     data = DateDemo().dateDemo(path)
     print(data)
-        

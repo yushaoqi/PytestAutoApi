@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2022/2/21 17:33
 # @Author : 余少琪
-import json
+
 
 from config.setting import ConfigHandler
 from tools.yamlControl import GetYamlData
 import requests
 from tools.logControl import ERROR
 from tools.allureDataControl import CaseCount
-from tools.gettimeControl import NowTime
+from tools.gettimeControl import now_time
 from tools.localIpControl import get_host_ip
 
 
@@ -25,14 +25,14 @@ class WeChatSend:
         self.name = GetYamlData(ConfigHandler.config_path).get_yaml_data()['ProjectName'][0]
         self.tester = GetYamlData(ConfigHandler.config_path).get_yaml_data()['TestName']
         self.allureData = CaseCount()
-        self.PASS = self.allureData.passCount()
-        self.FAILED = self.allureData.failedCount()
-        self.BROKEN = self.allureData.brokenCount()
-        self.SKIP = self.allureData.skippedCount()
-        self.TOTAL = self.allureData.totalCount()
-        self.RATE = self.allureData.passRate()
+        self.PASS = self.allureData.pass_count()
+        self.FAILED = self.allureData.failed_count()
+        self.BROKEN = self.allureData.broken_count()
+        self.SKIP = self.allureData.skipped_count()
+        self.TOTAL = self.allureData.total_count()
+        self.RATE = self.allureData.pass_rate()
 
-    def sendText(self, content, mentioned_mobile_list=None):
+    def send_text(self, content, mentioned_mobile_list=None):
         """
         发送文本类型通知
         :param content: 文本内容，最长不超过2048个字节，必须是utf8编码
@@ -55,9 +55,9 @@ class WeChatSend:
                     else:
                         raise TypeError("手机号码必须是字符串类型.")
         else:
-            raise "手机号码列表必须是list类型."
+            raise ValueError("手机号码列表必须是list类型.")
 
-    def sendMarkDown(self, content):
+    def send_markdown(self, content):
         """
         发送 MarkDown 类型消息
         :param content: 消息内容，markdown形式
@@ -97,7 +97,7 @@ class WeChatSend:
         else:
             raise TypeError("图文类型的参数必须是字典类型")
 
-    def sendEmailNotification(self):
+    def send_email_notification(self):
         # 发送企业微信通知
         text = """【{0}自动化通知】
                                     >测试环境：<font color=\"info\">TEST</font>
@@ -114,10 +114,10 @@ class WeChatSend:
                                     >非相关负责人员可忽略此消息。
                                     >测试报告，点击查看>>[测试报告入口](http://{6}:9999/index.html)""" \
             .format(self.name, self.tester, self.RATE, self.PASS, self.FAILED,
-                    self.BROKEN, self.SKIP, NowTime(), get_host_ip())
+                    self.BROKEN, self.SKIP, now_time(), get_host_ip())
 
-        WeChatSend().sendMarkDown(text)
+        WeChatSend().send_markdown(text)
 
 
 if __name__ == '__main__':
-    WeChatSend().sendEmailNotification()
+    WeChatSend().send_email_notification()

@@ -76,8 +76,8 @@ class PyTimer:
 
 
 def do_something(name, gender='male'):
-    print(time.time(), '定时时间到，执行特定任务' )
-    print('name:%s, gender:%s'%(name, gender))
+    print(time.time(), '定时时间到，执行特定任务')
+    print('name:%s, gender:%s' % (name, gender))
     time.sleep(5)
     print(time.time(), '完成特定任务')
 
