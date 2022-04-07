@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2022-04-07 21:03:43
+# @Time   : 2022-04-07 22:51:22
 # @Author : 余少琪
 
 
@@ -12,14 +12,14 @@ from utils.assertUtils.assertControl import Assert
 from utils.requestsUtils.requestControl import RequestControl
 
 
-TestData = CaseData(ConfigHandler.data_path + r'uplpad_file_test/batchDisable.yaml').case_process()
+TestData = CaseData(ConfigHandler.data_path + r'WorkApplyCenter/batchDisable.yaml').case_process()
 
 
-@allure.epic("换社会")
-@allure.feature("登录模块")
+@allure.epic("电商平台")
+@allure.feature("文件模块")
 class TestBatchdisable:
 
-    @allure.story("测试patch请求方式")
+    @allure.story("PATCH")
     @pytest.mark.parametrize('in_data', TestData, ids=[i['detail'] for i in TestData])
     def test_batchDisable(self, in_data, case_skip):
         """

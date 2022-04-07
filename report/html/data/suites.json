@@ -1,0 +1,217 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "test_case.Login",
+    "children" : [ {
+      "name" : "test_login",
+      "children" : [ {
+        "name" : "TestLogin",
+        "children" : [ {
+          "name" : "test_login[正常登录]",
+          "uid" : "4fe4115c555bbd9d",
+          "parentUid" : "612e66c6daa596e29d800576fc544130",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343470755,
+            "stop" : 1649343470755,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'POST', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/user/loginByPassword', 'detail': '正常登录', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'JSON', 'data': {'param': {'phone': '13300000000', 'password': '123456'}}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "612e66c6daa596e29d800576fc544130"
+      } ],
+      "uid" : "864d037e836ea971e48ceba105637218"
+    } ],
+    "uid" : "3aa66c7fc191575b51800465931c68d9"
+  }, {
+    "name" : "test_case.WorkApplyCenter",
+    "children" : [ {
+      "name" : "test_batchDisable",
+      "children" : [ {
+        "name" : "TestBatchdisable",
+        "children" : [ {
+          "name" : "test_batchDisable[测试PATCH接口]",
+          "uid" : "866e57574dc57a91",
+          "parentUid" : "6ebf2f149723dfed0956f2d3a89ae793",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471690,
+            "stop" : 1649343471690,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'PATCH', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/adpt/advert/adplan/batchDisable', 'detail': '测试PATCH接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'work_login_init'}, 'requestType': 'JSON', 'data': {'bid': 'blog-121903028'}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "6ebf2f149723dfed0956f2d3a89ae793"
+      } ],
+      "uid" : "d9b25c3a59296bc91e2ca65ede0c516f"
+    }, {
+      "name" : "test_csdn_test_api",
+      "children" : [ {
+        "name" : "TestCsdnTestApi",
+        "children" : [ {
+          "name" : "csdn的接口（没有开源接口，直接拿csdn的接口做演示）",
+          "uid" : "92239d26f0c7e70",
+          "parentUid" : "89fe4190ff45e2e55ac0882428690122",
+          "status" : "passed",
+          "time" : {
+            "start" : 1649343471705,
+            "stop" : 1649343471892,
+            "duration" : 187
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'POST', 'is_run': None, 'url': 'https://redisdatarecall.csdn.net/recommend/get_head_word', 'detail': 'csdn的接口（没有开源接口，直接拿csdn的接口做演示）', 'headers': {'Content-Type': 'application/json;charset=UTF-8'}, 'requestType': 'JSON', 'data': {'applyId': None, 'reason': '审核时间2022-04-07 22:57:50.202003'}, 'dependence_case': None, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.status', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "89fe4190ff45e2e55ac0882428690122"
+      } ],
+      "uid" : "49e708777e2f531deab08fb1b653b285"
+    }, {
+      "name" : "test_spu_apply",
+      "children" : [ {
+        "name" : "TestSpuApply",
+        "children" : [ {
+          "name" : "test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]",
+          "uid" : "55fe008ea2ffec2b",
+          "parentUid" : "429d2c5dd3c859b8471e47bb1dfe1f5d",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471900,
+            "stop" : 1649343471900,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'PUT', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/spu/approval/pass', 'detail': '正常审核商品(测试一个接口依赖多个数据)', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'work_login_init'}, 'requestType': 'JSON', 'data': {'applyId': None, 'reason': '审核时间2022-04-07 22:57:50.374544'}, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'spu_apply_list_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.data.[0].applyId', 'replace_key': '$.data.applyId'}, {'dependent_type': 'request', 'jsonpath': '$.detail', 'replace_key': '$.data.reason'}]}], 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "429d2c5dd3c859b8471e47bb1dfe1f5d"
+      } ],
+      "uid" : "2e392f07e3ea7d3b82c9d72872a02739"
+    }, {
+      "name" : "test_sup_apply_list",
+      "children" : [ {
+        "name" : "TestSupApplyList",
+        "children" : [ {
+          "name" : "test_sup_apply_list[查看商品审核列表]",
+          "uid" : "40e86f583d74f8e9",
+          "parentUid" : "fe9573b0817a630e90ad84cd301b7323",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471917,
+            "stop" : 1649343471917,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'GET', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/spu/approval/spuList', 'detail': '查看商品审核列表', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'work_login_init'}, 'requestType': 'PARAMS', 'data': {'spuType': 1, 'pageNum': 1, 'pageSize': 10}, 'dependence_case': None, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "fe9573b0817a630e90ad84cd301b7323"
+      } ],
+      "uid" : "81b493dcfd9606eece6405264b23bd3c"
+    }, {
+      "name" : "test_work_apply_good_detail",
+      "children" : [ {
+        "name" : "TestWorkApplyGoodDetail",
+        "children" : [ {
+          "name" : "test_work_apply_good_detail[查看商品审核详情]",
+          "uid" : "f3b98325f3c6f2b7",
+          "parentUid" : "76d09f895b6a0f4bf5ecd994b8d7be4a",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471932,
+            "stop" : 1649343471932,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'GET', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/spu/approval/spuApplyDetails/$url_param{good_id}', 'detail': '查看商品审核详情', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'work_login_init'}, 'requestType': 'JSON', 'data': {'auth': None}, 'dependence_case': False, 'dependence_case_data': [{'case_id': 'spu_apply_list_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.data.[0].applyId', 'replace_key': '$url_param{good_id}'}]}, {'case_id': 'login_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.data.[0].token', 'replace_key': '$.data.auth'}]}], 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "76d09f895b6a0f4bf5ecd994b8d7be4a"
+      } ],
+      "uid" : "3f34742d80ba3792e78741f4ad56fc98"
+    } ],
+    "uid" : "21ecfdd2cc81cc663a39cf61b775ef84"
+  }, {
+    "name" : "test_case.uplpad_file_test",
+    "children" : [ {
+      "name" : "test_up_files",
+      "children" : [ {
+        "name" : "TestUpFiles",
+        "children" : [ {
+          "name" : "test_up_files[测试上传文件接口]",
+          "uid" : "e19c6a0d29fc3929",
+          "parentUid" : "d5a2a4ccd6b6fdc3300d2106f35a0179",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471945,
+            "stop" : 1649343471945,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'POST', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/adpt/advert/mate/batchUploadMate', 'detail': '测试上传文件接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'work_login_ini'}, 'requestType': 'FILE', 'data': {'file': {'files': 'test.png'}, 'data': {'uids': 'vc-upload-1649224175138-20'}, 'params': {'test': 1}}, 'dependence_case': None, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 1011006, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "d5a2a4ccd6b6fdc3300d2106f35a0179"
+      } ],
+      "uid" : "4301c9753c071d3102cb66141817c094"
+    }, {
+      "name" : "test_upload_files",
+      "children" : [ {
+        "name" : "TestUploadFiles",
+        "children" : [ {
+          "name" : "test_upload_files[测试上传文件接口]",
+          "uid" : "44839f9cd63479e1",
+          "parentUid" : "979d5988543ca66281ead794c6739b04",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1649343471959,
+            "stop" : 1649343471959,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'method': 'POST', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/biz/company/importData', 'detail': '测试上传文件接口', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'work_login_init'}, 'requestType': 'FILE', 'data': {'file': {'file': 'companySewage.xlsx'}}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 401, 'AssertType': None}}}" ]
+        } ],
+        "uid" : "979d5988543ca66281ead794c6739b04"
+      } ],
+      "uid" : "02b28d633a8893882d08a96de15a0dfb"
+    } ],
+    "uid" : "d0079796453a35f12bdaa976d505fd5c"
+  } ]
+}

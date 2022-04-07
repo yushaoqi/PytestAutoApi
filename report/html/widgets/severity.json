@@ -1,0 +1,81 @@
+[ {
+  "uid" : "44839f9cd63479e1",
+  "name" : "test_upload_files[测试上传文件接口]",
+  "time" : {
+    "start" : 1649343471959,
+    "stop" : 1649343471959,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "92239d26f0c7e70",
+  "name" : "csdn的接口（没有开源接口，直接拿csdn的接口做演示）",
+  "time" : {
+    "start" : 1649343471705,
+    "stop" : 1649343471892,
+    "duration" : 187
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4fe4115c555bbd9d",
+  "name" : "test_login[正常登录]",
+  "time" : {
+    "start" : 1649343470755,
+    "stop" : 1649343470755,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "f3b98325f3c6f2b7",
+  "name" : "test_work_apply_good_detail[查看商品审核详情]",
+  "time" : {
+    "start" : 1649343471932,
+    "stop" : 1649343471932,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "e19c6a0d29fc3929",
+  "name" : "test_up_files[测试上传文件接口]",
+  "time" : {
+    "start" : 1649343471945,
+    "stop" : 1649343471945,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "55fe008ea2ffec2b",
+  "name" : "test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]",
+  "time" : {
+    "start" : 1649343471900,
+    "stop" : 1649343471900,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "866e57574dc57a91",
+  "name" : "test_batchDisable[测试PATCH接口]",
+  "time" : {
+    "start" : 1649343471690,
+    "stop" : 1649343471690,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "40e86f583d74f8e9",
+  "name" : "test_sup_apply_list[查看商品审核列表]",
+  "time" : {
+    "start" : 1649343471917,
+    "stop" : 1649343471917,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+} ]

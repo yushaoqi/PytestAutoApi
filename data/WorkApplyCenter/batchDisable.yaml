@@ -1,11 +1,11 @@
 # 公共参数
 case_common:
-  allureEpic: 电商平台
+  allureEpic: 电商平台端
   allureFeature: 文件模块
   allureStory: PATCH
 
 batchDisable_01:
-    host: {{host}}
+    host: ${{host}}
     url: /adpt/advert/adplan/batchDisable
     method: PATCH
     detail: 测试PATCH接口
@@ -15,9 +15,9 @@ batchDisable_01:
     # 请求的数据，是 params 还是 json、或者file
     requestType: json
     # 是否执行，空或者 true 都会执行
-    is_run: Fasle
+    is_run: False
     data:
-
+      bid: blog-121903028
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据

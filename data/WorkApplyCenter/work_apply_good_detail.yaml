@@ -19,7 +19,7 @@ spuApplyDetails_01:
   data:
       auth:
    # 是否有依赖业务，为空或者false则表示没有
-  dependence_case: True
+  dependence_case: False
   # 依赖的数据
   dependence_case_data:
     - case_id: spu_apply_list_01

@@ -1,21 +1,21 @@
 # 公共参数
 case_common:
-  allureEpic: 婚奢汇
+  allureEpic: 电商平台端
   allureFeature: 文件上传
   allureStory: 上传excel文件
 
 upload_files_01:
-    host: http://parkyz.kkx88.cn
+    host: ${{host}}
     url: /api/biz/company/importData
     method: POST
     detail: 测试上传文件接口
     headers:
       Content-Type: application/json;charset=UTF-8
-      Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjA1ZTc3ZDRiLWU3NWEtNGMyNi04NjA1LTI4M2Q3ZjdlNWNmZSJ9.2htV4vh5KxR9jEDltfifiwZUPd1OYrwLRXRLM2K1AEgoY-jTCn9z1m5aLPmpIIf2dL5YoSEbyxmGT9Pm1CwzMg
+      Authorization: work_login_init
     # 请求的数据，是 params 还是 json、或者file
     requestType: file
     # 是否执行，空或者 true 都会执行
-    is_run:
+    is_run: False
     data:
       file:
         file: companySewage.xlsx

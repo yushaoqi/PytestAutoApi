@@ -1,11 +1,11 @@
 # 公共参数
 case_common:
-  allureEpic: 婚奢汇
+  allureEpic: 电商平台端
   allureFeature: 文件上传
   allureStory: 上传excel文件
 
 upload_files_02:
-    host: {{host}}
+    host: ${{host}}
     url: /adpt/advert/mate/batchUploadMate
     method: POST
     detail: 测试上传文件接口
@@ -15,7 +15,7 @@ upload_files_02:
     # 请求的数据，是 params 还是 json、或者file
     requestType: file
     # 是否执行，空或者 true 都会执行
-    is_run:
+    is_run: False
     data:
       file:
         files: test.png

@@ -15,4 +15,3 @@ def del_file(path):
             del_file(c_path)
         else:
             os.remove(c_path)
-

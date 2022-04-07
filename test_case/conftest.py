@@ -58,21 +58,22 @@ def write_case_process():
     Cache('case_process').set_caches(case_data)
 
 
-@pytest.fixture(scope="session", autouse=True)
-def work_login_init():
-    """
-    获取平台端的token信息
-    :return:
-    """
-    login_yaml = CaseData(ConfigHandler.data_path + 'Login/login.yaml').case_process()[0]
-    res = RequestControl().http_request(login_yaml)
-    # 将token写入缓存中
-    if res[0] is not False:
-        token = res[0]['data']['token']
-        Cache('work_login_init').set_caches(token)
-        return token
-    else:
-        WARNING.logger.warning("登录用例设置的是不执行，无法获取到token信息")
+# @pytest.fixture(scope="session", autouse=True)
+# @pytest.mark.skip()
+# def work_login_init():
+#     """
+#     获取平台端的token信息
+#     :return:
+#     """
+#     login_yaml = CaseData(ConfigHandler.data_path + 'Login/login.yaml').case_process()[0]
+#     res = RequestControl().http_request(login_yaml)
+#     # 将token写入缓存中
+#     if res[0] is not False:
+#         token = res[0]['data']['token']
+#         Cache('work_login_init').set_caches(token)
+#         return token
+#     else:
+#         WARNING.logger.warning("登录用例设置的是不执行，无法获取到token信息")
 
 
 def pytest_collection_modifyitems(items):
