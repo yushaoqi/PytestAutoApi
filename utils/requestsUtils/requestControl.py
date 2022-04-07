@@ -15,6 +15,7 @@ from Enums.requestType_enum import RequestType
 from Enums.yamlData_enum import YAMLDate
 from config.setting import ConfigHandler
 from utils.cacheUtils.cacheControl import Cache
+from utils.logUtils.runTimeDecoratorl import execution_duration
 from utils.otherUtils.allureDate.allure_tools import allure_step, allure_step_no, allure_attach
 
 
@@ -79,11 +80,9 @@ class RequestControl:
             params = None
         return multipart, params
 
-    from utils.logUtils.runTimeDecoratorl import execution_duration
-    @classmethod
     @log_decorator(True)
-    @execution_duration(2000)
-    def http_request(cls, yaml_data, **kwargs):
+    @execution_duration(100)
+    def http_request(self, yaml_data, **kwargs):
         from utils.requestsUtils.dependentCase import DependentCase
         _is_run = yaml_data[YAMLDate.IS_RUN.value]
         _method = yaml_data[YAMLDate.METHOD.value]
@@ -94,7 +93,7 @@ class RequestControl:
         _sql = yaml_data[YAMLDate.SQL.value]
         _assert = yaml_data[YAMLDate.ASSERT.value]
         _dependent_data = yaml_data[YAMLDate.DEPENDENCE_CASE_DATA.value]
-        cls.case_token(_headers)
+        self.case_token(_headers)
         res = None
 
         # 判断用例是否执行
@@ -114,7 +113,7 @@ class RequestControl:
                                        headers=_headers, **kwargs)
             # 判断上传文件
             elif _requestType == RequestType.FILE.value:
-                multipart = cls.upload_file(yaml_data)
+                multipart = self.upload_file(yaml_data)
                 res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value],
                                        data=multipart[0], params=multipart[1], headers=_headers, **kwargs)
 
@@ -138,7 +137,7 @@ class RequestControl:
                 allure_step("响应结果: ", res.text)
             else:
                 allure_step("响应结果: ", res.json())
-            return cls._check_params(res, yaml_data)
+            return self._check_params(res, yaml_data)
         else:
             # 用例跳过执行的话，所有数据都返回 False
             return False, False, yaml_data

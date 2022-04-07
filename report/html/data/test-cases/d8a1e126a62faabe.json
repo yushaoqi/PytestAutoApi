@@ -1,0 +1,267 @@
+{
+  "uid" : "d8a1e126a62faabe",
+  "name" : "test_sup_apply_list[查看商品审核列表]",
+  "fullName" : "test_case.WorkApplyCenter.test_sup_apply_list.TestSupApplyList#test_sup_apply_list",
+  "historyId" : "9613e3c97bba7d459c51d44c947a49ca",
+  "time" : {
+    "start" : 1649347416726,
+    "stop" : 1649347416726,
+    "duration" : 0
+  },
+  "description" : "\n        :param :\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :param :\n    :return:\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "Skipped",
+  "statusTrace" : "('C:\\\\work\\\\Study\\\\pytest-auto-api2\\\\test_case\\\\conftest.py', 107, 'Skipped')",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1649347415373,
+      "stop" : 1649347415464,
+      "duration" : 91
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "clear_report",
+    "time" : {
+      "start" : 1649347415464,
+      "stop" : 1649347415501,
+      "duration" : 37
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "write_case_process",
+    "time" : {
+      "start" : 1649347415501,
+      "stop" : 1649347416280,
+      "duration" : 779
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "case_skip",
+    "time" : {
+      "start" : 1649347416727,
+      "stop" : 1649347416736,
+      "duration" : 9
+    },
+    "status" : "skipped",
+    "statusMessage" : "Skipped\n",
+    "statusTrace" : "  File \"C:\\work\\Study\\pytest-auto-api2\\venv\\lib\\site-packages\\pluggy\\_callers.py\", line 39, in _multicall\n    res = hook_impl.function(*args)\n  File \"C:\\work\\Study\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\fixtures.py\", line 1111, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n  File \"C:\\work\\Study\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\fixtures.py\", line 890, in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n  File \"C:\\work\\Study\\pytest-auto-api2\\test_case\\conftest.py\", line 107, in case_skip\n    pytest.skip()\n  File \"C:\\work\\Study\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\outcomes.py\", line 175, in skip\n    raise Skipped(msg=reason, allow_module_level=allow_module_level)\n",
+    "steps" : [ {
+      "name" : "请求URL: False",
+      "time" : {
+        "start" : 1649347416728,
+        "stop" : 1649347416728,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求方式: GET",
+      "time" : {
+        "start" : 1649347416728,
+        "stop" : 1649347416728,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求头: ",
+      "time" : {
+        "start" : 1649347416728,
+        "stop" : 1649347416730,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7677e17c83c980a3",
+        "name" : "请求头: ",
+        "source" : "7677e17c83c980a3.json",
+        "type" : "application/json",
+        "size" : 80
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "请求数据: ",
+      "time" : {
+        "start" : 1649347416730,
+        "stop" : 1649347416732,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "750bbe8b936c5ab6",
+        "name" : "请求数据: ",
+        "source" : "750bbe8b936c5ab6.json",
+        "type" : "application/json",
+        "size" : 46
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "依赖数据: ",
+      "time" : {
+        "start" : 1649347416732,
+        "stop" : 1649347416733,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6392ce26f143591c",
+        "name" : "依赖数据: ",
+        "source" : "6392ce26f143591c.json",
+        "type" : "application/json",
+        "size" : 6
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "预期数据: ",
+      "time" : {
+        "start" : 1649347416733,
+        "stop" : 1649347416736,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "694a6322401f9fc2",
+        "name" : "预期数据: ",
+        "source" : "694a6322401f9fc2.json",
+        "type" : "application/json",
+        "size" : 82
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 4
+  } ],
+  "afterStages" : [ {
+    "name" : "clear_report::0",
+    "time" : {
+      "start" : 1649347416787,
+      "stop" : 1649347416787,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "电商平台端"
+  }, {
+    "name" : "story",
+    "value" : "商品审核列表"
+  }, {
+    "name" : "feature",
+    "value" : "审核中心"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.WorkApplyCenter"
+  }, {
+    "name" : "suite",
+    "value" : "test_sup_apply_list"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestSupApplyList"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-H35VFGJ"
+  }, {
+    "name" : "thread",
+    "value" : "14848-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.WorkApplyCenter.test_sup_apply_list"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "in_data",
+    "value" : "{'method': 'GET', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/spu/approval/spuList', 'detail': '查看商品审核列表', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'work_login_init'}, 'requestType': 'PARAMS', 'data': {'spuType': 1, 'pageNum': 1, 'pageSize': 10}, 'dependence_case': None, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d8a1e126a62faabe.json",
+  "parameterValues" : [ "{'method': 'GET', 'is_run': False, 'url': 'https://redisdatarecall.csdn.net/api/v1/work/spu/approval/spuList', 'detail': '查看商品审核列表', 'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'work_login_init'}, 'requestType': 'PARAMS', 'data': {'spuType': 1, 'pageNum': 1, 'pageSize': 10}, 'dependence_case': None, 'dependence_case_data': None, 'sql': None, 'assert': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}}" ]
+}

@@ -1,81 +1,81 @@
 [ {
-  "uid" : "40e86f583d74f8e9",
-  "name" : "test_sup_apply_list[查看商品审核列表]",
-  "time" : {
-    "start" : 1649343471917,
-    "stop" : 1649343471917,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "4fe4115c555bbd9d",
+  "uid" : "d0bf858816dbefde",
   "name" : "test_login[正常登录]",
   "time" : {
-    "start" : 1649343470755,
-    "stop" : 1649343470755,
+    "start" : 1649347415372,
+    "stop" : 1649347415372,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "e19c6a0d29fc3929",
-  "name" : "test_up_files[测试上传文件接口]",
+  "uid" : "d8a1e126a62faabe",
+  "name" : "test_sup_apply_list[查看商品审核列表]",
   "time" : {
-    "start" : 1649343471945,
-    "stop" : 1649343471945,
+    "start" : 1649347416726,
+    "stop" : 1649347416726,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "55fe008ea2ffec2b",
-  "name" : "test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]",
-  "time" : {
-    "start" : 1649343471900,
-    "stop" : 1649343471900,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "44839f9cd63479e1",
+  "uid" : "d433964bb2e8950c",
   "name" : "test_upload_files[测试上传文件接口]",
   "time" : {
-    "start" : 1649343471959,
-    "stop" : 1649343471959,
+    "start" : 1649347416772,
+    "stop" : 1649347416772,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "92239d26f0c7e70",
-  "name" : "csdn的接口（没有开源接口，直接拿csdn的接口做演示）",
+  "uid" : "5b808f312f29bca5",
+  "name" : "test_up_files[测试上传文件接口]",
   "time" : {
-    "start" : 1649343471705,
-    "stop" : 1649343471892,
-    "duration" : 187
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "f3b98325f3c6f2b7",
-  "name" : "test_work_apply_good_detail[查看商品审核详情]",
-  "time" : {
-    "start" : 1649343471932,
-    "stop" : 1649343471932,
+    "start" : 1649347416756,
+    "stop" : 1649347416756,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "866e57574dc57a91",
+  "uid" : "c26b30e71a4fe6e6",
+  "name" : "test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]",
+  "time" : {
+    "start" : 1649347416710,
+    "stop" : 1649347416710,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "77894595a4b7115d",
   "name" : "test_batchDisable[测试PATCH接口]",
   "time" : {
-    "start" : 1649343471690,
-    "stop" : 1649343471690,
+    "start" : 1649347416304,
+    "stop" : 1649347416304,
     "duration" : 0
   },
   "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "c0d766084f60160c",
+  "name" : "test_work_apply_good_detail[查看商品审核详情]",
+  "time" : {
+    "start" : 1649347416742,
+    "stop" : 1649347416742,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "7a592362b0e27c42",
+  "name" : "csdn的接口（没有开源接口，直接拿csdn的接口做演示）",
+  "time" : {
+    "start" : 1649347416319,
+    "stop" : 1649347416698,
+    "duration" : 379
+  },
+  "status" : "passed",
   "severity" : "normal"
 } ]
