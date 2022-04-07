@@ -6851,3 +6851,22 @@
 接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['yaml', '框架', 'jenkins', 'pytest', 'sdn', 'api'], 'ext': {'pytest': '', 'jenkins': '', 'api': '', 'sdn': '', '框架': '', 'yaml': ''}, 'error': False}
 数据库断言数据: {'sql': None}
 =================================================================================
+%(levelname)-8s2022-04-07 22:30:12,617C:\work\Study\pytest-auto-api2\logs\info.log:run.py:22 
+                             _    _         _      _____         _
+              __ _ _ __ (_)  / \  _   _| |_ __|_   _|__  ___| |_
+             / _` | '_ \| | / _ \| | | | __/ _ \| |/ _ \/ __| __|
+            | (_| | |_) | |/ ___ \ |_| | || (_) | |  __/\__ \ |_
+             \__,_| .__/|_/_/   \_\__,_|\__\___/|_|\___||___/\__|
+                  |_|
+                  开始执行余少琪的框架项目...
+                
+%(levelname)-8s2022-04-07 22:30:13,297C:\work\Study\pytest-auto-api2\logs\info.log:logDecorator.py:24 
+=================================================================================
+测试标题: 测试接口
+请求方式: POST
+请求头:   {'Content-Type': 'application/json;charset=UTF-8'}
+请求路径: https://redisdatarecall.csdn.net/recommend/get_head_word
+请求内容: {'bid': 'blog-121903028'}
+接口响应内容: {'status': 200, 'msg': '查询成功', 'content': ['yaml', '框架', 'jenkins', 'pytest', 'sdn', 'api'], 'ext': {'pytest': '', 'jenkins': '', 'api': '', 'sdn': '', '框架': '', 'yaml': ''}, 'error': False}
+数据库断言数据: {'sql': None}
+=================================================================================

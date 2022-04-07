@@ -1,11 +1,11 @@
 [ {
-  "uid" : "f55aa1e142fcf040",
-  "name" : "test_dateDemo[inData0]",
+  "uid" : "464098aa0ad3dcb2",
+  "name" : "测试接口",
   "time" : {
-    "start" : 1649341597527,
-    "stop" : 1649341597527,
-    "duration" : 0
+    "start" : 1649341813096,
+    "stop" : 1649341813299,
+    "duration" : 203
   },
-  "status" : "broken",
+  "status" : "passed",
   "severity" : "normal"
 } ]

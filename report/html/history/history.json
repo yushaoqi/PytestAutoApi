@@ -2,20 +2,19 @@
   "9724f0467ede83b4aa72aeced28d200a" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "f55aa1e142fcf040",
-      "status" : "broken",
-      "statusDetails" : "AttributeError: 'RequestControl' object has no attribute 'HttpRequest'",
+      "uid" : "464098aa0ad3dcb2",
+      "status" : "passed",
       "time" : {
-        "start" : 1649341597527,
-        "stop" : 1649341597527,
-        "duration" : 0
+        "start" : 1649341813096,
+        "stop" : 1649341813299,
+        "duration" : 203
       }
     } ]
   }

@@ -8,14 +8,14 @@
       "children" : [ {
         "name" : "TestDateDemo",
         "children" : [ {
-          "name" : "test_dateDemo[inData0]",
-          "uid" : "f55aa1e142fcf040",
+          "name" : "测试接口",
+          "uid" : "464098aa0ad3dcb2",
           "parentUid" : "e20c9714c8ce4d88627f18182efe23fe",
-          "status" : "broken",
+          "status" : "passed",
           "time" : {
-            "start" : 1649341597527,
-            "stop" : 1649341597527,
-            "duration" : 0
+            "start" : 1649341813096,
+            "stop" : 1649341813299,
+            "duration" : 203
           },
           "flaky" : false,
           "newFailed" : false,

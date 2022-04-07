@@ -1,5 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Thu Apr 07 22:26:37 CST 2022","Thu Apr 07 22:26:37 CST 2022","0","test_case.test_demo","test_DateDemo","TestDateDemo","","","test_dateDemo[inData0]","
+"passed","Thu Apr 07 22:30:13 CST 2022","Thu Apr 07 22:30:13 CST 2022","203","test_case.test_demo","test_DateDemo","TestDateDemo","","","测试接口","
         测试接口
         :param :
         :return:
