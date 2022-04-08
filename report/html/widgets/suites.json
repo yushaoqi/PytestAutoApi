@@ -1,35 +1,35 @@
 {
   "total" : 3,
   "items" : [ {
-    "uid" : "21ecfdd2cc81cc663a39cf61b775ef84",
-    "name" : "test_case.WorkApplyCenter",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 4,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 5
-    }
-  }, {
-    "uid" : "d0079796453a35f12bdaa976d505fd5c",
-    "name" : "test_case.uplpad_file_test",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 2,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 2
-    }
-  }, {
     "uid" : "3aa66c7fc191575b51800465931c68d9",
     "name" : "test_case.Login",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
+      "skipped" : 0,
+      "passed" : 8,
+      "unknown" : 0,
+      "total" : 8
+    }
+  }, {
+    "uid" : "9935130eb9d0c7267fb91a644a8ebffb",
+    "name" : "test_case.Collect",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
       "skipped" : 1,
-      "passed" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 6
+    }
+  }, {
+    "uid" : "a0560216942e53bbce8c488aa55e291c",
+    "name" : "test_case.UserInfo",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     }

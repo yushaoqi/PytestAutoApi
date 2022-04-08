@@ -1,81 +1,151 @@
 [ {
-  "uid" : "77894595a4b7115d",
-  "name" : "test_batchDisable[测试PATCH接口]",
+  "uid" : "dd3d23fd801f863f",
+  "name" : "test_collect_delete_tool[正常删除不存在的ID数据（接口未完成此功能，跳过该条用例）]",
   "time" : {
-    "start" : 1649347416304,
-    "stop" : 1649347416304,
+    "start" : 1649435147524,
+    "stop" : 1649435147524,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "d0bf858816dbefde",
-  "name" : "test_login[正常登录]",
+  "uid" : "4ff93610e5dce632",
+  "name" : "正常登录",
   "time" : {
-    "start" : 1649347415372,
-    "stop" : 1649347415372,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "d433964bb2e8950c",
-  "name" : "test_upload_files[测试上传文件接口]",
-  "time" : {
-    "start" : 1649347416772,
-    "stop" : 1649347416772,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "c0d766084f60160c",
-  "name" : "test_work_apply_good_detail[查看商品审核详情]",
-  "time" : {
-    "start" : 1649347416742,
-    "stop" : 1649347416742,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "d8a1e126a62faabe",
-  "name" : "test_sup_apply_list[查看商品审核列表]",
-  "time" : {
-    "start" : 1649347416726,
-    "stop" : 1649347416726,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "7a592362b0e27c42",
-  "name" : "csdn的接口（没有开源接口，直接拿csdn的接口做演示）",
-  "time" : {
-    "start" : 1649347416319,
-    "stop" : 1649347416698,
-    "duration" : 379
+    "start" : 1649435148264,
+    "stop" : 1649435148850,
+    "duration" : 586
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "5b808f312f29bca5",
-  "name" : "test_up_files[测试上传文件接口]",
+  "uid" : "3e8f8382fc562665",
+  "name" : "手机号码为空",
   "time" : {
-    "start" : 1649347416756,
-    "stop" : 1649347416756,
-    "duration" : 0
+    "start" : 1649435150399,
+    "stop" : 1649435150633,
+    "duration" : 234
   },
-  "status" : "skipped",
+  "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "c26b30e71a4fe6e6",
-  "name" : "test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]",
+  "uid" : "8f9a59625d2b113e",
+  "name" : "编辑收藏网址",
   "time" : {
-    "start" : 1649347416710,
-    "stop" : 1649347416710,
-    "duration" : 0
+    "start" : 1649435147797,
+    "stop" : 1649435148243,
+    "duration" : 446
   },
-  "status" : "skipped",
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f449754a018a344a",
+  "name" : "手机号码首位包含空格",
+  "time" : {
+    "start" : 1649435150652,
+    "stop" : 1649435150901,
+    "duration" : 249
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "25bdf0fbccaadb36",
+  "name" : "查看收藏网址列表接口",
+  "time" : {
+    "start" : 1649435147555,
+    "stop" : 1649435147782,
+    "duration" : 227
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "22988618e790b912",
+  "name" : "新增收藏网址接口",
+  "time" : {
+    "start" : 1649435146611,
+    "stop" : 1649435146778,
+    "duration" : 167
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "12a2f23f8af114f7",
+  "name" : "输入手机号码小于11位",
+  "time" : {
+    "start" : 1649435149788,
+    "stop" : 1649435150052,
+    "duration" : 264
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f6e7dc036acfa5c",
+  "name" : "登录密码为空",
+  "time" : {
+    "start" : 1649435149200,
+    "stop" : 1649435149457,
+    "duration" : 257
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2e50c6b50168fd7a",
+  "name" : "输入非1开头的手机号码",
+  "time" : {
+    "start" : 1649435149474,
+    "stop" : 1649435149736,
+    "duration" : 262
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fd3971c25fb0d45c",
+  "name" : "输入错误的密码",
+  "time" : {
+    "start" : 1649435148905,
+    "stop" : 1649435149186,
+    "duration" : 281
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3b1064853f104649",
+  "name" : "正常删除收藏网站",
+  "time" : {
+    "start" : 1649435147010,
+    "stop" : 1649435147459,
+    "duration" : 449
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b787b278809a8f5",
+  "name" : "正常获取个人身份信息",
+  "time" : {
+    "start" : 1649435150918,
+    "stop" : 1649435151118,
+    "duration" : 200
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e52b0d42ae4b8d47",
+  "name" : "输入手机号码大于于11位",
+  "time" : {
+    "start" : 1649435150109,
+    "stop" : 1649435150384,
+    "duration" : 275
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "52201656d0091d9e",
+  "name" : "未登录状态下新增收藏网址",
+  "time" : {
+    "start" : 1649435146796,
+    "stop" : 1649435146994,
+    "duration" : 198
+  },
+  "status" : "passed",
   "severity" : "normal"
 } ]

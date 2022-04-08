@@ -37,7 +37,7 @@ def log_decorator(switch: bool):
                                 f"\n=================================================================================\n"
                                 f"测试标题: {res[2]['detail']}\n"
                                 f"请求方式: {res[2]['method']}\n"
-                                f"请求头:   {res[2]['headers']}\n"
+                                f"请求头:   {res[3]}\n"
                                 f"请求路径: {res[2]['url']}\n"
                                 f"请求内容: {res[2]['data']}\n"
                                 f"依赖测试用例: {_dependent_case}\n"

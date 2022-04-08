@@ -1,48 +1,15 @@
 {
-  "total" : 4,
+  "total" : 1,
   "items" : [ {
-    "uid" : "2c19bb69224f3b3905d2de9d48b9bc3c",
-    "name" : "CSDN平台端",
+    "uid" : "24bcf6f52c3f3a08871bace959b4931e",
+    "name" : "开发平台接口",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 1
-    }
-  }, {
-    "uid" : "e30b40430e862b27213e6b60eb1239aa",
-    "name" : "电商平台端",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 2,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 2
-    }
-  }, {
-    "uid" : "49b3726f5bbbe33b73575654555f859b",
-    "name" : "电商平台",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 1,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    }
-  }, {
-    "uid" : "604f290d353a2ccd3dc152a3daa964c9",
-    "name" : "婚奢汇",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 1,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
+      "total" : 3
     }
   } ]
 }

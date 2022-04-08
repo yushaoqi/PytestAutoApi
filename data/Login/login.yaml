@@ -1,32 +1,269 @@
 # 公共参数
 case_common:
-  allureEpic: 电商平台端
+  allureEpic: 开发平台接口
   allureFeature: 登录模块
-  allureStory: 正常登录
+  allureStory: 登录
 
-login:
+login_01:
     host: ${{host}}
-    url: /api/v1/work/user/loginByPassword
+    url: /user/login
     method: POST
     detail: 正常登录
     headers:
-      Content-Type: application/json;charset=UTF-8
-    # 请求的数据，是 params 还是 json、或者file
-    requestType: json
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
     # 是否执行，空或者 true 都会执行
-    is_run: False
+    is_run:
     data:
-      param:
-        phone: '13300000000'
-        password: '123456'
+      username: '18800000001'
+      password: '123456'
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
     dependence_case_data:
     assert:
-      code:
-        jsonpath: $.code
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
         type: ==
-        value: 200
+        value: 0
+        AssertType:
+      # 断言接口返回的username
+      username:
+        jsonpath: $.data.username
+        type: ==
+        value: '18800000001'
+        AssertType:
+    sql:
+
+login_02:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 输入错误的密码
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: '18800000001'
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_03:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 登录密码为空
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: '18800000001'
+      password:
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_04:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 输入非1开头的手机号码
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: '28800000001'
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_05:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 输入手机号码小于11位
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: '1880000000'
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_06:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 输入手机号码大于于11位
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: '18800000000'
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_07:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 手机号码为空
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username:
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
+        AssertType:
+    sql:
+
+login_08:
+    host: ${{host}}
+    url: /user/login
+    method: POST
+    detail: 手机号码首位包含空格
+    headers:
+      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: ' 18867507063 '
+      password: '12345'
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: "账号密码不匹配！"
         AssertType:
     sql:

@@ -7,6 +7,7 @@ import re
 import datetime
 import jsonpath
 from faker import Faker
+import random
 from utils.logUtils.logControl import ERROR
 
 
@@ -67,6 +68,12 @@ class Context:
         """
 
         return datetime.datetime.now()
+
+    @property
+    def random_int(self):
+        """随机生成 0 - 9999 的数字"""
+        numbers = self.f.random_int()
+        return numbers
 
     @property
     def host(self) -> str:

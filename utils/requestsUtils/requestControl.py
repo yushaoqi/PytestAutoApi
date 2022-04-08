@@ -23,7 +23,7 @@ class RequestControl:
     """ 封装请求 """
 
     @classmethod
-    def _check_params(cls, response, yaml_data) -> Any:
+    def _check_params(cls, response, yaml_data, headers, cookie) -> Any:
         """ 抽离出通用模块，判断request中的一些参数校验 """
         # 判断响应码不等于200时，打印文本格式信息
         if response.status_code != 200:
@@ -31,23 +31,65 @@ class RequestControl:
             # 判断 sql 不是空的话，获取数据库的数据，并且返回
         if sql_switch() and yaml_data['sql'] is not None:
             sql_data = MysqlDB().assert_execution(sql=yaml_data['sql'], resp=response.json())
-            return response.json(), sql_data, yaml_data
-        return response.json(), {"sql": None}, yaml_data
+            return response.json(), sql_data, yaml_data, headers, cookie
+        return response.json(), {"sql": None}, yaml_data, headers, cookie
 
     @classmethod
     def case_token(cls, header) -> None:
         try:
             # 判断用例是否依赖token
-            _token = header['token']
+            _token = header['cookie']
             # 如果依赖则从缓存中读取对应得token信息
             try:
                 # 判断如果没有缓存数据，则直接取用例中的数据
                 cache = Cache(_token).get_cache()
-                header['token'] = cache
+                header['cookie'] = cache
             except FileNotFoundError:
                 pass
         except KeyError:
             pass
+
+    @classmethod
+    def file_data_exit(cls, yaml_data, file_data):
+        """判断上传文件时，data参数是否存在"""
+        # 兼容又要上传文件，又要上传其他类型参数
+        try:
+            for key, value in yaml_data[YAMLDate.DATA.value]['data'].items():
+                file_data[key] = value
+        except KeyError:
+            pass
+
+    @classmethod
+    def multipart_data(cls, file_data):
+        multipart = MultipartEncoder(
+            fields=file_data,  # 字典格式
+            boundary='-----------------------------' + str(random.randint(int(1e28), int(1e29 - 1)))
+        )
+        return multipart
+
+    @classmethod
+    def multipart_in_headers(cls, request_data, header):
+        """ 判断处理header为 Content-Type: multipart/form-data"""
+
+        if "multipart/form-data" in str(header.values()):
+            # 判断请求参数不为空
+            if request_data:
+                # 当 Content-Type 为 "multipart/form-data"时，需要将数据类型转换成 str
+                for k, v in request_data.items():
+                    request_data[k] = str(v)
+                request_data = MultipartEncoder(request_data)
+                header['Content-Type'] = request_data.content_type
+
+        return request_data, header
+
+    @classmethod
+    def file_prams_exit(cls, yaml_data, multipart):
+        # 判断上传文件接口，文件参数是否存在
+        try:
+            params = yaml_data[YAMLDate.DATA.value]['params']
+        except KeyError:
+            params = None
+        return multipart, params
 
     @classmethod
     def upload_file(cls, yaml_data):
@@ -60,28 +102,15 @@ class RequestControl:
             _files.append(file_data)
             # allure中展示该附件
             allure_attach(source=file_path, name=value, extension=value)
-        # 兼容就要上传文件，又要上传其他类型参数
-        try:
-            for key, value in yaml_data[YAMLDate.DATA.value]['data'].items():
-                file_data[key] = value
-        except KeyError:
-            pass
-
-        multipart = MultipartEncoder(
-            fields=file_data,  # 字典格式
-            boundary='-----------------------------' + str(random.randint(int(1e28), int(1e29 - 1)))
-        )
-
+        # 兼容又要上传文件，又要上传其他类型参数
+        cls.file_data_exit(yaml_data, file_data)
+        multipart = cls.multipart_data(file_data)
         yaml_data[YAMLDate.HEADER.value]['Content-Type'] = multipart.content_type
-
-        try:
-            params = yaml_data[YAMLDate.DATA.value]['params']
-        except KeyError:
-            params = None
-        return multipart, params
+        yaml_data, multipart = cls.file_prams_exit(yaml_data, multipart)
+        return yaml_data, multipart
 
     @log_decorator(True)
-    @execution_duration(100)
+    @execution_duration(3000)
     def http_request(self, yaml_data, **kwargs):
         from utils.requestsUtils.dependentCase import DependentCase
         _is_run = yaml_data[YAMLDate.IS_RUN.value]
@@ -102,13 +131,12 @@ class RequestControl:
             DependentCase().get_dependent_data(yaml_data)
 
             if _requestType == RequestType.JSON.value:
+                _data, _headers = self.multipart_in_headers(_data, _headers)
                 res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value], json=_data,
-                                       headers=_headers, **kwargs)
-            elif _requestType == RequestType.PARAMS.value:
+                                       headers=_headers,  **kwargs)
 
-                res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value], json=_data, headers=_headers,
-                                       **kwargs)
             elif _requestType == RequestType.PARAMS.value:
+                _data, _headers = self.multipart_in_headers(_data, _headers)
                 res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value], params=_data,
                                        headers=_headers, **kwargs)
             # 判断上传文件
@@ -118,11 +146,7 @@ class RequestControl:
                                        data=multipart[0], params=multipart[1], headers=_headers, **kwargs)
 
             elif _requestType == RequestType.DATE.value:
-
-                res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value], data=_data,
-                                       headers=_headers, **kwargs)
-
-            elif _requestType == RequestType.DATE.value:
+                _data, _headers = self.multipart_in_headers(_data, _headers)
                 res = requests.request(method=_method, url=yaml_data[YAMLDate.URL.value], data=_data, headers=_headers,
                                        **kwargs)
             allure.dynamic.title(_detail)
@@ -137,7 +161,8 @@ class RequestControl:
                 allure_step("响应结果: ", res.text)
             else:
                 allure_step("响应结果: ", res.json())
-            return self._check_params(res, yaml_data)
+            cookie = res.cookies.get_dict()
+            return self._check_params(res, yaml_data, _headers, cookie)
         else:
             # 用例跳过执行的话，所有数据都返回 False
             return False, False, yaml_data
