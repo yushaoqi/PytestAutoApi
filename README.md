@@ -1,3 +1,4 @@
+
 ## 框架介绍
 
 本框架主要是基于 Python + pytest + allure + log + yaml + mysql + redis + 钉钉通知 + Jenkins 实现的接口自动化框架。
@@ -38,7 +39,6 @@
 
 ## 目录结构
 
-下方是本框架中所有目录结构的相关接受
 
     ├── Cache                          // 存放缓存文件
     ├── config                         // 配置
