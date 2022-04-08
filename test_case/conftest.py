@@ -58,22 +58,28 @@ def write_case_process():
     Cache('case_process').set_caches(case_data)
 
 
-# @pytest.fixture(scope="session", autouse=True)
-# @pytest.mark.skip()
-# def work_login_init():
-#     """
-#     获取平台端的token信息
-#     :return:
-#     """
-#     login_yaml = CaseData(ConfigHandler.data_path + 'Login/login.yaml').case_process()[0]
-#     res = RequestControl().http_request(login_yaml)
-#     # 将token写入缓存中
-#     if res[0] is not False:
-#         token = res[0]['data']['token']
-#         Cache('work_login_init').set_caches(token)
-#         return token
-#     else:
-#         WARNING.logger.warning("登录用例设置的是不执行，无法获取到token信息")
+@pytest.fixture(scope="session", autouse=True)
+@pytest.mark.skip()
+def work_login_init():
+    """
+    获取平台端的token信息
+    :return:
+    """
+    login_yaml = CaseData(ConfigHandler.data_path + 'Login/login.yaml').case_process()[0]
+    res = RequestControl().http_request(login_yaml)
+    # 判断登录接口如果没有跳过
+    if res[0] is not False:
+        # 处理cookie格式
+        response_cookie = res[4]
+        cookies = ''
+        for k, v in response_cookie.items():
+            _cookie = k + "=" + v + ";"
+            cookies += _cookie
+        # 将登录接口中的cookie写入缓存中
+        Cache('login_cookie').set_caches(cookies)
+
+    else:
+        WARNING.logger.warning("登录用例设置的是不执行，无法获取到token信息")
 
 
 def pytest_collection_modifyitems(items):

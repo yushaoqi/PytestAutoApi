@@ -7,7 +7,7 @@ Env: 测试环境
 TesterName: 余少琪
 
 # 域名1
-host: https://redisdatarecall.csdn.net # 记得修改
+host: https://www.wanandroid.com
 app_host:
 # 域名2
 work:

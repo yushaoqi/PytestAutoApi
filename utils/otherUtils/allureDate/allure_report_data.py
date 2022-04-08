@@ -20,7 +20,6 @@ class AllureFileClean:
             with open(i, 'r', encoding='utf-8') as fp:
                 date = json.load(fp)
                 files.append(date)
-        print(files)
         return files
 
     def get_failed_case(self) -> list:

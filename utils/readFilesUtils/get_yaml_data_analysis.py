@@ -216,8 +216,3 @@ class CaseData:
                 return None
         except KeyError:
             raise KeyError(f"用例中未找到 sql 参数. 用例ID: {case_id}")
-
-
-if __name__ == '__main__':
-   data =  CaseData(r'C:\Users\hzxy\PycharmProjects\pyestAutoApi\data\WorkApplyCenter\work_apply_good_detail.yaml').case_process()
-   print(data)

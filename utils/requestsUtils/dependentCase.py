@@ -105,6 +105,9 @@ class DependentCase:
                         jsonpath_dates[_replace_key] = jsonpath_data[0]
                         cls.url_replace(replace_key=_replace_key, jsonpath_dates=jsonpath_dates,
                                         jsonpath_data=jsonpath_data, case_data=case_data)
+                    else:
+                        raise ValueError("依赖的dependent_type不正确，只支持request、response、sql依赖\n"
+                                         f"当前填写内容: {i[YAMLDate.DEPENDENT_TYPE.value]}")
             return jsonpath_dates
         else:
             return False

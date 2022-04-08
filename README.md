@@ -147,6 +147,14 @@
 
     pip install -r requirements.txt
 
+## 接口文档
+
+这里非常感谢一位安卓的朋友，给我推荐了开源的接口文件，框架中会针对开源接口中的登录、个人信息、收藏（新增、查看、修改、删除）等功能，编写结果自动化案例
+下方是接口文档地址，大家可以自行查看（因为开源的接口，里面有些逻辑性的功能，如修改被删除的网址接口并没有过多的做判断，
+因此用例中只写了一些基础的场景，仅供大家参考。）
+[https://wanandroid.com/blog/show/](https://wanandroid.com/blog/show/)
+
+
 ## 用例中相关字段的介绍
 
 ![img.png](image/case_datas.png)
