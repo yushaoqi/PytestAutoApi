@@ -1,4 +1,4 @@
-DE# 公共参数
+# 公共参数
 case_common:
   allureEpic: 电商平台端
   allureFeature: 登录模块

@@ -81,7 +81,7 @@ class RequestControl:
         return multipart, params
 
     @log_decorator(True)
-    @execution_duration(100)
+    @execution_duration(3000)
     def http_request(self, yaml_data, **kwargs):
         from utils.requestsUtils.dependentCase import DependentCase
         _is_run = yaml_data[YAMLDate.IS_RUN.value]
