@@ -1,6 +1,7 @@
 # 公共参数
 case_common:
   allureEpic: 电商平台端
+
   allureFeature: 审核中心
   allureStory: 商品审核
 
