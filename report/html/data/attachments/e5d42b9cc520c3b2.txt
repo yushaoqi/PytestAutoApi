@@ -1,0 +1,22 @@
+INFO     C:\work\Study\pytest-auto-api2\logs\info.log:logDecoratorl.py:36 
+=================================================================================
+测试标题: 新增收藏网址接口
+请求方式: POST
+请求头:   {'Content-Type': 'multipart/form-data; boundary=fe31f6c4743e49529502dcfa528c0252', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=74892F328128F86895343BAA36AD9B8B;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;'}
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json
+请求内容: {'name': '自动化生成收藏网址1131', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: {'data': {'desc': '', 'icon': '', 'id': 12386, 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2', 'name': '自动化生成收藏网址1131', 'order': 0, 'userId': 129462, 'visible': 1}, 'errorCode': 0, 'errorMsg': ''}
+数据库断言数据: {'sql': None}
+=================================================================================
+INFO     C:\work\Study\pytest-auto-api2\logs\info.log:logDecoratorl.py:36 
+=================================================================================
+测试标题: 编辑收藏网址
+请求方式: POST
+请求头:   {'Content-Type': 'multipart/form-data; boundary=2ee8c501765348adba0e955b3a104ccf', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=74892F328128F86895343BAA36AD9B8B;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;'}
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json
+请求内容: {'id': '12386', 'name': '自动化编辑网址名称', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}
+依赖测试用例: [{'case_id': 'collect_addtool_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.id', 'replace_key': '$.data.id'}]}]
+接口响应内容: {'data': {'desc': '', 'icon': '', 'id': 12387, 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2', 'name': '自动化编辑网址名称', 'order': 0, 'userId': 129462, 'visible': 1}, 'errorCode': 0, 'errorMsg': ''}
+数据库断言数据: {'sql': None}
+=================================================================================

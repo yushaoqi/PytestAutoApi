@@ -1,0 +1,11 @@
+INFO     C:\work\Study\pytest-auto-api2\logs\info.log:logDecoratorl.py:36 
+=================================================================================
+测试标题: 正常登录
+请求方式: POST
+请求头:   {'Content-Type': 'multipart/form-data; boundary=1a263ced540042e19411a963e31d287e'}
+请求路径: https://www.wanandroid.com/user/login
+请求内容: {'username': '18800000001', 'password': '123456'}
+依赖测试用例: 暂无依赖用例数据
+接口响应内容: {'data': {'admin': False, 'chapterTops': [], 'coinCount': 21, 'collectIds': [], 'email': '', 'icon': '', 'id': 129462, 'nickname': '18800000001', 'password': '', 'publicName': '18800000001', 'token': '', 'type': 0, 'username': '18800000001'}, 'errorCode': 0, 'errorMsg': ''}
+数据库断言数据: {'sql': None}
+=================================================================================
