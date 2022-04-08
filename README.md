@@ -11,7 +11,7 @@
 
 ![img.png](image/starts.png)
 
-##　前言
+## 前言
 
 公司突然要求你做自动化，但是没有代码基础不知道怎么做？或者有自动化基础，但是不知道如何系统性的做自动化，
 放在yaml文件中维护，不知道如何处理多业务依赖的逻辑？
@@ -142,20 +142,7 @@
 
 上方截图，就是一个用例中需要维护的相关字段，下面我会对每个字段的作用，做出解释。
 
-1、case_common: 这个公共参数的维护，方便后期如有需要新增的字段，可以添加在公共参数中，
-目前只有三个：allureEpic、allureFeature、allureStory，
-这三个都是allure报告需要用到的装饰器内容，后续自动生成 pytest 中 test_case 会用到这三个参数值。
-2、spu_apply_list_01： 用例ID，唯一
-3、host: 接口的域名： 填写规则如下 ${{host}}，执行脚本时，会去读取conf.yaml 文件中配置域名
-4、url: 接口路径
-5、header: 请求头
-6、requestType: 请求参数类型，有json、file、params、data四种类型
-7、is_run: 是否执行，为空、或者 True 都会执行
-8、data: 请求参数，所有的请求参数，全部放在 data 下方
-9、dependence_case：判断该条用力，是否有依赖业务，如为空或者 false 则表示没有
-10、dependence_case_data：依赖用例中需要的相关数据（下方数据依赖示例中，会对该字段下方的内容，做详细介绍）
-11、assert: 断言，支持判断sql、或者接口响应内容。
-12、sql：该用例中所需使用的sql
+![img.png](image/case_detail.png)
 
 ## 如何发送get请求
 上方了解了用例的数据结构之后，下面我们开始编写第一个get请求方式的接口。

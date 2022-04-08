@@ -75,7 +75,7 @@ class CaseData:
                                  f"{self.raise_value_error(data_name='请求方式', case_id=case_id, detail=_case_method)}")
 
         except AttributeError:
-            raise ValueError(f"method 目前只支持 { ['GET', 'POST', 'PUT', 'DELETE', 'uplpad_file_test', 'HEAD', 'OPTION']} 请求方式，"
+            raise ValueError(f"method 目前只支持 { ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTION']} 请求方式，"
                              f"如需新增请联系管理员！ "
                              f"{self.raise_value_error(data_name='请求方式', case_id=case_id, detail=case_data['method'])}")
         except KeyError:
