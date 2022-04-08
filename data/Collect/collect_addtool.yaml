@@ -1,0 +1,67 @@
+# 公共参数
+case_common:
+  allureEpic: 开发平台接口
+  allureFeature: 收藏模块
+  allureStory: 收藏网址接口
+
+collect_addtool_01:
+    host: ${{host}}
+    url: /lg/collect/addtool/json
+    method: POST
+    detail: 新增收藏网址接口
+    headers:
+      Content-Type: multipart/form-data;
+      # 这里cookie的值，写的是存入缓存的名称
+      cookie: login_cookie
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name: 自动化生成收藏网址${{random_int}}
+      link: https://gitee.com/yu_xiao_qi/pytest-auto-api2
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: 0
+        AssertType:
+    sql:
+
+collect_addtool_02:
+    host: ${{host}}
+    url: /lg/collect/addtool/json
+    method: POST
+    detail: 未登录状态下新增收藏网址
+    headers:
+      Content-Type: multipart/form-data;
+      # 这里cookie的值，写的是存入缓存的名称
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name: 自动化生成收藏网址${{random_int}}
+      link: https://gitee.com/yu_xiao_qi/pytest-auto-api2
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: -1001
+        AssertType:
+      errorMsg:
+        jsonpath: $.errorMsg
+        type: ==
+        value: '请先登录！'
+        AssertType:
+    sql:

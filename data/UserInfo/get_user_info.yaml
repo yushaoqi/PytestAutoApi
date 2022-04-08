@@ -1,0 +1,39 @@
+# 公共参数
+case_common:
+  allureEpic: 开发平台接口
+  allureFeature: 个人信息模块
+  allureStory: 个人信息接口
+
+get_user_info_01:
+    host: ${{host}}
+    url: /user/lg/userinfo/json
+    method: GET
+    detail: 正常获取个人身份信息
+    headers:
+      Content-Type: multipart/form-data;
+      # 这里cookie的值，写的是存入缓存的名称
+      cookie: login_cookie
+    # 请求的数据，是 params 还是 json、或者file、date
+    requestType: date
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.errorCode
+        type: ==
+        value: 0
+        AssertType:
+      # 断言接口返回的username
+      username:
+        jsonpath: $.data.userInfo.username
+        type: ==
+        value: '18800000001'
+        AssertType:
+    sql:
+
