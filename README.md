@@ -38,6 +38,8 @@
 
 ## 目录结构
 
+下方是本框架中所有目录结构的相关接受
+
     ├── Cache                          // 存放缓存文件
     ├── config                         // 配置
     │   ├── conf.yaml                  // 公共配置
@@ -92,6 +94,7 @@
     
 
 ## 依赖库
+
 
     allure-pytest==2.9.45
     allure-python-commons==2.9.45
