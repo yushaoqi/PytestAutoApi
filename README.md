@@ -12,6 +12,7 @@
 ![img.png](image/starts.png)
 
 ##　前言
+
 公司突然要求你做自动化，但是没有代码基础不知道怎么做？或者有自动化基础，但是不知道如何系统性的做自动化，
 放在yaml文件中维护，不知道如何处理多业务依赖的逻辑？
 
@@ -36,6 +37,7 @@
 * 多线程执行
 
 ## 目录结构
+
     ├── Cache                          // 存放缓存文件
     ├── config                         // 配置
     │   ├── conf.yaml                  // 公共配置
@@ -155,7 +157,7 @@
 11、assert: 断言，支持判断sql、或者接口响应内容。
 12、sql：该用例中所需使用的sql
 
-### 如何发送get请求
+## 如何发送get请求
 上方了解了用例的数据结构之后，下面我们开始编写第一个get请求方式的接口。
 首先，开始编写项目之后，我们在 conf.yaml 中配置项目的域名
 
@@ -203,7 +205,7 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 
     ${{host}}/api/v1/work/spu/approval/spuList?supType=1&pageNum=1&pageSize=10
 
-### 如何发送post请求
+## 如何发送post请求
 
     # 公共参数
     case_common:
@@ -246,7 +248,7 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
         
 这里post请求，我们需要请求的数据格式是json格式的，那么requestType 则填写为json格式。包括 PUT/DELETE/HEAD 请求的数据格式都是一样的，唯一不同的就是需要配置 reuqestType，如果需要请求的参数是json格式，则requestType我们就填写json，如果是url拼接的形式，我们就填写 params
 
-### 如何测试上传文件接口
+## 如何测试上传文件接口
 
 首先，我们将所有需要测试的文件，全部都放在 files 文件夹中
 ![img.png](image/files.png)
@@ -266,7 +268,8 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 1、requestType: 上传文件，我们需要更改成 file
 2、filename 参数名称: 上传文件，我们只需要填写files文件夹下的文件名称即可，程序在发送请求时，会去识别文件
 
-### 多业务逻辑，如何编写测试用例
+## 多业务逻辑，如何编写测试用例
+
 多业务这一块，我们拿个简单的例子举例，比如登录场景，在登陆之前，我们需要先获取到验证码。
 
 ![img.png](image/send_sms_code.png)
@@ -374,7 +377,8 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 3、jsonpath: 通过jsonpath 提取方式，提取到短信验证码中的验证码内容
 4、replace_key：拿到验证码之后，我们将本条用例中的data中的code参数，那么我们使用jsonpath的方式，进行替换 $.data.code
 
-### 多业务逻辑，需要依赖同一个接口中的多个数据
+## 多业务逻辑，需要依赖同一个接口中的多个数据
+
     dependence_case_data:
       - case_id: send_sms_code_02
         dependent_data:
@@ -391,7 +395,8 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 
 如上方示例，可以添加多个 dependent_type
 
-### 多业务逻辑，需要依赖不同接口的数据
+## 多业务逻辑，需要依赖不同接口的数据
+
 假设我们需要获取 send_sms_code_01、get_code_01两个接口中的数据，用例格式如下
     
     dependence_case: True
@@ -410,7 +415,7 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
             jsonpath: $.code
             replace_key: $.data.code            
 
-### 用例中需要依赖登录的token，如何设计
+## 用例中需要依赖登录的token，如何设计
 
 首先，为了防止重复请求调用登录接口，pytest中的 conftest.py 提供了热加载机制，看上方截图中的代码，我们需要在 conftest.py 提前编写好登录的代码。
 
@@ -424,7 +429,7 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 
 这里在编写用例的时候，token 填写我们所编写的缓存名称即可。
 
-### 用例中如何生成随机数据
+## 用例中如何生成随机数据
 
 比如我们有些特殊的场景，可能会涉及到一些定制化的数据，每次执行数据，需要按照指定规则随机生成。
 
@@ -442,7 +447,7 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 其他所需随机生成的数据，可在文件中自行添加。
 
 
-### 用例中如何进行接口断言和数据库断言
+## 用例中如何进行接口断言和数据库断言
 
 假设现在我需要测试一个报表统计的数据，该接口返回了任务的处理时长 和 处理数量。功能如下截图所示：
 
@@ -513,25 +518,27 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
       - select * from users;
       - select * from goods;
 
-### 自动生成test_case层代码
+## 自动生成test_case层代码
 
 小伙伴们在编写好 yaml 用例之后，可以直接执行 caseAutomaticControl.py ，会跟你设计的测试用例，生成对应的代码。
 
 ![img.png](image/write_test_case.png)
 
-### 发送钉钉通知通知
+## 发送钉钉通知通知
+
 ![img.png](image/dingding.png)
 
-### 发送企业微信通知
+## 发送企业微信通知
+
 ![img.png](image/wechart.png)
 
-### 日志打印装饰器
+## 日志打印装饰器
 
 ![img.png](image/log.png)
 
 在requestControl.py中，我单独封装了一个日志装饰器，需要的小伙伴可以不用改动代码，直接使用，如果不需要，直接注释，或者改成False。控制台将不会有日志输出
 
-### 统计用例运行时长
+## 统计用例运行时长
 ![img.png](image/run_times.png)
 
 同样，这里封装了一个统计用例运行时长的装饰器，使用改装饰器前，需要先进行导包
@@ -541,14 +548,15 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 
     @execution_duration(2000)
 
-### 生成allure报告
+## 生成allure报告
+
 我们直接运行主程序 run.py ，运行完成之后，就可以生成漂亮的allure报告啦~
 
 ![img.png](image/allure.png)
 
 ![img.png](image/allure2.png)
 
-### 其他
+## 其他
 
 本框架为2.0升级版本，升级之后的功能，现在基本上都是在yaml中维护用例，无需测试人员编写代码，
 和 1.0版本的区别在于，1.0版本还需要测试人员手动编写多业务逻辑的代码，需要有一定基础编码的能力
@@ -559,6 +567,6 @@ get请求我们 requestType 写的是params，这样发送请求时，我们会�
 *******************************************************
 
 以上便是整个框架的使用说明，这个框架属于个人业余时间开发，大家如果在使用中遇到什么问题，或者有相关建议，可以随时反馈给我，
-框架内容会随着大家的反馈，持续更新！邮箱地址：1602343211@qq.com
+_框架内容会随着大家的反馈，持续更新！邮箱地址：1602343211@qq.com
 
 如果觉得框架有帮助到你，麻烦收藏一下哦~~谢谢。:)
