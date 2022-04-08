@@ -1,1 +1,0 @@
-"[{'case_id': 'spu_apply_list_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.data.[0].applyId', 'replace_key': '$url_param{good_id}'}]}, {'case_id': 'login_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.data.[0].token', 'replace_key': '$.data.auth'}]}]"

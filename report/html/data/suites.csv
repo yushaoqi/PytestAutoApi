@@ -1,33 +1,33 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"skipped","Fri Apr 08 00:03:35 CST 2022","Fri Apr 08 00:03:35 CST 2022","0","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
+"Status","Name","Duration in ms","Description"
+"passed","test_case.WorkApplyCenter.test_csdn_test_api.TestCsdnTestApi#test_csdn_test_api","476","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.WorkApplyCenter","test_sup_apply_list","TestSupApplyList","","","test_sup_apply_list[查看商品审核列表]","
+"skipped","test_case.WorkApplyCenter.test_work_apply_good_detail.TestWorkApplyGoodDetail#test_work_apply_good_detail","0","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.uplpad_file_test","test_upload_files","TestUploadFiles","","","test_upload_files[测试上传文件接口]","
+"skipped","test_case.WorkApplyCenter.test_batchDisable.TestBatchdisable#test_batchDisable","0","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.uplpad_file_test","test_up_files","TestUpFiles","","","test_up_files[测试上传文件接口]","
+"skipped","test_case.WorkApplyCenter.test_spu_apply.TestSpuApply#test_spu_apply","0","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.WorkApplyCenter","test_spu_apply","TestSpuApply","","","test_spu_apply[正常审核商品(测试一个接口依赖多个数据)]","
+"skipped","test_case.uplpad_file_test.test_upload_files.TestUploadFiles#test_upload_files","0","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.WorkApplyCenter","test_batchDisable","TestBatchdisable","","","test_batchDisable[测试PATCH接口]","
+"skipped","test_case.uplpad_file_test.test_up_files.TestUpFiles#test_up_files","0","
         :param :
         :return:
         "
-"skipped","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","0","test_case.WorkApplyCenter","test_work_apply_good_detail","TestWorkApplyGoodDetail","","","test_work_apply_good_detail[查看商品审核详情]","
+"skipped","test_case.Login.test_login.TestLogin#test_login","0","
         :param :
         :return:
         "
-"passed","Fri Apr 08 00:03:36 CST 2022","Fri Apr 08 00:03:36 CST 2022","379","test_case.WorkApplyCenter","test_csdn_test_api","TestCsdnTestApi","","","csdn的接口（没有开源接口，直接拿csdn的接口做演示）","
+"skipped","test_case.WorkApplyCenter.test_sup_apply_list.TestSupApplyList#test_sup_apply_list","0","
         :param :
         :return:
         "

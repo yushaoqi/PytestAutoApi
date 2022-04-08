@@ -1,170 +1,74 @@
 (function () {
-    var settings = allure.getPluginSettings('screen-diff', { diffType: 'diff' });
+    var settings = allure.getPluginSettings('screen-diff', {diffType: 'diff'});
 
     function renderImage(src) {
-        return (
-            '<div class="screen-diff__container">' +
-            '<img class="screen-diff__image" src="' +
-            src +
-            '">' +
-            '</div>'
-        );
+        return '<div class="screen-diff__container">' +
+            '<img class="screen-diff__image" src="data/attachments/' + src + '">' +
+            '</div>';
     }
 
-    function findImage(data, name) {
-        if (data.testStage && data.testStage.attachments) {
-            var matchedImage = data.testStage.attachments.filter(function (attachment) {
-                return attachment.name === name;
-            })[0];
-            if (matchedImage) {
-                return 'data/attachments/' + matchedImage.source;
+    function renderDiffContent(type, data) {
+        function findImage(name) {
+            if (data.testStage && data.testStage.attachments) {
+                return data.testStage.attachments.filter(function (attachment) {
+                    return attachment.name === name;
+                })[0];
             }
+            return null;
         }
-        return null;
-    }
 
-    function renderDiffContent(type, diffImage, actualImage, expectedImage) {
+        var diffImage = findImage('diff');
+        var actualImage = findImage('actual');
+        var expectedImage = findImage('expected');
+
+        if (!diffImage && !actualImage && !expectedImage) {
+            return '<span>Diff, actual and expected image have not been provided.</span>';
+        }
+
         if (type === 'diff') {
-            if (diffImage) {
-                return renderImage(diffImage);
+            if (!diffImage) {
+                return renderImage(actualImage.source);
             }
+            return renderImage(diffImage.source);
         }
-        if (type === 'overlay' && expectedImage) {
-            return (
-                '<div class="screen-diff__overlay screen-diff__container">' +
-                '<img class="screen-diff__image" src="' +
-                expectedImage +
-                '">' +
+        if (type === 'overlay') {
+            return '<div class="screen-diff__overlay screen-diff__container">' +
+                '<img class="screen-diff__image" src="data/attachments/' + expectedImage.source + '">' +
                 '<div class="screen-diff__image-over">' +
-                '<img class="screen-diff__image" src="' +
-                actualImage +
-                '">' +
+                '<img class="screen-diff__image" src="data/attachments/' + actualImage.source + '">' +
                 '</div>' +
-                '</div>'
-            );
+                '</div>';
         }
-        if (actualImage) {
-            return renderImage(actualImage);
-        }
-        return 'No diff data provided';
     }
-
-    var TestResultView = Backbone.Marionette.View.extend({
-        regions: {
-            subView: '.screen-diff-view',
-        },
-        template: function () {
-            return '<div class="screen-diff-view"></div>';
-        },
-        onRender: function () {
-            var data = this.model.toJSON();
-            var testType = data.labels.filter(function (label) {
-                return label.name === 'testType';
-            })[0];
-            var diffImage = findImage(data, 'diff');
-            var actualImage = findImage(data, 'actual');
-            var expectedImage = findImage(data, 'expected');
-            if (!testType || testType.value !== 'screenshotDiff') {
-                return;
-            }
-            this.showChildView(
-                'subView',
-                new ScreenDiffView({
-                    diffImage: diffImage,
-                    actualImage: actualImage,
-                    expectedImage: expectedImage,
-                }),
-            );
-        },
-    });
-    var ErrorView = Backbone.Marionette.View.extend({
-        templateContext: function () {
-            return this.options;
-        },
-        template: function (data) {
-            return '<pre class="screen-diff-error">' + data.error + '</pre>';
-        },
-    });
-    var AttachmentView = Backbone.Marionette.View.extend({
-        regions: {
-            subView: '.screen-diff-view',
-        },
-        template: function () {
-            return '<div class="screen-diff-view"></div>';
-        },
-        onRender: function () {
-            jQuery
-                .getJSON(this.options.sourceUrl)
-                .then(this.renderScreenDiffView.bind(this), this.renderErrorView.bind(this));
-        },
-        renderErrorView: function (error) {
-            console.log(error);
-            this.showChildView(
-                'subView',
-                new ErrorView({
-                    error: error.statusText,
-                }),
-            );
-        },
-        renderScreenDiffView: function (data) {
-            this.showChildView(
-                'subView',
-                new ScreenDiffView({
-                    diffImage: data.diff,
-                    actualImage: data.actual,
-                    expectedImage: data.expected,
-                }),
-            );
-        },
-    });
 
     var ScreenDiffView = Backbone.Marionette.View.extend({
         className: 'pane__section',
-        events: function () {
-            return {
-                ['click [name="screen-diff-type-' + this.cid + '"]']: 'onDiffTypeChange',
-                'mousemove .screen-diff__overlay': 'onOverlayMove',
-            };
-        },
-        initialize: function (options) {
-            this.diffImage = options.diffImage;
-            this.actualImage = options.actualImage;
-            this.expectedImage = options.expectedImage;
-            this.radioName = 'screen-diff-type-' + this.cid;
+        events: {
+            'click [name="screen-diff-type"]': 'onDiffTypeChange',
+            'mousemove .screen-diff__overlay': 'onOverlayMove'
         },
         templateContext: function () {
             return {
-                diffType: settings.get('diffType'),
-                diffImage: this.diffImage,
-                actualImage: this.actualImage,
-                expectedImage: this.expectedImage,
-                radioName: this.radioName,
-            };
+                diffType: settings.get('diffType')
+            }
         },
         template: function (data) {
-            if (!data.diffImage && !data.actualImage && !data.expectedImage) {
+            var testType = data.labels.filter(function (label) {
+                return label.name === 'testType'
+            })[0];
+
+            if (!testType || testType.value !== 'screenshotDiff') {
                 return '';
             }
 
-            return (
-                '<h3 class="pane__section-title">Screen Diff</h3>' +
+            return '<h3 class="pane__section-title">Screen Diff</h3>' +
                 '<div class="screen-diff__content">' +
                 '<div class="screen-diff__switchers">' +
-                '<label><input type="radio" name="' +
-                data.radioName +
-                '" value="diff"> Show diff</label>' +
-                '<label><input type="radio" name="' +
-                data.radioName +
-                '" value="overlay"> Show overlay</label>' +
+                '<label><input type="radio" name="screen-diff-type" value="diff"> Show diff</label>' +
+                '<label><input type="radio" name="screen-diff-type" value="overlay"> Show overlay</label>' +
                 '</div>' +
-                renderDiffContent(
-                    data.diffType,
-                    data.diffImage,
-                    data.actualImage,
-                    data.expectedImage,
-                ) +
-                '</div>'
-            );
+                renderDiffContent(data.diffType, data) +
+                '</div>';
         },
         adjustImageSize: function (event) {
             var overImage = this.$(event.target);
@@ -172,10 +76,7 @@
         },
         onRender: function () {
             const diffType = settings.get('diffType');
-            this.$('[name="' + this.radioName + '"][value="' + diffType + '"]').prop(
-                'checked',
-                true,
-            );
+            this.$('[name="screen-diff-type"][value="' + diffType + '"]').prop('checked', true);
             if (diffType === 'overlay') {
                 this.$('.screen-diff__image-over img').on('load', this.adjustImageSize.bind(this));
             }
@@ -190,11 +91,7 @@
         onDiffTypeChange: function (event) {
             settings.save('diffType', event.target.value);
             this.render();
-        },
+        }
     });
-    allure.api.addTestResultBlock(TestResultView, { position: 'before' });
-    allure.api.addAttachmentViewer('application/vnd.allure.image.diff', {
-        View: AttachmentView,
-        icon: 'fa fa-exchange',
-    });
+    allure.api.addTestResultBlock(ScreenDiffView, {position: 'before'});
 })();
