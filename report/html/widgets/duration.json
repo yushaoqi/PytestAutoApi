@@ -1,150 +1,150 @@
 [ {
-  "uid" : "534f233688992957",
-  "name" : "手机号码首位包含空格",
+  "uid" : "29bf66d6f67e5ebe",
+  "name" : "正常登录",
   "time" : {
-    "start" : 1649436280401,
-    "stop" : 1649436280612,
-    "duration" : 211
+    "start" : 1649436480220,
+    "stop" : 1649436480801,
+    "duration" : 581
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "3296bc4246da49b",
-  "name" : "正常删除收藏网站",
-  "time" : {
-    "start" : 1649436277445,
-    "stop" : 1649436277773,
-    "duration" : 328
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "886770db815a1c44",
-  "name" : "查看收藏网址列表接口",
-  "time" : {
-    "start" : 1649436277799,
-    "stop" : 1649436277964,
-    "duration" : 165
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "1e4c51de9b9aaa45",
-  "name" : "输入错误的密码",
-  "time" : {
-    "start" : 1649436278906,
-    "stop" : 1649436279125,
-    "duration" : 219
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "92b3022df1098695",
-  "name" : "手机号码为空",
-  "time" : {
-    "start" : 1649436280162,
-    "stop" : 1649436280391,
-    "duration" : 229
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "4a3ec76fde2d9bf3",
+  "uid" : "2d73014a374d0361",
   "name" : "未登录状态下新增收藏网址",
   "time" : {
-    "start" : 1649436277292,
-    "stop" : 1649436277437,
+    "start" : 1649436479128,
+    "stop" : 1649436479273,
     "duration" : 145
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "6d0690469b6a6701",
-  "name" : "正常登录",
+  "uid" : "48823ed09fc41752",
+  "name" : "编辑收藏网址",
   "time" : {
-    "start" : 1649436278316,
-    "stop" : 1649436278898,
-    "duration" : 582
+    "start" : 1649436479866,
+    "stop" : 1649436480209,
+    "duration" : 343
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "e579ac0eb501777c",
-  "name" : "输入非1开头的手机号码",
+  "uid" : "4b81c6ddd9fef2eb",
+  "name" : "登录密码为空",
   "time" : {
-    "start" : 1649436279401,
-    "stop" : 1649436279633,
+    "start" : 1649436481067,
+    "stop" : 1649436481299,
     "duration" : 232
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d950e41b8f2a4abd",
-  "name" : "登录密码为空",
-  "time" : {
-    "start" : 1649436279137,
-    "stop" : 1649436279391,
-    "duration" : 254
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "18cbd82f1582470",
-  "name" : "编辑收藏网址",
-  "time" : {
-    "start" : 1649436277974,
-    "stop" : 1649436278303,
-    "duration" : 329
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "4b88973a75d50def",
+  "uid" : "28dd0db06eb9b5d6",
   "name" : "输入手机号码小于11位",
   "time" : {
-    "start" : 1649436279646,
-    "stop" : 1649436279907,
-    "duration" : 261
+    "start" : 1649436481559,
+    "stop" : 1649436481789,
+    "duration" : 230
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "a8b32b636af1c96d",
-  "name" : "正常获取个人身份信息",
+  "uid" : "c9f503094780a74b",
+  "name" : "输入手机号码大于于11位",
   "time" : {
-    "start" : 1649436280622,
-    "stop" : 1649436280756,
-    "duration" : 134
+    "start" : 1649436481802,
+    "stop" : 1649436482043,
+    "duration" : 241
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "6f300bd9d61a5f78",
+  "uid" : "3acfda576cc53d51",
   "name" : "新增收藏网址接口",
   "time" : {
-    "start" : 1649436277137,
-    "stop" : 1649436277280,
-    "duration" : 143
+    "start" : 1649436478966,
+    "stop" : 1649436479116,
+    "duration" : 150
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "2bb18abaca896ed7",
+  "uid" : "948a6b20b90aa0b1",
+  "name" : "正常获取个人身份信息",
+  "time" : {
+    "start" : 1649436482555,
+    "stop" : 1649436482701,
+    "duration" : 146
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6b03c0f6e3187c23",
+  "name" : "手机号码首位包含空格",
+  "time" : {
+    "start" : 1649436482316,
+    "stop" : 1649436482542,
+    "duration" : 226
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cc4ea3e060f205bc",
+  "name" : "输入错误的密码",
+  "time" : {
+    "start" : 1649436480808,
+    "stop" : 1649436481056,
+    "duration" : 248
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c73985b0a08c071d",
+  "name" : "查看收藏网址列表接口",
+  "time" : {
+    "start" : 1649436479665,
+    "stop" : 1649436479857,
+    "duration" : 192
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3024dc49af72c54a",
+  "name" : "手机号码为空",
+  "time" : {
+    "start" : 1649436482057,
+    "stop" : 1649436482303,
+    "duration" : 246
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec189a013e584067",
   "name" : "test_collect_delete_tool[正常删除不存在的ID数据（接口未完成此功能，跳过该条用例）]",
   "time" : {
-    "start" : 1649436277780,
-    "stop" : 1649436277780,
+    "start" : 1649436479645,
+    "stop" : 1649436479645,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "normal"
 }, {
-  "uid" : "29f3602c5748dc57",
-  "name" : "输入手机号码大于于11位",
+  "uid" : "2be64a900c0eedc7",
+  "name" : "输入非1开头的手机号码",
   "time" : {
-    "start" : 1649436279920,
-    "stop" : 1649436280148,
-    "duration" : 228
+    "start" : 1649436481309,
+    "stop" : 1649436481550,
+    "duration" : 241
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b9ce05335eedd334",
+  "name" : "正常删除收藏网站",
+  "time" : {
+    "start" : 1649436479283,
+    "stop" : 1649436479638,
+    "duration" : 355
   },
   "status" : "passed",
   "severity" : "normal"
