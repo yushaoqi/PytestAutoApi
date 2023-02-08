@@ -1,1 +1,0 @@
-"{'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}, 'name': {'jsonpath': '$.data.name', 'type': '==', 'value': '自动化编辑网址名称', 'AssertType': None}, 'link': {'jsonpath': '$.data.link', 'type': '==', 'value': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2', 'AssertType': None}}"

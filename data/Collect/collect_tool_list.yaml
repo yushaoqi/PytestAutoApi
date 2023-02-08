@@ -5,23 +5,29 @@ case_common:
   allureStory: 收藏网址列表接口
 
 collect_tool_list_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/usertools/json
     method: GET
     detail: 查看收藏网址列表接口
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: None
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
         # 依赖的数据
     dependence_case_data:
+      - case_id: self
+        dependent_data:
+          - dependent_type: sqlData
+            jsonpath: $.business_type
+            set_cache: yushaoqi
+
     assert:
       # 断言接口状态码
       errorCode:
@@ -29,4 +35,9 @@ collect_tool_list_01:
         type: ==
         value: 0
         AssertType:
+      status_code: 200
     sql:
+    setup_sql:
+      - SELECT * FROM `api_test`.`t_open_field_cfg_copy1` LIMIT 0,1;
+    sleep: 2
+

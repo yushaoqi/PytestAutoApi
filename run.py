@@ -2,18 +2,19 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/29 15:01
 # @Author : 余少琪
-
 import os
+import sys
 import traceback
 import pytest
-from utils import project_name
-from utils.logUtils.logControl import INFO
-from utils import get_notification_type
-from utils.noticUtils.weChatSendControl import WeChatSend
-from utils.noticUtils.dingtalkControl import DingTalkSendMsg
-from utils.noticUtils.sendmailControl import SendEmail
-from Enums.notificationType_enum import NotificationType
-from utils.noticUtils.feishuControl import FeiShuTalkChatBot
+from utils.other_tools.models import NotificationType
+from utils.other_tools.allure_data.allure_report_data import AllureFileClean
+from utils.logging_tool.log_control import INFO
+from utils.notify.wechat_send import WeChatSend
+from utils.notify.ding_talk import DingTalkSendMsg
+from utils.notify.send_mail import SendEmail
+from utils.notify.lark import FeiShuTalkChatBot
+from utils.other_tools.allure_data.error_case_excel import ErrorCaseExcel
+from utils import config
 
 
 def run():
@@ -28,11 +29,15 @@ def run():
              \\__,_| .__/|_/_/   \\_\\__,_|\\__\\___/|_|\\___||___/\\__|
                   |_|
                   开始执行{}项目...
-                """.format(project_name)
+                """.format(config.project_name)
         )
 
+        # 判断现有的测试用例，如果未生成测试代码，则自动生成
+        # TestCaseAutomaticGeneration().get_case_automatic()
+
         pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning',
-                     '--alluredir', './report/tmp'])
+                     '--alluredir', './report/tmp', "--clean-alluredir"])
+
         """
                    --reruns: 失败重跑次数
                    --count: 重复执行次数
@@ -46,25 +51,28 @@ def run():
                    """
 
         os.system(r"allure generate ./report/tmp -o ./report/html --clean")
-        # 判断通知类型
-        if get_notification_type() == NotificationType.DEFAULT.value:
-            pass
-        elif get_notification_type() == NotificationType.DING_TALK.value:
-            DingTalkSendMsg().send_ding_notification()
-        elif get_notification_type() == NotificationType.WECHAT.value:
-            WeChatSend().send_wechat_notification()
-        elif get_notification_type() == NotificationType.EMAIL.value:
-            SendEmail().send_main()
-        elif get_notification_type() == NotificationType.FEI_SHU.value:
-            FeiShuTalkChatBot().post()
-        else:
-            raise ValueError("通知类型配置错误，暂不支持该类型通知")
-        os.system(f"allure serve ./report/tmp -p 9999")
+
+        allure_data = AllureFileClean().get_case_count()
+        notification_mapping = {
+            NotificationType.DING_TALK.value: DingTalkSendMsg(allure_data).send_ding_notification,
+            NotificationType.WECHAT.value: WeChatSend(allure_data).send_wechat_notification,
+            NotificationType.EMAIL.value: SendEmail(allure_data).send_main,
+            NotificationType.FEI_SHU.value: FeiShuTalkChatBot(allure_data).post
+        }
+
+        if config.notification_type != NotificationType.DEFAULT.value:
+            notification_mapping.get(config.notification_type)()
+
+        if config.excel_report:
+            ErrorCaseExcel().write_case()
+
+        # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
+        os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
 
     except Exception:
         # 如有异常，相关异常发送邮件
         e = traceback.format_exc()
-        send_email = SendEmail()
+        send_email = SendEmail(AllureFileClean.get_case_count())
         send_email.error_mail(e)
         raise
 

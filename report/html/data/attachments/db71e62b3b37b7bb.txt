@@ -1,0 +1,11 @@
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-08.log:log_decorator.py:42 
+======================================================
+用例标题: 输入错误的密码
+请求路径: https://www.wanandroid.com/user/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'multipart/form-data; boundary=7498042bcd2c46f8b664d682eb1822f1', 'Content-Length': '232'}
+请求内容: {'username': '18800000001', 'password': '12345'}
+接口响应内容: {"data":null,"errorCode":-1,"errorMsg":"账号密码不匹配！"}
+接口响应时长: 287 ms
+Http状态码: 200
+=====================================================

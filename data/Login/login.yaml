@@ -5,14 +5,14 @@ case_common:
   allureStory: 登录
 
 login_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 正常登录
     headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -38,14 +38,14 @@ login_01:
     sql:
 
 login_02:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 输入错误的密码
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -71,14 +71,14 @@ login_02:
     sql:
 
 login_03:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 登录密码为空
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -104,14 +104,14 @@ login_03:
     sql:
 
 login_04:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 输入非1开头的手机号码
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -137,14 +137,14 @@ login_04:
     sql:
 
 login_05:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 输入手机号码小于11位
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -170,14 +170,14 @@ login_05:
     sql:
 
 login_06:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 输入手机号码大于于11位
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -203,14 +203,14 @@ login_06:
     sql:
 
 login_07:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 手机号码为空
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -236,14 +236,14 @@ login_07:
     sql:
 
 login_08:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/login
     method: POST
     detail: 手机号码首位包含空格
     headers:
       Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:

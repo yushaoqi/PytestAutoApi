@@ -5,21 +5,21 @@ case_common:
   allureStory: 删除收藏网站接口
 
 collect_delete_tool_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/deletetool/json
     method: POST
     detail: 正常删除收藏网站
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      id: 111
-      # 是否有依赖业务，为空或者false则表示没有
+      id: $cache{collect_delete_tool_01_id}
+      id2: 2
     dependence_case: True
     # 依赖的数据
     dependence_case_data:
@@ -27,7 +27,7 @@ collect_delete_tool_01:
         dependent_data:
           - dependent_type: response
             jsonpath: $.data.id
-            replace_key: $.data.id
+            set_cache: collect_delete_tool_01_id
 
     assert:
       # 断言接口状态码
@@ -40,16 +40,16 @@ collect_delete_tool_01:
 
 
 collect_delete_tool_02:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/deletetool/json
     method: POST
     detail: 正常删除不存在的ID数据（接口未完成此功能，跳过该条用例）
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run: False
     data:
@@ -63,7 +63,6 @@ collect_delete_tool_02:
           - dependent_type: response
             jsonpath: $.data.id
             replace_key: $.data.id
-
     assert:
       # 断言接口状态码
       errorCode:

@@ -5,22 +5,22 @@ case_common:
   allureStory: 编辑收藏网址接口
 
 collect_update_tool_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/addtool/json
     method: POST
     detail: 编辑收藏网址
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
-    is_run:
+    is_run: False
     data:
-      id:
       name: 自动化编辑网址名称
       link: https://gitee.com/yu_xiao_qi/pytest-auto-api2
+      id:
     # 是否有依赖业务，为空或者false则表示没有
     dependence_case: True
     # 依赖的数据
@@ -37,15 +37,24 @@ collect_update_tool_01:
         type: ==
         value: 0
         AssertType:
-      name:
-        jsonpath: $.data.name
-        type: ==
-        value: 自动化编辑网址名称
-        AssertType:
-      link:
-        jsonpath: $.data.link
-        type: ==
-        value: https://gitee.com/yu_xiao_qi/pytest-auto-api2
-        AssertType:
-
     sql:
+    teardown:
+
+      # 先搜索
+      - case_id: collect_tool_list_01
+        param_prepare:
+          - dependent_type: self_response
+            jsonpath: $.data[-1:].id
+            set_cache: $set_cache{artile_id}
+
+      # 删除
+      - case_id: collect_delete_tool_01
+        send_request:
+          # 删除从缓存中拿数据
+          - dependent_type: cache
+            cache_data: int:artile_id
+            replace_key: $.data.id
+
+
+
+

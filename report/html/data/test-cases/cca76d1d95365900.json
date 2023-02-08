@@ -1,0 +1,265 @@
+{
+  "uid" : "cca76d1d95365900",
+  "name" : "test_login[登录密码为空]",
+  "fullName" : "test_case.Login.test_login.TestLogin#test_login",
+  "historyId" : "0a418be200242c6d48da8179c0f08d8b",
+  "time" : {
+    "start" : 1675824941310,
+    "stop" : 1675824942337,
+    "duration" : 1027
+  },
+  "description" : "\n        :param :\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :param :\n    :return:\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1675824935062,
+      "stop" : 1675824935124,
+      "duration" : 62
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "work_login_init",
+    "time" : {
+      "start" : 1675824935124,
+      "stop" : 1675824936122,
+      "duration" : 998
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "case_skip",
+    "time" : {
+      "start" : 1675824941309,
+      "stop" : 1675824941309,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "\n        :param :\n        :return:\n        ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "请求URL: https://www.wanandroid.com/user/login",
+      "time" : {
+        "start" : 1675824942330,
+        "stop" : 1675824942330,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求方式: POST",
+      "time" : {
+        "start" : 1675824942330,
+        "stop" : 1675824942330,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求头: ",
+      "time" : {
+        "start" : 1675824942330,
+        "stop" : 1675824942332,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8bddd3ae29e5fd86",
+        "name" : "请求头: ",
+        "source" : "8bddd3ae29e5fd86.json",
+        "type" : "application/json",
+        "size" : 234
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "请求数据: ",
+      "time" : {
+        "start" : 1675824942332,
+        "stop" : 1675824942333,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "63681e59adf6c196",
+        "name" : "请求数据: ",
+        "source" : "63681e59adf6c196.json",
+        "type" : "application/json",
+        "size" : 47
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "预期数据: ",
+      "time" : {
+        "start" : 1675824942333,
+        "stop" : 1675824942335,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9ec4d1ff196b6b10",
+        "name" : "预期数据: ",
+        "source" : "9ec4d1ff196b6b10.json",
+        "type" : "application/json",
+        "size" : 202
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "响应耗时(ms): 1016",
+      "time" : {
+        "start" : 1675824942335,
+        "stop" : 1675824942335,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "响应结果: ",
+      "time" : {
+        "start" : 1675824942335,
+        "stop" : 1675824942336,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f8d992943979d098",
+        "name" : "响应结果: ",
+        "source" : "f8d992943979d098.json",
+        "type" : "application/json",
+        "size" : 76
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    } ],
+    "attachments" : [ {
+      "uid" : "c90049127b4cf355",
+      "name" : "log",
+      "source" : "c90049127b4cf355.txt",
+      "type" : "text/plain",
+      "size" : 745
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 5
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "登录模块"
+  }, {
+    "name" : "epic",
+    "value" : "开发平台接口"
+  }, {
+    "name" : "story",
+    "value" : "登录"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.Login"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-705SHAFS"
+  }, {
+    "name" : "thread",
+    "value" : "25504-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.Login.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "in_data",
+    "value" : "{'url': 'https://www.wanandroid.com/user/login', 'method': 'POST', 'detail': '登录密码为空', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': -1, 'AssertType': None}, 'errorMsg': {'jsonpath': '$.errorMsg', 'type': '==', 'value': '账号密码不匹配！', 'AssertType': None}}, 'headers': {'Content-Type': 'multipart/form-data;'}, 'requestType': 'DATA', 'is_run': None, 'data': {'username': '18800000001', 'password': None}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'setup_sql': None, 'status_code': None, 'teardown_sql': None, 'teardown': None, 'current_request_set_cache': None, 'sleep': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "cca76d1d95365900.json",
+  "parameterValues" : [ "{'url': 'https://www.wanandroid.com/user/login', 'method': 'POST', 'detail': '登录密码为空', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': -1, 'AssertType': None}, 'errorMsg': {'jsonpath': '$.errorMsg', 'type': '==', 'value': '账号密码不匹配！', 'AssertType': None}}, 'headers': {'Content-Type': 'multipart/form-data;'}, 'requestType': 'DATA', 'is_run': None, 'data': {'username': '18800000001', 'password': None}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'setup_sql': None, 'status_code': None, 'teardown_sql': None, 'teardown': None, 'current_request_set_cache': None, 'sleep': None}" ]
+}

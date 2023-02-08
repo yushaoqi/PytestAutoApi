@@ -1,1 +1,0 @@
-"{'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}}"

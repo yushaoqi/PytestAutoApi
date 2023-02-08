@@ -5,16 +5,16 @@ case_common:
   allureStory: 个人信息接口
 
 get_user_info_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /user/lg/userinfo/json
     method: GET
     detail: 正常获取个人身份信息
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
@@ -36,4 +36,3 @@ get_user_info_01:
         value: '18800000001'
         AssertType:
     sql:
-

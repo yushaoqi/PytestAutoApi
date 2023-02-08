@@ -1,0 +1,23 @@
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-08.log:log_decorator.py:42 
+======================================================
+用例标题: 新增收藏网址接口
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=0B19544B3BFD2909F4391EA24DFA73EB;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;', 'Content-Length': '93', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: {'name': '自动化', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}
+接口响应内容: {"data":{"desc":"","icon":"","id":56463,"link":"https://gitee.com/yu_xiao_qi/pytest-auto-api2","name":"自动化","order":0,"userId":129462,"visible":1},"errorCode":0,"errorMsg":""}
+接口响应时长: 176 ms
+Http状态码: 200
+=====================================================
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-08.log:log_decorator.py:42 
+======================================================
+用例标题: 正常删除收藏网站
+请求路径: https://www.wanandroid.com/lg/collect/deletetool/json
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'multipart/form-data; boundary=3fcde60e9e06465d9774f6c96d049cba', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=0B19544B3BFD2909F4391EA24DFA73EB;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;', 'Content-Length': '211'}
+请求内容: {'id': 56463, 'id2': 2}
+接口响应内容: {"data":null,"errorCode":0,"errorMsg":""}
+接口响应时长: 172 ms
+Http状态码: 200
+=====================================================
+WARNING  C:\Users\xyhz\Downloads\PytestAutoApi\logs\warning-2023-02-08.log:teardown_control.py:318 程序中检查到您数据库开关为关闭状态，已为您跳过删除sql: UPDATE `api_test`.`ysq_test` SET `name` = '$json($.data.id)$' WHERE `name` = '2' LIMIT 1

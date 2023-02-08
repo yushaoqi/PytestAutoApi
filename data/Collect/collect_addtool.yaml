@@ -5,24 +5,23 @@ case_common:
   allureStory: 收藏网址接口
 
 collect_addtool_01:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/addtool/json
     method: POST
     detail: 新增收藏网址接口
     headers:
-      Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-      cookie: login_cookie
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+      cookie: $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      name: 自动化生成收藏网址${{random_int}}
+      name: 自动化
       link: https://gitee.com/yu_xiao_qi/pytest-auto-api2
-      # 是否有依赖业务，为空或者false则表示没有
+
     dependence_case: False
-        # 依赖的数据
+    # 依赖的数据
     dependence_case_data:
     assert:
       # 断言接口状态码
@@ -31,30 +30,49 @@ collect_addtool_01:
         type: ==
         value: 0
         AssertType:
+        message: "errorCode 断言为 0"
+
+    current_request_set_cache:
+      - type: response
+        jsonpath: $.data.id
+        # 自定义的缓存名称
+        name: yushaoqi_sql
     sql:
+    teardown:
+      - case_id: collect_delete_tool_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $.data.id
+
+    teardown_sql:
+      - UPDATE `api_test`.`ysq_test` SET `name` = '$json($.data.id)$' WHERE `name` = '2' LIMIT 1
 
 collect_addtool_02:
-    host: ${{host}}
+    host: ${{host()}}
     url: /lg/collect/addtool/json
     method: POST
     detail: 未登录状态下新增收藏网址
     headers:
       Content-Type: multipart/form-data;
       # 这里cookie的值，写的是存入缓存的名称
-    # 请求的数据，是 params 还是 json、或者file、date
-    requestType: date
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: data
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      name: 自动化生成收藏网址${{random_int}}
+
+      name: 自动生成收藏网址${{random_int()}}
       link: https://gitee.com/yu_xiao_qi/pytest-auto-api2
-      # 是否有依赖业务，为空或者false则表示没有
+    # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
-        # 依赖的数据
+    # 依赖的数据
     dependence_case_data:
     assert:
+      status_code: 200
       # 断言接口状态码
       errorCode:
+      # 断言接口状态码
         jsonpath: $.errorCode
         type: ==
         value: -1001
@@ -65,3 +83,4 @@ collect_addtool_02:
         value: '请先登录！'
         AssertType:
     sql:
+

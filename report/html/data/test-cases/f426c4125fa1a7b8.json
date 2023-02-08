@@ -1,0 +1,237 @@
+{
+  "uid" : "f426c4125fa1a7b8",
+  "name" : "test_collect_update_tool[编辑收藏网址]",
+  "fullName" : "test_case.Collect.test_collect_update_tool.TestCollectUpdateTool#test_collect_update_tool",
+  "historyId" : "ac817ddc0dcc5c0fb36d5991e43d3c55",
+  "time" : {
+    "start" : 1675824940220,
+    "stop" : 1675824940220,
+    "duration" : 0
+  },
+  "description" : "\n        :param :\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :param :\n    :return:\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "Skipped",
+  "statusTrace" : "('D:\\\\工作资料\\\\pytest-auto-api2\\\\test_case\\\\conftest.py', 101, 'Skipped')",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1675824935062,
+      "stop" : 1675824935124,
+      "duration" : 62
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "work_login_init",
+    "time" : {
+      "start" : 1675824935124,
+      "stop" : 1675824936122,
+      "duration" : 998
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "case_skip",
+    "time" : {
+      "start" : 1675824940221,
+      "stop" : 1675824940225,
+      "duration" : 4
+    },
+    "status" : "skipped",
+    "statusMessage" : "Skipped\n",
+    "statusTrace" : "  File \"D:\\work_code\\pytest-auto-api2\\venv\\lib\\site-packages\\pluggy\\_callers.py\", line 39, in _multicall\n    res = hook_impl.function(*args)\n  File \"D:\\work_code\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\fixtures.py\", line 1111, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n  File \"D:\\work_code\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\fixtures.py\", line 890, in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n  File \"D:\\工作资料\\pytest-auto-api2\\test_case\\conftest.py\", line 101, in case_skip\n    pytest.skip()\n  File \"D:\\work_code\\pytest-auto-api2\\venv\\lib\\site-packages\\_pytest\\outcomes.py\", line 175, in skip\n    raise Skipped(msg=reason, allow_module_level=allow_module_level)\n",
+    "steps" : [ {
+      "name" : "请求URL: False",
+      "time" : {
+        "start" : 1675824940221,
+        "stop" : 1675824940221,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求方式: POST",
+      "time" : {
+        "start" : 1675824940221,
+        "stop" : 1675824940221,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "请求头: ",
+      "time" : {
+        "start" : 1675824940221,
+        "stop" : 1675824940223,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "83b3b38e73d12b33",
+        "name" : "请求头: ",
+        "source" : "83b3b38e73d12b33.json",
+        "type" : "application/json",
+        "size" : 76
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "请求数据: ",
+      "time" : {
+        "start" : 1675824940223,
+        "stop" : 1675824940224,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8f4ecac85bf05e22",
+        "name" : "请求数据: ",
+        "source" : "8f4ecac85bf05e22.json",
+        "type" : "application/json",
+        "size" : 110
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "依赖数据: ",
+      "time" : {
+        "start" : 1675824940224,
+        "stop" : 1675824940224,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6df2b5fb2dbe218d",
+        "name" : "依赖数据: ",
+        "source" : "6df2b5fb2dbe218d.json",
+        "type" : "application/json",
+        "size" : 173
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "预期数据: ",
+      "time" : {
+        "start" : 1675824940224,
+        "stop" : 1675824940225,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7eab2074c0d9ea95",
+        "name" : "预期数据: ",
+        "source" : "7eab2074c0d9ea95.json",
+        "type" : "application/json",
+        "size" : 90
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 4
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "开发平台接口"
+  }, {
+    "name" : "feature",
+    "value" : "收藏模块"
+  }, {
+    "name" : "story",
+    "value" : "编辑收藏网址接口"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.Collect"
+  }, {
+    "name" : "suite",
+    "value" : "test_collect_update_tool"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCollectUpdateTool"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-705SHAFS"
+  }, {
+    "name" : "thread",
+    "value" : "25504-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.Collect.test_collect_update_tool"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "in_data",
+    "value" : "{'url': 'https://www.wanandroid.com/lg/collect/addtool/json', 'method': 'POST', 'detail': '编辑收藏网址', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}}, 'headers': {'Content-Type': 'multipart/form-data;', 'cookie': '$cache{login_cookie}'}, 'requestType': 'DATA', 'is_run': False, 'data': {'name': '自动化编辑网址名称', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2', 'id': None}, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'collect_addtool_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.id', 'set_cache': None, 'replace_key': '$.data.id'}]}], 'sql': None, 'setup_sql': None, 'status_code': None, 'teardown_sql': None, 'teardown': [{'case_id': 'collect_tool_list_01', 'param_prepare': [{'dependent_type': 'self_response', 'jsonpath': '$.data[-1:].id', 'set_cache': '$set_cache{artile_id}'}], 'send_request': None}, {'case_id': 'collect_delete_tool_01', 'param_prepare': None, 'send_request': [{'dependent_type': 'cache', 'jsonpath': None, 'cache_data': 'int:artile_id', 'set_cache': None, 'replace_key': '$.data.id'}]}], 'current_request_set_cache': None, 'sleep': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f426c4125fa1a7b8.json",
+  "parameterValues" : [ "{'url': 'https://www.wanandroid.com/lg/collect/addtool/json', 'method': 'POST', 'detail': '编辑收藏网址', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}}, 'headers': {'Content-Type': 'multipart/form-data;', 'cookie': '$cache{login_cookie}'}, 'requestType': 'DATA', 'is_run': False, 'data': {'name': '自动化编辑网址名称', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2', 'id': None}, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'collect_addtool_01', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.id', 'set_cache': None, 'replace_key': '$.data.id'}]}], 'sql': None, 'setup_sql': None, 'status_code': None, 'teardown_sql': None, 'teardown': [{'case_id': 'collect_tool_list_01', 'param_prepare': [{'dependent_type': 'self_response', 'jsonpath': '$.data[-1:].id', 'set_cache': '$set_cache{artile_id}'}], 'send_request': None}, {'case_id': 'collect_delete_tool_01', 'param_prepare': None, 'send_request': [{'dependent_type': 'cache', 'jsonpath': None, 'cache_data': 'int:artile_id', 'set_cache': None, 'replace_key': '$.data.id'}]}], 'current_request_set_cache': None, 'sleep': None}" ]
+}
