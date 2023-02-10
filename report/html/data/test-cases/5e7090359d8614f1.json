@@ -1,0 +1,265 @@
+{
+  "uid" : "5e7090359d8614f1",
+  "name" : "test_collect_tool_list[查看收藏网址列表接口]",
+  "fullName" : "test_case.Collect.test_collect_tool_list.TestCollectToolList#test_collect_tool_list",
+  "historyId" : "8dc337090b769ee2123d6c056f9f9f43",
+  "time" : {
+    "start" : 1675997457261,
+    "stop" : 1675997459702,
+    "duration" : 2441
+  },
+  "description" : "\n        :param :\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :param :\n    :return:\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1675997455167,
+      "stop" : 1675997455231,
+      "duration" : 64
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "work_login_init",
+    "time" : {
+      "start" : 1675997455231,
+      "stop" : 1675997456244,
+      "duration" : 1013
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "case_skip",
+    "time" : {
+      "start" : 1675997457259,
+      "stop" : 1675997457261,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        :param :\n        :return:\n        ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "请求URL: https://www.wanandroid.com/lg/collect/usertools/json",
+      "time" : {
+        "start" : 1675997459667,
+        "stop" : 1675997459667,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "请求方式: GET",
+      "time" : {
+        "start" : 1675997459667,
+        "stop" : 1675997459667,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "请求头: ",
+      "time" : {
+        "start" : 1675997459667,
+        "stop" : 1675997459669,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5ae265bd36f56f51",
+        "name" : "请求头: ",
+        "source" : "5ae265bd36f56f51.json",
+        "type" : "application/json",
+        "size" : 395
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "请求数据: ",
+      "time" : {
+        "start" : 1675997459669,
+        "stop" : 1675997459670,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "92b6f8c76055df1a",
+        "name" : "请求数据: ",
+        "source" : "92b6f8c76055df1a.json",
+        "type" : "application/json",
+        "size" : 6
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "预期数据: ",
+      "time" : {
+        "start" : 1675997459670,
+        "stop" : 1675997459672,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "47aa75406c776c8c",
+        "name" : "预期数据: ",
+        "source" : "47aa75406c776c8c.json",
+        "type" : "application/json",
+        "size" : 110
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "响应耗时(ms): 173",
+      "time" : {
+        "start" : 1675997459672,
+        "stop" : 1675997459672,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "响应结果: ",
+      "time" : {
+        "start" : 1675997459672,
+        "stop" : 1675997459678,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d399bf7481b78a82",
+        "name" : "响应结果: ",
+        "source" : "d399bf7481b78a82.json",
+        "type" : "application/json",
+        "size" : 420485
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "9efa5204b2d3639f",
+      "name" : "log",
+      "source" : "9efa5204b2d3639f.txt",
+      "type" : "text/plain",
+      "size" : 363374
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "收藏网址列表接口"
+  }, {
+    "name" : "epic",
+    "value" : "开发平台接口"
+  }, {
+    "name" : "feature",
+    "value" : "收藏模块"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.Collect"
+  }, {
+    "name" : "suite",
+    "value" : "test_collect_tool_list"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCollectToolList"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-705SHAFS"
+  }, {
+    "name" : "thread",
+    "value" : "27772-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.Collect.test_collect_tool_list"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "in_data",
+    "value" : "{'url': 'https://www.wanandroid.com/lg/collect/usertools/json', 'method': 'GET', 'detail': '查看收藏网址列表接口', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}, 'status_code': 200}, 'headers': {'Content-Type': 'multipart/form-data;', 'cookie': '$cache{login_cookie}'}, 'requestType': 'NONE', 'is_run': None, 'data': None, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'self', 'dependent_data': [{'dependent_type': 'sqlData', 'jsonpath': '$.business_type', 'set_cache': 'yushaoqi', 'replace_key': None}]}], 'sql': None, 'setup_sql': ['SELECT * FROM `api_test`.`t_open_field_cfg_copy1` LIMIT 0,1;'], 'status_code': None, 'teardown_sql': None, 'teardown': None, 'current_request_set_cache': None, 'sleep': 2}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5e7090359d8614f1.json",
+  "parameterValues" : [ "{'url': 'https://www.wanandroid.com/lg/collect/usertools/json', 'method': 'GET', 'detail': '查看收藏网址列表接口', 'assert_data': {'errorCode': {'jsonpath': '$.errorCode', 'type': '==', 'value': 0, 'AssertType': None}, 'status_code': 200}, 'headers': {'Content-Type': 'multipart/form-data;', 'cookie': '$cache{login_cookie}'}, 'requestType': 'NONE', 'is_run': None, 'data': None, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'self', 'dependent_data': [{'dependent_type': 'sqlData', 'jsonpath': '$.business_type', 'set_cache': 'yushaoqi', 'replace_key': None}]}], 'sql': None, 'setup_sql': ['SELECT * FROM `api_test`.`t_open_field_cfg_copy1` LIMIT 0,1;'], 'status_code': None, 'teardown_sql': None, 'teardown': None, 'current_request_set_cache': None, 'sleep': 2}" ]
+}

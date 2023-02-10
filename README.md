@@ -484,6 +484,33 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
             jsonpath: $.code
             set_cache: v_code2
 
+### 缓存中获取的默认是字符串
+
+如果你已经用例写到了这一步，相信部分人在使用set_cache关键字的时候，按照下方示例，
+会发现当我们使用`$cache{login_02_v_code}` 的时候，发送请求时，前端`$cache{login_02_v_code}`会默认传递一个字符串形式
+这里程序中处理数据时，缓存数据默认都是字符串，如果你获取的缓存值为 int类型，则我们需要更为 `$cache{int:login_02_v_code}`
+同理，如果是 list，则更改为 `$cache{list:login_02_v_code}`
+
+
+
+    demo_01:
+        host: ${{host()}}
+        ...
+        data:
+          phoneNumber: 18014909278
+          # code: $cache{login_02_v_code}
+          code: $cache{login_02_v_code}
+          # 是否有依赖业务，为空或者false则表示没有
+        dependence_case: True
+            # 依赖的数据
+        dependence_case_data:
+          - case_id: send_sms_code_01
+            dependent_data:
+              - dependent_type: response
+                jsonpath: $.code
+                set_cache: login_02_v_code
+
+
 ### 请求参数为路径参数
     
     

@@ -1,0 +1,11 @@
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-10.log:log_decorator.py:42 
+======================================================
+用例标题: 未登录状态下新增收藏网址
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'multipart/form-data; boundary=64a5b0c0219d4c94bcec01f6e6f1bcd5', 'Content-Length': '280'}
+请求内容: {'name': '自动生成收藏网址189', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}
+接口响应内容: {"errorCode":-1001,"errorMsg":"请先登录！"}
+接口响应时长: 128 ms
+Http状态码: 200
+=====================================================

@@ -1,0 +1,22 @@
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-10.log:log_decorator.py:42 
+======================================================
+用例标题: 新增收藏网址接口
+请求路径: https://www.wanandroid.com/lg/collect/addtool/json
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=263D0CCF652148916D43E2B36D8048C5;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;', 'Content-Length': '93', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: {'name': '自动化', 'link': 'https://gitee.com/yu_xiao_qi/pytest-auto-api2'}
+接口响应内容: {"data":{"desc":"","icon":"","id":56845,"link":"https://gitee.com/yu_xiao_qi/pytest-auto-api2","name":"自动化","order":0,"userId":129462,"visible":1},"errorCode":0,"errorMsg":""}
+接口响应时长: 148 ms
+Http状态码: 200
+=====================================================
+INFO     C:\Users\xyhz\Downloads\PytestAutoApi\logs\info-2023-02-10.log:log_decorator.py:42 
+======================================================
+用例标题: 正常删除收藏网站
+请求路径: https://www.wanandroid.com/lg/collect/deletetool/json
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'multipart/form-data; boundary=70638c12957d4fafbab4b21b520fd2b4', 'cookie': 'loginUserName_wanandroid_com=18800000001;token_pass_wanandroid_com=5d9b90bcb70640183e09d1e755ead823;JSESSIONID=263D0CCF652148916D43E2B36D8048C5;loginUserName=18800000001;token_pass=5d9b90bcb70640183e09d1e755ead823;', 'Content-Length': '211'}
+请求内容: {'id': '56845', 'id2': 2}
+接口响应内容: {"data":null,"errorCode":0,"errorMsg":""}
+接口响应时长: 167 ms
+Http状态码: 200
+=====================================================
